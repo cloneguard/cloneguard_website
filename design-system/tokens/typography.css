@@ -1,0 +1,27 @@
+:root{
+--font-display:'Space Grotesk',ui-sans-serif,system-ui,sans-serif;
+--font-body:'IBM Plex Sans',ui-sans-serif,system-ui,sans-serif;
+--font-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,monospace;
+--text-xs:12px;
+--text-sm:13px;
+--text-base:15px;
+--text-md:17px;
+--text-lg:20px;
+--text-xl:26px;
+--text-2xl:34px;
+--text-3xl:46px;
+--text-4xl:64px;
+--leading-tight:1.08;
+--leading-snug:1.25;
+--leading-normal:1.5;
+--leading-relaxed:1.65;
+--tracking-tight:-0.02em;
+--tracking-tighter:-0.03em;
+--tracking-normal:0;
+--tracking-wide:0.06em;
+--tracking-mono-label:0.08em;
+--weight-regular:400;
+--weight-medium:500;
+--weight-semibold:600;
+--weight-bold:700;
+}
