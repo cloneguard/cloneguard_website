@@ -106,31 +106,45 @@
   .hero-meta span{ display:flex; align-items:center; gap: var(--space-2); }
   .dot{ width:6px; height:6px; border-radius:50%; background: var(--accent-verified); display:inline-block; }
 
-  /* ---------- VERIFICATION PAIR (matches components/brand/VerificationCard.jsx) ---------- */
-  .verify-stage{ position:relative; width:300px; height:190px; }
+  /* ---------- VERIFICATION PAIR ----------
+     Core card anatomy (rail, id, label, name, domain, divider, status dot+line)
+     matches components/brand/VerificationCard.jsx exactly. Size and the
+     genuine/flagged offset are NOT copied from the component's small default
+     props (260px, 26px/18px) — those defaults read as near-total overlap at
+     this scale and made the hero's signature motif look like a single card,
+     not a pair. Widened + spread out here since the motif's own guidance
+     calls hero sections out as its flagship use ("used sparingly: hero
+     sections, empty states, case-open moments, report covers") — the exact
+     place it's meant to carry visual weight. Two extra evidence rows (domain
+     age / SSL issuer) were added back for the same reason: they fill the
+     larger card with real "case file" content instead of empty dark space. */
+  .verify-stage{ position:relative; width:420px; height:280px; margin:0 auto; }
+  @media (max-width:520px){ .verify-stage{ transform:scale(0.72); transform-origin:center top; } }
   .vcard{
-    position:absolute; top:0; left:0; width:260px; overflow:hidden;
+    position:absolute; top:0; left:0; width:296px; overflow:hidden;
     border-radius: var(--radius-md); background: var(--ink-navy-900); color: var(--fg-on-inverse);
     box-shadow: var(--shadow-lg);
   }
-  .vcard .vrail{ height:4px; }
-  .vcard .vbody{ padding:16px 18px; }
+  .vcard .vrail{ height:5px; }
+  .vcard .vbody{ padding:18px 20px; }
   .vcard .vtop{ display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
   .vcard .vid{ font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); color: var(--ink-navy-300); }
   .vcard .vlabel{ font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); font-weight: var(--weight-semibold); }
-  .vcard .vname{ font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); margin-bottom:4px; }
+  .vcard .vname{ font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); margin-bottom:4px; }
   .vcard .vdomain{ font-family: var(--font-mono); font-size:12px; color: var(--ink-navy-300); }
-  .vcard .vdiv{ margin-top:16px; height:1px; background: var(--ink-navy-700); }
-  .vcard .vstatus{ margin-top:12px; display:flex; gap:6px; align-items:center; }
+  .vcard .vmeta{ margin-top:14px; }
+  .vcard .vmeta-row{ display:flex; justify-content:space-between; font-family: var(--font-mono); font-size:11px; padding:7px 0; border-top:1px solid var(--ink-navy-700); color: var(--ink-navy-300); }
+  .vcard .vdiv{ margin-top:2px; height:1px; background: var(--ink-navy-700); }
+  .vcard .vstatus{ margin-top:14px; display:flex; gap:6px; align-items:center; }
   .vcard .vstatus-dot{ width:7px; height:7px; border-radius:50%; }
   .vcard .vstatus-text{ font-family: var(--font-mono); font-size:10.5px; color: var(--ink-navy-300); }
 
-  .v-genuine{ border:1px solid var(--ink-navy-700); z-index:1; transform: rotate(-2deg); }
+  .v-genuine{ border:1px solid var(--ink-navy-700); z-index:1; transform: translate(-46px,-14px) rotate(-4deg); }
   .v-genuine .vrail{ background: var(--accent-verified); }
   .v-genuine .vlabel{ color: var(--brass-gold-300); }
   .v-genuine .vstatus-dot{ background: var(--accent-verified-strong); }
 
-  .v-flagged{ border:1px solid var(--brick-red-700); z-index:2; transform: rotate(2deg) translate(26px,18px); }
+  .v-flagged{ border:1px solid var(--brick-red-700); z-index:2; transform: translate(46px,32px) rotate(4deg); }
   .v-flagged .vrail{ background: var(--accent-flagged); }
   .v-flagged .vlabel{ color: var(--brick-red-300); }
   .v-flagged .vstatus-dot{ background: var(--accent-flagged-strong); }
@@ -255,6 +269,10 @@
           </div>
           <div class="vname">Brand Casino Ltd.</div>
           <div class="vdomain">brand-casino.com</div>
+          <div class="vmeta">
+            <div class="vmeta-row"><span>Domain age</span><span>6 yrs</span></div>
+            <div class="vmeta-row"><span>SSL issuer</span><span>Verified</span></div>
+          </div>
           <div class="vdiv"></div>
           <div class="vstatus">
             <span class="vstatus-dot"></span>
@@ -271,6 +289,10 @@
           </div>
           <div class="vname">Brand Casino Ltd.</div>
           <div class="vdomain">brand-casino-bonus.net</div>
+          <div class="vmeta">
+            <div class="vmeta-row"><span>Domain age</span><span>4 days</span></div>
+            <div class="vmeta-row"><span>SSL issuer</span><span>Mismatch</span></div>
+          </div>
           <div class="vdiv"></div>
           <div class="vstatus">
             <span class="vstatus-dot"></span>
