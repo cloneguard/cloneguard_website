@@ -170,10 +170,43 @@
   .contact-value{ font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); color: var(--fg-primary); }
 
   /* ---------- FINAL CTA ---------- */
-  .final-cta{ text-align:center; background: var(--bg-surface); }
-  .final-cta .wrap{ max-width:680px; }
-  .final-cta h2{ font-family: var(--font-display); font-size: clamp(28px,4vw,var(--text-3xl)); letter-spacing: var(--tracking-tight); margin: var(--space-4) 0 var(--space-4); }
-  .final-cta p{ color: var(--fg-secondary); font-size: var(--text-base); margin-bottom: var(--space-8); }
+  /* ---------- GET REPORT (mirrors hero-grid: content left, visual right) ---------- */
+  .get-report{ background: var(--bg-surface); }
+  .get-report-grid{ display:grid; grid-template-columns: 1.05fr 0.95fr; gap: var(--space-16); align-items:center; }
+  @media (max-width:900px){ .get-report-grid{ grid-template-columns:1fr; gap: var(--space-12); } }
+  .get-report h2{ font-family: var(--font-display); font-size: clamp(28px,4vw,var(--text-3xl)); letter-spacing: var(--tracking-tight); margin: var(--space-4) 0 var(--space-4); }
+  .get-report .lede{ color: var(--fg-secondary); font-size: var(--text-md); line-height: var(--leading-relaxed); max-width:440px; margin-bottom: var(--space-8); }
+
+  /* Report mock-up card - same "case file" visual language as the hero's
+     verification pair (dark navy, mono rail, id/label header), applied here
+     as a single card since the motif's own guidance calls out "report
+     covers" as one of its intended uses. */
+  .report-card{ background: var(--ink-navy-900); color: var(--fg-on-inverse); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); overflow:hidden; max-width:420px; margin:0 auto; }
+  .report-card .rrail{ height:5px; background: var(--accent-flagged); }
+  .report-card .rbody{ padding:22px 22px 20px; }
+  .report-card .rtop{ display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
+  .report-card .rid{ font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); color: var(--ink-navy-300); }
+  .report-card .rlabel{ font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); font-weight: var(--weight-semibold); color: var(--brick-red-300); }
+  .report-card .rtarget{ font-family: var(--font-mono); font-size:12px; color: var(--ink-navy-300); margin-bottom:14px; }
+  .report-card .rtarget b{ color: var(--fg-on-inverse); font-weight: var(--weight-medium); }
+
+  .report-row{ display:flex; align-items:center; justify-content:space-between; gap: var(--space-3); padding:10px 0; border-top:1px solid var(--ink-navy-700); }
+  .report-row:first-child{ border-top:none; }
+  .report-row-left{ display:flex; align-items:center; gap:10px; min-width:0; }
+  .report-row-icon{ width:26px; height:26px; border-radius:50%; background: var(--ink-navy-800); display:flex; align-items:center; justify-content:center; color: var(--ink-navy-300); flex-shrink:0; }
+  .report-row-text{ min-width:0; }
+  .report-row-channel{ font-family: var(--font-mono); font-size:9.5px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--ink-navy-300); }
+  .report-row-name{ font-size:13px; color: var(--fg-on-inverse); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .report-risk{ display:flex; align-items:center; gap:6px; flex-shrink:0; font-family: var(--font-mono); font-size:10.5px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; }
+  .report-risk .dot{ width:6px; height:6px; border-radius:50%; }
+  .report-risk.high .dot{ background: var(--accent-flagged-strong); }
+  .report-risk.high span{ color: var(--brick-red-300); }
+  .report-risk.med .dot{ background: var(--brass-gold-300); }
+  .report-risk.med span{ color: var(--brass-gold-300); }
+
+  .report-foot{ margin-top:14px; padding-top:14px; border-top:1px solid var(--ink-navy-700); display:flex; justify-content:space-between; align-items:flex-end; }
+  .report-foot-stat{ font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--weight-semibold); }
+  .report-foot-label{ font-family: var(--font-mono); font-size:10.5px; color: var(--ink-navy-300); margin-top:2px; }
 </style>
 </head>
 <body>
@@ -404,12 +437,77 @@
   </div>
 </section>
 
-<section class="final-cta" id="get-report">
-  <div class="wrap">
-    <div class="eyebrow" style="justify-content:center;">Get started</div>
-    <h2>See what's already out there.</h2>
-    <p>We'll run a free impersonation scan on your brand and send you the findings - no commitment needed.</p>
-    <a href="mailto:info@cloneguard.co?subject=Free%20Impersonation%20Report%20request&amp;body=Company%20name%3A%20%0APrimary%20domain%3A%20%0A%0APlease%20run%20a%20free%20impersonation%20report%20for%20us." class="btn btn-primary btn-lg">Get Your Free Impersonation Report</a>
+<section class="get-report band-white" id="get-report">
+  <div class="wrap get-report-grid">
+    <div>
+      <div class="eyebrow">Get started</div>
+      <h2>See what's already out there.</h2>
+      <p class="lede">We'll run a free impersonation scan on your brand and send you the findings - no commitment needed.</p>
+      <a href="mailto:info@cloneguard.co?subject=Free%20Impersonation%20Report%20request&amp;body=Company%20name%3A%20%0APrimary%20domain%3A%20%0A%0APlease%20run%20a%20free%20impersonation%20report%20for%20us." class="btn btn-primary btn-lg">Get Your Free Impersonation Report</a>
+    </div>
+
+    <div class="report-card" aria-hidden="true">
+      <div class="rrail"></div>
+      <div class="rbody">
+        <div class="rtop">
+          <span class="rid">CG-SCAN-0847</span>
+          <span class="rlabel">IMPERSONATION SCAN</span>
+        </div>
+        <div class="rtarget">Scanned: <b>brand-casino.com</b></div>
+
+        <div class="report-row">
+          <div class="report-row-left">
+            <span class="report-row-icon"><i data-lucide="globe" width="13" height="13" stroke-width="2"></i></span>
+            <div class="report-row-text">
+              <div class="report-row-channel">Website</div>
+              <div class="report-row-name">brand-casino-bonus.net</div>
+            </div>
+          </div>
+          <div class="report-risk high"><span class="dot"></span><span>High</span></div>
+        </div>
+
+        <div class="report-row">
+          <div class="report-row-left">
+            <span class="report-row-icon"><i data-lucide="instagram" width="13" height="13" stroke-width="2"></i></span>
+            <div class="report-row-text">
+              <div class="report-row-channel">Social</div>
+              <div class="report-row-name">@brandcasino.wins</div>
+            </div>
+          </div>
+          <div class="report-risk med"><span class="dot"></span><span>Medium</span></div>
+        </div>
+
+        <div class="report-row">
+          <div class="report-row-left">
+            <span class="report-row-icon"><i data-lucide="smartphone" width="13" height="13" stroke-width="2"></i></span>
+            <div class="report-row-text">
+              <div class="report-row-channel">App store</div>
+              <div class="report-row-name">"Brand Casino VIP"</div>
+            </div>
+          </div>
+          <div class="report-risk high"><span class="dot"></span><span>High</span></div>
+        </div>
+
+        <div class="report-row">
+          <div class="report-row-left">
+            <span class="report-row-icon"><i data-lucide="send" width="13" height="13" stroke-width="2"></i></span>
+            <div class="report-row-text">
+              <div class="report-row-channel">Telegram</div>
+              <div class="report-row-name">@brandcasino_support</div>
+            </div>
+          </div>
+          <div class="report-risk med"><span class="dot"></span><span>Medium</span></div>
+        </div>
+
+        <div class="report-foot">
+          <div>
+            <div class="report-foot-stat">4</div>
+            <div class="report-foot-label">Impersonations flagged</div>
+          </div>
+          <div class="report-foot-label" style="text-align:right;">Full findings<br>sent by email</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -417,8 +515,8 @@
   <div class="wrap contact-layout">
     <div class="section-head" style="margin-bottom:0;">
       <div class="eyebrow">Get in touch</div>
-      <h2>Prefer to reach us directly?</h2>
-      <p>No form, no gatekeeping - reach the team directly through either channel below.</p>
+      <h2>Reach the team directly.</h2>
+      <p>Get in touch through either channel.</p>
     </div>
     <div class="contact-grid">
       <a href="mailto:info@cloneguard.co" class="contact-card card">
