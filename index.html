@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CloneGuard — Brand Protection for High-Risk Industries</title>
+<title>CloneGuard - Brand Protection for High-Risk Industries</title>
 
 <!-- Design system: tokens + base only (see design-system/README.md). -->
 <link rel="stylesheet" href="design-system/styles.css">
 
-<!-- Lucide — same icon system + version referenced by components/brand/Icon.jsx -->
+<!-- Lucide - same icon system + version referenced by components/brand/Icon.jsx -->
 <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
 
 <style>
   /*
     Everything below is layout + the plain-CSS re-implementation of the
     design system's React components (Button, Card, Badge, VerificationCard).
-    No color / font / spacing / radius / shadow value is hand-picked here —
+    No color / font / spacing / radius / shadow value is hand-picked here -
     each one pulls from design-system/tokens/*.css. If a token changes, this
     page repaints without being touched. Component visuals (hover states,
     variants) are copied 1:1 from the source .jsx + .prompt.md specs and
-    will need manual re-sync if those specs change — see design-system/README.md.
+    will need manual re-sync if those specs change - see design-system/README.md.
   */
 
   *{box-sizing:border-box; margin:0; padding:0;}
@@ -132,11 +132,11 @@
      Core card anatomy (rail, id, label, name, domain, divider, status dot+line)
      matches components/brand/VerificationCard.jsx exactly. Size and the
      genuine/flagged offset are NOT copied from the component's small default
-     props (260px, 26px/18px) — those defaults read as near-total overlap at
+     props (260px, 26px/18px) - those defaults read as near-total overlap at
      this scale and made the hero's signature motif look like a single card,
      not a pair. Widened + spread out here since the motif's own guidance
      calls hero sections out as its flagship use ("used sparingly: hero
-     sections, empty states, case-open moments, report covers") — the exact
+     sections, empty states, case-open moments, report covers") - the exact
      place it's meant to carry visual weight. Two extra evidence rows (domain
      age / SSL issuer) were added back for the same reason: they fill the
      larger card with real "case file" content instead of empty dark space. */
@@ -234,10 +234,13 @@
   @media (max-width:900px){ .test-grid{ grid-template-columns:1fr; } }
   .test-card{ padding: var(--space-6); }
   .case-tag{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--brass-gold-700); margin-bottom: var(--space-4); }
-  .case-headline{ font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); line-height: var(--leading-snug); color: var(--fg-primary); margin-bottom: var(--space-5); }
+  .test-card h3{ font-family: var(--font-display); font-size: var(--text-lg); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
+  .test-card p{ color: var(--fg-secondary); font-size:14.5px; line-height: var(--leading-normal); margin-bottom: var(--space-5); }
 
   /* ---------- CONTACT ---------- */
-  .contact-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap: var(--space-6); max-width:640px; }
+  .contact-layout{ display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items:center; }
+  @media (max-width:800px){ .contact-layout{ grid-template-columns:1fr; gap: var(--space-8); } }
+  .contact-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap: var(--space-6); }
   @media (max-width:600px){ .contact-grid{ grid-template-columns:1fr; } }
   .contact-card{ padding: var(--space-8) var(--space-6); display:block; transition: border-color var(--duration-base) var(--ease-standard), transform var(--duration-base) var(--ease-standard); }
   .contact-card:hover{ border-color: var(--brass-gold-700); transform: translateY(-3px); }
@@ -251,10 +254,10 @@
   .final-cta p{ color: var(--fg-secondary); font-size: var(--text-base); margin-bottom: var(--space-8); }
 
   /* ---------- FOOTER ---------- */
-  footer{ border-top:1px solid var(--border-default); padding: var(--space-12) 0; }
+  footer{ border-top:1px solid var(--border-default); padding: var(--space-6) 0; }
   .foot-grid{ display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap: var(--space-8); }
   .foot-links{ display:flex; gap: var(--space-8); font-size:13.5px; color: var(--fg-secondary); flex-wrap:wrap; }
-  .foot-note{ font-family: var(--font-mono); font-size:11.5px; color: var(--fg-muted); margin-top: var(--space-5); }
+  .foot-note{ font-family: var(--font-mono); font-size:11.5px; color: var(--fg-muted); margin-top: var(--space-2); }
 </style>
 </head>
 <body>
@@ -289,7 +292,7 @@
       <h1>Brand protection<br>for <span class="accent">high-risk</span><br>industries.</h1>
       <p class="lede">We monitor, detect, and take down the fake sites, accounts, and apps putting your brand and your customers at risk.</p>
       <div class="hero-ctas">
-        <a href="mailto:info@cloneguard.co?subject=Free%20Impersonation%20Report%20request&amp;body=Company%20name%3A%20%0APrimary%20domain%3A%20%0A%0APlease%20run%20a%20free%20impersonation%20report%20for%20us." class="btn btn-primary btn-lg">Get Free Impersonation Report</a>
+        <a href="mailto:info@cloneguard.co?subject=Free%20Impersonation%20Report%20request&amp;body=Company%20name%3A%20%0APrimary%20domain%3A%20%0A%0APlease%20run%20a%20free%20impersonation%20report%20for%20us." class="btn btn-primary btn-lg">Free Impersonation Report</a>
         <a href="#how" class="btn btn-secondary btn-lg">See how it works</a>
       </div>
       <div class="hero-meta">
@@ -364,7 +367,7 @@
       <div class="svc-card card">
         <div class="svc-icon"><i data-lucide="search" width="22" height="22" stroke-width="1.75"></i></div>
         <h3>Monitoring &amp; Takedowns</h3>
-        <p>Continuous detection of cloned websites, fake accounts, and impersonating apps — reviewed and actioned by our team.</p>
+        <p>Continuous detection of cloned websites, fake accounts, and impersonating apps - reviewed and actioned by our team.</p>
         <ul class="svc-list">
           <li>24/7 brand &amp; domain monitoring, across social, web, and app stores</li>
           <li>Fake account, phishing site, and clone takedowns</li>
@@ -376,7 +379,7 @@
       <div class="svc-card card">
         <div class="svc-icon"><i data-lucide="file-check" width="22" height="22" stroke-width="1.75"></i></div>
         <h3>Trademark Registration</h3>
-        <p>UK and EU trademark filing, handled end to end through our specialist legal partners — you retain full ownership.</p>
+        <p>UK and EU trademark filing, handled end to end through our specialist legal partners - you retain full ownership.</p>
         <ul class="svc-list">
           <li>UKIPO and EUIPO filing &amp; representation</li>
           <li>Conflict screening before you commit to filing</li>
@@ -388,7 +391,7 @@
       <div class="svc-card card">
         <div class="svc-icon"><i data-lucide="layout-grid" width="22" height="22" stroke-width="1.75"></i></div>
         <h3>Specialist Services</h3>
-        <p>Additional protection, introduced as your business needs it — sourced through vetted specialist partners.</p>
+        <p>Additional protection, introduced as your business needs it - sourced through vetted specialist partners.</p>
         <ul class="svc-list">
           <li>Executive &amp; VIP digital protection</li>
           <li>Cyber insurance placement for high-risk industries</li>
@@ -437,19 +440,19 @@
     </div>
     <div class="how-grid">
       <div class="how-step">
-        <div class="how-num">01 — Detect</div>
+        <div class="how-num">01 - Detect</div>
         <h3>Continuous scanning</h3>
         <p>We monitor domains, app stores, and social platforms around the clock for anything using your brand without permission.</p>
       </div>
       <div class="how-step">
-        <div class="how-num">02 — Validate</div>
+        <div class="how-num">02 - Validate</div>
         <h3>Human review</h3>
-        <p>Every flagged case is checked by our team before action is taken — no false positives filed against genuine accounts.</p>
+        <p>Every flagged case is checked by our team before action is taken - no false positives filed against genuine accounts.</p>
       </div>
       <div class="how-step">
-        <div class="how-num">03 — Enforce</div>
+        <div class="how-num">03 - Enforce</div>
         <h3>Takedown &amp; report</h3>
-        <p>Confirmed cases are actioned immediately. You receive a clear monthly report — no dashboard, no login required.</p>
+        <p>Confirmed cases are actioned immediately. You receive a clear monthly report - no dashboard, no login required.</p>
       </div>
     </div>
   </div>
@@ -458,25 +461,28 @@
 <section id="proof" class="band-tint">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">Case patterns</div>
+      <div class="eyebrow">How cases resolve</div>
       <h2>What a takedown looks like.</h2>
-      <p>Every case follows the same path — detected, verified, actioned. Here's how that plays out across the services we run most.</p>
+      <p>Every case follows the same path - detected, verified, actioned. Here's how that plays out across the services we run most.</p>
     </div>
     <div class="test-grid">
       <div class="test-card card">
-        <div class="case-tag">iGaming — Monitoring &amp; Takedowns</div>
-        <p class="case-headline">A cloned sportsbook login page is detected, verified against your registered domain, and reported to the host — usually removed before it captures a single credential.</p>
+        <div class="case-tag">iGaming - Monitoring &amp; Takedowns</div>
+        <h3>Detected, verified, removed.</h3>
+        <p>A cloned sportsbook login page is verified against your registered domain and reported to the host - usually removed before it captures a single credential.</p>
         <span class="badge badge-verified">Typical resolution: under 24 hours</span>
       </div>
       <div class="test-card card">
-        <div class="case-tag">Crypto — Monitoring &amp; Takedowns</div>
-        <p class="case-headline">A spoofed exchange or wallet login page is flagged, confirmed against your brand assets, and filed with the registrar — often gone before it reaches a real user.</p>
+        <div class="case-tag">Crypto - Monitoring &amp; Takedowns</div>
+        <h3>Flagged, confirmed, filed.</h3>
+        <p>A spoofed exchange or wallet login page is confirmed against your brand assets and filed with the registrar - often gone before it reaches a real user.</p>
         <span class="badge badge-verified">Typical resolution: under 24 hours</span>
       </div>
       <div class="test-card card">
         <div class="case-tag">Trademark Registration</div>
-        <p class="case-headline">Your mark is screened for conflicts, filed with the relevant IP office, and tracked through to registration — closing the gap copycats rely on to register lookalike marks first.</p>
-        <span class="badge badge-verified">Typical timeline: a few months to registration</span>
+        <h3>Screened, filed, registered.</h3>
+        <p>Your mark is screened for conflicts and filed with the relevant IP office, closing the gap copycats rely on to register lookalike marks first.</p>
+        <span class="badge badge-verified">&lt;6 months to registration</span>
       </div>
     </div>
   </div>
@@ -486,17 +492,17 @@
   <div class="wrap">
     <div class="eyebrow" style="justify-content:center;">Get started</div>
     <h2>See what's already out there.</h2>
-    <p>We'll run a free impersonation scan on your brand and send you the findings — no commitment, no platform access needed.</p>
+    <p>We'll run a free impersonation scan on your brand and send you the findings - no commitment, no platform access needed.</p>
     <a href="mailto:info@cloneguard.co?subject=Free%20Impersonation%20Report%20request&amp;body=Company%20name%3A%20%0APrimary%20domain%3A%20%0A%0APlease%20run%20a%20free%20impersonation%20report%20for%20us." class="btn btn-primary btn-lg">Get Free Impersonation Report</a>
   </div>
 </section>
 
 <section id="contact" class="band-tint">
-  <div class="wrap">
-    <div class="section-head">
+  <div class="wrap contact-layout">
+    <div class="section-head" style="margin-bottom:0;">
       <div class="eyebrow">Get in touch</div>
       <h2>Prefer to reach us directly?</h2>
-      <p>No form, no gatekeeping — reach the team directly through either channel below.</p>
+      <p>No form, no gatekeeping - reach the team directly through either channel below.</p>
     </div>
     <div class="contact-grid">
       <a href="mailto:info@cloneguard.co" class="contact-card card">
