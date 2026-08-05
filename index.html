@@ -172,41 +172,41 @@
   /* ---------- FINAL CTA ---------- */
   /* ---------- GET REPORT (mirrors hero-grid: content left, visual right) ---------- */
   .get-report{ background: var(--bg-surface); }
-  .get-report-grid{ display:grid; grid-template-columns: 1.05fr 0.95fr; gap: var(--space-16); align-items:center; }
+  .get-report-grid{ display:grid; grid-template-columns: 0.85fr 1.15fr; gap: var(--space-16); align-items:center; }
   @media (max-width:900px){ .get-report-grid{ grid-template-columns:1fr; gap: var(--space-12); } }
   .get-report h2{ font-family: var(--font-display); font-size: clamp(28px,4vw,var(--text-3xl)); letter-spacing: var(--tracking-tight); margin: var(--space-4) 0 var(--space-4); }
   .get-report .lede{ color: var(--fg-secondary); font-size: var(--text-md); line-height: var(--leading-relaxed); max-width:440px; margin-bottom: var(--space-8); }
 
-  /* Report mock-up card - same "case file" visual language as the hero's
-     verification pair (dark navy, mono rail, id/label header), applied here
-     as a single card since the motif's own guidance calls out "report
-     covers" as one of its intended uses. */
-  .report-card{ background: var(--ink-navy-900); color: var(--fg-on-inverse); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); overflow:hidden; max-width:420px; margin:0 auto; }
-  .report-card .rrail{ height:5px; background: var(--accent-flagged); }
-  .report-card .rbody{ padding:22px 22px 20px; }
-  .report-card .rtop{ display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
-  .report-card .rid{ font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); color: var(--ink-navy-300); }
-  .report-card .rlabel{ font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); font-weight: var(--weight-semibold); color: var(--brick-red-300); }
-  .report-card .rtarget{ font-family: var(--font-mono); font-size:12px; color: var(--ink-navy-300); margin-bottom:14px; }
-  .report-card .rtarget b{ color: var(--fg-on-inverse); font-weight: var(--weight-medium); }
+  /* Report mock-up - styled as an actual document page (letterhead, meta
+     line, findings table, signed-off footer) rather than a UI screen, since
+     this is meant to read as "the thing you're sent," not "the product
+     dashboard." Wide/landscape rather than the hero card's tall phone-like
+     proportions. */
+  .doc-card{ background: var(--bg-surface); color: var(--fg-primary); border-radius: var(--radius-sm); border:1px solid var(--border-default); box-shadow: var(--shadow-lg); overflow:hidden; max-width:560px; margin:0 auto; }
+  .doc-head{ padding: var(--space-6) var(--space-6) var(--space-4); border-bottom:2px solid var(--ink-navy-900); display:flex; justify-content:space-between; align-items:flex-end; }
+  .doc-brand{ font-family: var(--font-display); font-weight: var(--weight-bold); font-size: var(--text-md); letter-spacing: var(--tracking-tight); }
+  .doc-type{ font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); margin-top:3px; }
+  .doc-id{ font-family: var(--font-mono); font-size:11px; color: var(--fg-muted); text-align:right; }
 
-  .report-row{ display:flex; align-items:center; justify-content:space-between; gap: var(--space-3); padding:10px 0; border-top:1px solid var(--ink-navy-700); }
-  .report-row:first-child{ border-top:none; }
-  .report-row-left{ display:flex; align-items:center; gap:10px; min-width:0; }
-  .report-row-icon{ width:26px; height:26px; border-radius:50%; background: var(--ink-navy-800); display:flex; align-items:center; justify-content:center; color: var(--ink-navy-300); flex-shrink:0; }
-  .report-row-text{ min-width:0; }
-  .report-row-channel{ font-family: var(--font-mono); font-size:9.5px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--ink-navy-300); }
-  .report-row-name{ font-size:13px; color: var(--fg-on-inverse); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-  .report-risk{ display:flex; align-items:center; gap:6px; flex-shrink:0; font-family: var(--font-mono); font-size:10.5px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; }
-  .report-risk .dot{ width:6px; height:6px; border-radius:50%; }
-  .report-risk.high .dot{ background: var(--accent-flagged-strong); }
-  .report-risk.high span{ color: var(--brick-red-300); }
-  .report-risk.med .dot{ background: var(--brass-gold-300); }
-  .report-risk.med span{ color: var(--brass-gold-300); }
+  .doc-body{ padding: var(--space-5) var(--space-6) var(--space-6); }
+  .doc-meta-row{ display:flex; justify-content:space-between; flex-wrap:wrap; gap: var(--space-3); font-family: var(--font-mono); font-size:11px; color: var(--fg-secondary); padding-bottom: var(--space-4); margin-bottom: var(--space-4); border-bottom:1px solid var(--border-default); }
+  .doc-meta-row b{ color: var(--fg-primary); font-weight: var(--weight-medium); }
 
-  .report-foot{ margin-top:14px; padding-top:14px; border-top:1px solid var(--ink-navy-700); display:flex; justify-content:space-between; align-items:flex-end; }
-  .report-foot-stat{ font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--weight-semibold); }
-  .report-foot-label{ font-family: var(--font-mono); font-size:10.5px; color: var(--ink-navy-300); margin-top:2px; }
+  .doc-table{ width:100%; border-collapse:collapse; }
+  .doc-table th{ font-family: var(--font-mono); font-size:9.5px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; font-weight: var(--weight-medium); color: var(--fg-muted); text-align:left; padding-bottom: var(--space-2); border-bottom:1px solid var(--border-default); }
+  .doc-table td{ font-size:13px; color: var(--fg-primary); padding:10px 0; border-bottom:1px solid var(--border-default); vertical-align:middle; }
+  .doc-table tr:last-child td{ border-bottom:none; }
+  .doc-table td.doc-channel{ font-family: var(--font-mono); font-size:11px; color: var(--fg-muted); white-space:nowrap; }
+  .doc-risk{ display:inline-flex; align-items:center; gap:6px; font-family: var(--font-mono); font-size:10.5px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; }
+  .doc-risk .dot{ width:6px; height:6px; border-radius:50%; }
+  .doc-risk.high .dot{ background: var(--accent-flagged-strong); }
+  .doc-risk.high span{ color: var(--brick-red-700); }
+  .doc-risk.med .dot{ background: var(--brass-gold-500); }
+  .doc-risk.med span{ color: var(--brass-gold-700); }
+
+  .doc-foot{ margin-top: var(--space-5); padding-top: var(--space-4); border-top:2px solid var(--ink-navy-900); display:flex; justify-content:space-between; align-items:center; }
+  .doc-foot-stat{ font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--weight-semibold); }
+  .doc-foot-label{ font-family: var(--font-mono); font-size:10.5px; color: var(--fg-muted); margin-top:2px; }
 </style>
 </head>
 <body>
@@ -220,7 +220,7 @@
       <a href="#how">How it works</a>
       <a href="#contact">Contact</a>
     </div>
-    <a href="#contact" class="btn btn-gold btn-md navcta">Get in Touch</a>
+    <a href="#contact" class="btn btn-gold btn-md navcta">Contact Us</a>
     <button class="navburger" id="navburger" aria-label="Open menu" aria-expanded="false">
       <i data-lucide="menu" width="20" height="20"></i>
     </button>
@@ -230,7 +230,7 @@
     <a href="#industries">Industries</a>
     <a href="#how">How it works</a>
     <a href="#contact">Contact</a>
-    <a href="#contact" class="btn btn-gold btn-md">Get in Touch</a>
+    <a href="#contact" class="btn btn-gold btn-md">Contact Us</a>
   </div>
 </header>
 
@@ -241,7 +241,7 @@
       <h1>Brand protection<br>for <span class="accent">high-risk</span><br>industries.</h1>
       <p class="lede">We monitor, detect, and take down the fake sites, accounts, and apps putting your brand and your customers at risk.</p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary btn-lg">Get in Touch</a>
+        <a href="#contact" class="btn btn-primary btn-lg">Contact Us</a>
         <a href="#how" class="btn btn-secondary btn-lg">See how it works</a>
       </div>
       <div class="hero-meta">
@@ -441,70 +441,63 @@
   <div class="wrap get-report-grid">
     <div>
       <div class="eyebrow">Get started</div>
-      <h2>See what's already out there.</h2>
-      <p class="lede">We'll run a free impersonation scan on your brand and send you the findings - no commitment needed.</p>
+      <h2>Find out who's already cloning you.</h2>
+      <p class="lede">Fake sites, fake accounts, fake apps - all built to look like you. We'll run a free scan and send you exactly what's out there, no commitment needed.</p>
       <a href="mailto:info@cloneguard.co?subject=Free%20Impersonation%20Report%20request&amp;body=Company%20name%3A%20%0APrimary%20domain%3A%20%0A%0APlease%20run%20a%20free%20impersonation%20report%20for%20us." class="btn btn-primary btn-lg">Get Your Free Impersonation Report</a>
     </div>
 
-    <div class="report-card" aria-hidden="true">
-      <div class="rrail"></div>
-      <div class="rbody">
-        <div class="rtop">
-          <span class="rid">CG-SCAN-0847</span>
-          <span class="rlabel">IMPERSONATION SCAN</span>
+    <div class="doc-card" aria-hidden="true">
+      <div class="doc-head">
+        <div>
+          <div class="doc-brand">CloneGuard</div>
+          <div class="doc-type">Impersonation Report</div>
         </div>
-        <div class="rtarget">Scanned: <b>brand-casino.com</b></div>
-
-        <div class="report-row">
-          <div class="report-row-left">
-            <span class="report-row-icon"><i data-lucide="globe" width="13" height="13" stroke-width="2"></i></span>
-            <div class="report-row-text">
-              <div class="report-row-channel">Website</div>
-              <div class="report-row-name">brand-casino-bonus.net</div>
-            </div>
-          </div>
-          <div class="report-risk high"><span class="dot"></span><span>High</span></div>
+        <div class="doc-id">CG-SCAN-0847<br>Prepared for Brand Casino Ltd.</div>
+      </div>
+      <div class="doc-body">
+        <div class="doc-meta-row">
+          <span>Domain scanned: <b>brand-casino.com</b></span>
+          <span>Channels checked: <b>Web, social, app stores, messaging</b></span>
         </div>
 
-        <div class="report-row">
-          <div class="report-row-left">
-            <span class="report-row-icon"><i data-lucide="instagram" width="13" height="13" stroke-width="2"></i></span>
-            <div class="report-row-text">
-              <div class="report-row-channel">Social</div>
-              <div class="report-row-name">@brandcasino.wins</div>
-            </div>
-          </div>
-          <div class="report-risk med"><span class="dot"></span><span>Medium</span></div>
-        </div>
+        <table class="doc-table">
+          <thead>
+            <tr>
+              <th>Channel</th>
+              <th>Flagged asset</th>
+              <th>Risk</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="doc-channel">Website</td>
+              <td>brand-casino-bonus.net</td>
+              <td><span class="doc-risk high"><span class="dot"></span><span>High</span></span></td>
+            </tr>
+            <tr>
+              <td class="doc-channel">Social</td>
+              <td>@brandcasino.wins</td>
+              <td><span class="doc-risk med"><span class="dot"></span><span>Medium</span></span></td>
+            </tr>
+            <tr>
+              <td class="doc-channel">App store</td>
+              <td>"Brand Casino VIP"</td>
+              <td><span class="doc-risk high"><span class="dot"></span><span>High</span></span></td>
+            </tr>
+            <tr>
+              <td class="doc-channel">Telegram</td>
+              <td>@brandcasino_support</td>
+              <td><span class="doc-risk med"><span class="dot"></span><span>Medium</span></span></td>
+            </tr>
+          </tbody>
+        </table>
 
-        <div class="report-row">
-          <div class="report-row-left">
-            <span class="report-row-icon"><i data-lucide="smartphone" width="13" height="13" stroke-width="2"></i></span>
-            <div class="report-row-text">
-              <div class="report-row-channel">App store</div>
-              <div class="report-row-name">"Brand Casino VIP"</div>
-            </div>
-          </div>
-          <div class="report-risk high"><span class="dot"></span><span>High</span></div>
-        </div>
-
-        <div class="report-row">
-          <div class="report-row-left">
-            <span class="report-row-icon"><i data-lucide="send" width="13" height="13" stroke-width="2"></i></span>
-            <div class="report-row-text">
-              <div class="report-row-channel">Telegram</div>
-              <div class="report-row-name">@brandcasino_support</div>
-            </div>
-          </div>
-          <div class="report-risk med"><span class="dot"></span><span>Medium</span></div>
-        </div>
-
-        <div class="report-foot">
+        <div class="doc-foot">
           <div>
-            <div class="report-foot-stat">4</div>
-            <div class="report-foot-label">Impersonations flagged</div>
+            <div class="doc-foot-stat">4</div>
+            <div class="doc-foot-label">Impersonations flagged</div>
           </div>
-          <div class="report-foot-label" style="text-align:right;">Full findings<br>sent by email</div>
+          <span class="badge badge-verified">Reviewed by analyst</span>
         </div>
       </div>
     </div>
