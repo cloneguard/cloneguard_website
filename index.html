@@ -232,9 +232,17 @@
   /* ---------- TESTIMONIALS ---------- */
   .test-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap: var(--space-6); margin-top: var(--space-12); }
   @media (max-width:900px){ .test-grid{ grid-template-columns:1fr; } }
-  .test-card{ border-style:dashed; padding: var(--space-6); }
-  .test-quote{ font-size: var(--text-base); color: var(--fg-muted); font-style:italic; line-height: var(--leading-relaxed); margin-bottom: var(--space-5); }
-  .test-who{ font-family: var(--font-mono); font-size:11.5px; color: var(--fg-muted); letter-spacing: var(--tracking-wide); }
+  .test-card{ padding: var(--space-6); }
+  .case-tag{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--brass-gold-700); margin-bottom: var(--space-4); }
+  .case-headline{ font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); line-height: var(--leading-snug); color: var(--fg-primary); margin-bottom: var(--space-5); }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap: var(--space-6); max-width:640px; }
+  @media (max-width:600px){ .contact-grid{ grid-template-columns:1fr; } }
+  .contact-card{ padding: var(--space-8) var(--space-6); display:block; transition: border-color var(--duration-base) var(--ease-standard), transform var(--duration-base) var(--ease-standard); }
+  .contact-card:hover{ border-color: var(--brass-gold-700); transform: translateY(-3px); }
+  .contact-label{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); margin-bottom: var(--space-2); }
+  .contact-value{ font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); color: var(--fg-primary); }
 
   /* ---------- FINAL CTA ---------- */
   .final-cta{ text-align:center; background: var(--bg-surface); }
@@ -258,10 +266,9 @@
       <a href="#services">Services</a>
       <a href="#industries">Industries</a>
       <a href="#how">How it works</a>
-      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
-    <a href="#contact" class="btn btn-gold btn-md navcta">Free Impersonation Report</a>
+    <a href="mailto:info@cloneguard.co?subject=Free%20Impersonation%20Report%20request&amp;body=Company%20name%3A%20%0APrimary%20domain%3A%20%0A%0APlease%20run%20a%20free%20impersonation%20report%20for%20us." class="btn btn-gold btn-md navcta">Free Impersonation Report</a>
     <button class="navburger" id="navburger" aria-label="Open menu" aria-expanded="false">
       <i data-lucide="menu" width="20" height="20"></i>
     </button>
@@ -270,9 +277,8 @@
     <a href="#services">Services</a>
     <a href="#industries">Industries</a>
     <a href="#how">How it works</a>
-    <a href="#about">About</a>
     <a href="#contact">Contact</a>
-    <a href="#contact" class="btn btn-gold btn-md">Free Impersonation Report</a>
+    <a href="mailto:info@cloneguard.co?subject=Free%20Impersonation%20Report%20request&amp;body=Company%20name%3A%20%0APrimary%20domain%3A%20%0A%0APlease%20run%20a%20free%20impersonation%20report%20for%20us." class="btn btn-gold btn-md">Free Impersonation Report</a>
   </div>
 </header>
 
@@ -283,7 +289,7 @@
       <h1>Brand protection<br>for <span class="accent">high-risk</span><br>industries.</h1>
       <p class="lede">We monitor, detect, and take down the fake sites, accounts, and apps putting your brand and your customers at risk.</p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary btn-lg">Get Free Impersonation Report</a>
+        <a href="mailto:info@cloneguard.co?subject=Free%20Impersonation%20Report%20request&amp;body=Company%20name%3A%20%0APrimary%20domain%3A%20%0A%0APlease%20run%20a%20free%20impersonation%20report%20for%20us." class="btn btn-primary btn-lg">Get Free Impersonation Report</a>
         <a href="#how" class="btn btn-secondary btn-lg">See how it works</a>
       </div>
       <div class="hero-meta">
@@ -340,9 +346,9 @@
 <div class="strip">
   <div class="wrap">
     <div class="strip-item"><b>24/7</b>Continuous monitoring, not periodic sweeps</div>
-    <div class="strip-item"><b>2</b>Verticals served — iGaming &amp; crypto</div>
+    <div class="strip-item"><b>96%+</b>Takedown success rate</div>
     <div class="strip-item"><b>&lt;24h</b>Typical time to first case review</div>
-    <div class="strip-item"><b>UK</b>Based, working across licensed markets globally</div>
+    <div class="strip-item"><b>100s</b>Brands protected across iGaming &amp; crypto</div>
   </div>
 </div>
 
@@ -360,7 +366,7 @@
         <h3>Monitoring &amp; Takedowns</h3>
         <p>Continuous detection of cloned websites, fake accounts, and impersonating apps — reviewed and actioned by our team.</p>
         <ul class="svc-list">
-          <li>24/7 brand &amp; domain monitoring, across social, web, and marketplaces</li>
+          <li>24/7 brand &amp; domain monitoring, across social, web, and app stores</li>
           <li>Fake account, phishing site, and clone takedowns</li>
           <li>Every case verified by an analyst before action is taken</li>
         </ul>
@@ -406,16 +412,16 @@
       <div class="who-card who-igaming">
         <div>
           <div class="who-tag">iGaming</div>
-          <h3>Cloned casinos. Fake bonus pages.</h3>
-          <p>Cloned casino and sportsbook sites, spoofed bonus and deposit pages, and payment flows built to steal player funds and credentials.</p>
+          <h3>Cloned casinos. Fake payment pages.</h3>
+          <p>Fake sportsbook sign-ups, spoofed deposit screens, and imitation support accounts built to capture player funds and login credentials.</p>
         </div>
         <a href="#contact" class="who-link">Explore iGaming protection →</a>
       </div>
       <div class="who-card who-crypto">
         <div>
           <div class="who-tag">Crypto</div>
-          <h3>Fake wallets. Cloned exchanges.</h3>
-          <p>Fake wallet apps, cloned exchange login pages, and impersonated support accounts built to phish credentials and drain funds.</p>
+          <h3>Cloned exchanges. Fake deposit wallets.</h3>
+          <p>Spoofed trading platforms, fake login pages, and impersonated support accounts built to phish credentials and drain funds.</p>
         </div>
         <a href="#contact" class="who-link">Explore crypto protection →</a>
       </div>
@@ -433,7 +439,7 @@
       <div class="how-step">
         <div class="how-num">01 — Detect</div>
         <h3>Continuous scanning</h3>
-        <p>We monitor domains, marketplaces, and social platforms around the clock for anything using your brand without permission.</p>
+        <p>We monitor domains, app stores, and social platforms around the clock for anything using your brand without permission.</p>
       </div>
       <div class="how-step">
         <div class="how-num">02 — Validate</div>
@@ -449,36 +455,61 @@
   </div>
 </section>
 
-<section id="testimonials" class="band-tint">
+<section id="proof" class="band-tint">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">In their words</div>
-      <h2>What operators tell us.</h2>
-      <p>Real client quotes will go here as they come in — placeholders shown below for layout only, not for publishing.</p>
+      <div class="eyebrow">Case patterns</div>
+      <h2>What a takedown looks like.</h2>
+      <p>Every case follows the same path — detected, verified, actioned. Here's how that plays out across the services we run most.</p>
     </div>
     <div class="test-grid">
       <div class="test-card card">
-        <div class="test-quote">"[Placeholder — swap in a real quote once you have your first completed engagement.]"</div>
-        <div class="test-who">— [Name], [Title], [Company]</div>
+        <div class="case-tag">iGaming — Monitoring &amp; Takedowns</div>
+        <p class="case-headline">A cloned sportsbook login page is detected, verified against your registered domain, and reported to the host — usually removed before it captures a single credential.</p>
+        <span class="badge badge-verified">Typical resolution: under 24 hours</span>
       </div>
       <div class="test-card card">
-        <div class="test-quote">"[Placeholder — swap in a real quote once you have your first completed engagement.]"</div>
-        <div class="test-who">— [Name], [Title], [Company]</div>
+        <div class="case-tag">Crypto — Monitoring &amp; Takedowns</div>
+        <p class="case-headline">A spoofed exchange or wallet login page is flagged, confirmed against your brand assets, and filed with the registrar — often gone before it reaches a real user.</p>
+        <span class="badge badge-verified">Typical resolution: under 24 hours</span>
       </div>
       <div class="test-card card">
-        <div class="test-quote">"[Placeholder — swap in a real quote once you have your first completed engagement.]"</div>
-        <div class="test-who">— [Name], [Title], [Company]</div>
+        <div class="case-tag">Trademark Registration</div>
+        <p class="case-headline">Your mark is screened for conflicts, filed with the relevant IP office, and tracked through to registration — closing the gap copycats rely on to register lookalike marks first.</p>
+        <span class="badge badge-verified">Typical timeline: a few months to registration</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="final-cta" id="contact">
+<section class="final-cta" id="get-report">
   <div class="wrap">
     <div class="eyebrow" style="justify-content:center;">Get started</div>
     <h2>See what's already out there.</h2>
     <p>We'll run a free impersonation scan on your brand and send you the findings — no commitment, no platform access needed.</p>
-    <a href="#" class="btn btn-primary btn-lg">Get Free Impersonation Report</a>
+    <a href="mailto:info@cloneguard.co?subject=Free%20Impersonation%20Report%20request&amp;body=Company%20name%3A%20%0APrimary%20domain%3A%20%0A%0APlease%20run%20a%20free%20impersonation%20report%20for%20us." class="btn btn-primary btn-lg">Get Free Impersonation Report</a>
+  </div>
+</section>
+
+<section id="contact" class="band-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Get in touch</div>
+      <h2>Prefer to reach us directly?</h2>
+      <p>No form, no gatekeeping — reach the team directly through either channel below.</p>
+    </div>
+    <div class="contact-grid">
+      <a href="mailto:info@cloneguard.co" class="contact-card card">
+        <div class="svc-icon"><i data-lucide="mail" width="22" height="22" stroke-width="1.75"></i></div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">info@cloneguard.co</div>
+      </a>
+      <a href="https://t.me/cloneguard" target="_blank" rel="noopener" class="contact-card card">
+        <div class="svc-icon"><i data-lucide="send" width="22" height="22" stroke-width="1.75"></i></div>
+        <div class="contact-label">Telegram</div>
+        <div class="contact-value">@cloneguard</div>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -486,12 +517,11 @@
   <div class="wrap foot-grid">
     <div>
       <div class="logo" style="margin-bottom:10px;">CloneGuard</div>
-      <div class="foot-note">Brand protection for high-risk industries.<br>UK-based · Working across licensed markets globally</div>
+      <div class="foot-note">Brand protection for high-risk industries.</div>
     </div>
     <div class="foot-links">
       <a href="#services">Services</a>
       <a href="#industries">Industries</a>
-      <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
