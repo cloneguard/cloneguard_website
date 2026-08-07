@@ -141,3 +141,30 @@ footer{ border-top:1px solid var(--border-default); padding: var(--space-6) 0; }
 .legal-body a{ color: var(--accent-verified-strong); text-decoration:underline; text-underline-offset:2px; }
 .legal-body strong{ color: var(--fg-primary); font-weight: var(--weight-semibold); }
 .legal-note{ background: var(--neutral-100); border:1px solid var(--border-default); border-radius: var(--radius-md); padding: var(--space-5) var(--space-6); font-size:13.5px; color: var(--fg-secondary); line-height: var(--leading-relaxed); margin-bottom: var(--space-10); }
+
+/* ---------- IMPACT CARDS (3-up "why it matters" grid) ----------
+   Shared by service pages (trademarks, monitoring) that need a short,
+   punchy 3-card explainer rather than a wall of paragraphs. */
+.impact-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-6); }
+@media (max-width:900px){ .impact-grid{ grid-template-columns:1fr; } }
+.impact-card{ padding: var(--space-8) var(--space-6) var(--space-6); }
+.impact-card h3{ font-family: var(--font-display); font-size: var(--text-md); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
+.impact-card p{ color: var(--fg-secondary); font-size:14px; line-height: var(--leading-normal); }
+
+/* ---------- COMPARISON TABLE (DIY / status quo vs CloneGuard) ----------
+   Shared by service pages that make the "why not just do this yourself"
+   case with a highlighted CloneGuard column. */
+.cmp-wrap{ overflow-x:auto; margin-top: var(--space-10); }
+.cmp-table{ width:100%; min-width:560px; border-collapse:separate; border-spacing:0; }
+.cmp-table th{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; font-weight: var(--weight-semibold); color: var(--fg-muted); text-align:left; padding: var(--space-3) var(--space-4); border-bottom:2px solid var(--ink-navy-900); }
+.cmp-table th:last-child{ color: var(--brass-gold-700); background: var(--accent-verified-soft); border-top-left-radius: var(--radius-sm); border-top-right-radius: var(--radius-sm); }
+.cmp-table td{ font-size:14px; color: var(--fg-secondary); padding: var(--space-4); border-bottom:1px solid var(--border-default); vertical-align:top; line-height: var(--leading-normal); }
+.cmp-table td:first-child{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); white-space:nowrap; }
+.cmp-table td.cmp-us{ background: var(--accent-verified-soft); }
+.cmp-table tr:last-child td.cmp-us{ border-bottom-left-radius: var(--radius-sm); border-bottom-right-radius: var(--radius-sm); }
+.cmp-table tr:last-child td{ border-bottom:none; }
+.cmp-cell{ display:flex; align-items:flex-start; gap:8px; }
+.cmp-cell i{ flex-shrink:0; margin-top:2px; }
+.cmp-no i{ color: var(--fg-muted); }
+.cmp-yes i{ color: var(--accent-verified-strong); }
+.cmp-yes{ color: var(--fg-primary); font-weight: var(--weight-medium); }

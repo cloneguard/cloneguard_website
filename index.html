@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CloneGuard - Brand Protection for High-Risk Industries</title>
-<meta name="description" content="CloneGuard monitors, detects, and takes down cloned websites, fake accounts, and impersonators targeting iGaming and crypto brands - plus UK/EU trademark registration.">
+<meta name="description" content="CloneGuard monitors, detects, and takes down cloned websites, fake accounts, and impersonators targeting iGaming and Crypto brands - plus UK/EU trademark registration.">
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cloneguard.co">
 <meta property="og:title" content="CloneGuard - Brand Protection for High-Risk Industries">
-<meta property="og:description" content="CloneGuard monitors, detects, and takes down cloned websites, fake accounts, and impersonators targeting iGaming and crypto brands.">
+<meta property="og:description" content="CloneGuard monitors, detects, and takes down cloned websites, fake accounts, and impersonators targeting iGaming and Crypto brands.">
 <meta property="og:image" content="https://cloneguard.co/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,7 +24,7 @@
 <!-- Twitter card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CloneGuard - Brand Protection for High-Risk Industries">
-<meta name="twitter:description" content="CloneGuard monitors, detects, and takes down cloned websites, fake accounts, and impersonators targeting iGaming and crypto brands.">
+<meta name="twitter:description" content="CloneGuard monitors, detects, and takes down cloned websites, fake accounts, and impersonators targeting iGaming and Crypto brands.">
 <meta name="twitter:image" content="https://cloneguard.co/og-image.png">
 
 <!-- Design system: tokens + base only (see design-system/README.md). -->
@@ -142,23 +142,6 @@
   .who-crypto .who-tag{ color: var(--fg-muted); }
   .who-link{ font-size: var(--text-base); font-weight: var(--weight-semibold); display:inline-flex; align-items:center; gap:6px; margin-top: var(--space-6); }
 
-  /* ---------- HOW IT WORKS ---------- */
-  .how-strip{ background: var(--ink-navy-900); color: var(--fg-on-inverse); }
-  .how-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background: var(--ink-navy-700); margin-top: var(--space-12); border-radius: var(--radius-md); overflow:hidden; }
-  @media (max-width:800px){ .how-grid{ grid-template-columns:1fr; } }
-  .how-step{ background: var(--ink-navy-800); padding: var(--space-8) var(--space-6); }
-  .how-num{ font-family: var(--font-mono); font-size:12px; color: var(--brass-gold-300); margin-bottom: var(--space-4); }
-  .how-step h3{ font-family: var(--font-display); font-size:19px; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
-  .how-step p{ font-size:14px; line-height: var(--leading-normal); color: var(--ink-navy-300); }
-
-  /* ---------- TESTIMONIALS ---------- */
-  .test-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap: var(--space-6); margin-top: var(--space-12); }
-  @media (max-width:900px){ .test-grid{ grid-template-columns:1fr; } }
-  .test-card{ padding: var(--space-6); }
-  .case-tag{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--brass-gold-700); margin-bottom: var(--space-4); }
-  .test-card h3{ font-family: var(--font-display); font-size: var(--text-lg); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
-  .test-card p{ color: var(--fg-secondary); font-size:14.5px; line-height: var(--leading-normal); margin-bottom: var(--space-5); }
-
   /* ---------- CONTACT ---------- */
   .contact-layout{ display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items:center; }
   @media (max-width:800px){ .contact-layout{ grid-template-columns:1fr; gap: var(--space-8); } }
@@ -169,45 +152,6 @@
   .contact-label{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); margin-bottom: var(--space-2); }
   .contact-value{ font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); color: var(--fg-primary); }
 
-  /* ---------- FINAL CTA ---------- */
-  /* ---------- GET REPORT (mirrors hero-grid: content left, visual right) ---------- */
-  .get-report{ background: var(--bg-surface); }
-  .get-report-grid{ display:grid; grid-template-columns: 0.85fr 1.15fr; gap: var(--space-16); align-items:center; }
-  @media (max-width:900px){ .get-report-grid{ grid-template-columns:1fr; gap: var(--space-12); } }
-  .get-report h2{ font-family: var(--font-display); font-size: clamp(28px,4vw,var(--text-3xl)); letter-spacing: var(--tracking-tight); margin: var(--space-4) 0 var(--space-4); }
-  .get-report .lede{ color: var(--fg-secondary); font-size: var(--text-md); line-height: var(--leading-relaxed); max-width:440px; margin-bottom: var(--space-8); }
-
-  /* Report mock-up - styled as an actual document page (letterhead, meta
-     line, findings table, signed-off footer) rather than a UI screen, since
-     this is meant to read as "the thing you're sent," not "the product
-     dashboard." Wide/landscape rather than the hero card's tall phone-like
-     proportions. */
-  .doc-card{ background: var(--bg-surface); color: var(--fg-primary); border-radius: var(--radius-sm); border:1px solid var(--border-default); box-shadow: var(--shadow-lg); overflow:hidden; max-width:560px; margin:0 auto; }
-  .doc-head{ padding: var(--space-6) var(--space-6) var(--space-4); border-bottom:2px solid var(--ink-navy-900); display:flex; justify-content:space-between; align-items:flex-end; }
-  .doc-brand{ font-family: var(--font-display); font-weight: var(--weight-bold); font-size: var(--text-md); letter-spacing: var(--tracking-tight); }
-  .doc-type{ font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); margin-top:3px; }
-  .doc-id{ font-family: var(--font-mono); font-size:11px; color: var(--fg-muted); text-align:right; }
-
-  .doc-body{ padding: var(--space-5) var(--space-6) var(--space-6); }
-  .doc-meta-row{ display:flex; justify-content:space-between; flex-wrap:wrap; gap: var(--space-3); font-family: var(--font-mono); font-size:11px; color: var(--fg-secondary); padding-bottom: var(--space-4); margin-bottom: var(--space-4); border-bottom:1px solid var(--border-default); }
-  .doc-meta-row b{ color: var(--fg-primary); font-weight: var(--weight-medium); }
-
-  .doc-table{ width:100%; border-collapse:collapse; }
-  .doc-table th{ font-family: var(--font-mono); font-size:9.5px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; font-weight: var(--weight-medium); color: var(--fg-muted); text-align:left; padding-bottom: var(--space-2); border-bottom:1px solid var(--border-default); }
-  .doc-table td{ font-size:13px; color: var(--fg-primary); padding:10px 0; border-bottom:1px solid var(--border-default); vertical-align:middle; }
-  .doc-table tr:last-child td{ border-bottom:none; }
-  .doc-table td.doc-channel{ font-family: var(--font-mono); font-size:11px; color: var(--fg-muted); white-space:nowrap; }
-  .doc-table tr.doc-more td{ text-align:center; font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); color: var(--fg-muted); padding:12px 0 2px; border-bottom:none; }
-  .doc-risk{ display:inline-flex; align-items:center; gap:6px; font-family: var(--font-mono); font-size:10.5px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; }
-  .doc-risk .dot{ width:6px; height:6px; border-radius:50%; }
-  .doc-risk.high .dot{ background: var(--accent-flagged-strong); }
-  .doc-risk.high span{ color: var(--brick-red-700); }
-  .doc-risk.med .dot{ background: var(--brass-gold-500); }
-  .doc-risk.med span{ color: var(--brass-gold-700); }
-
-  .doc-foot{ margin-top: var(--space-5); padding-top: var(--space-4); border-top:2px solid var(--ink-navy-900); display:flex; justify-content:space-between; align-items:center; }
-  .doc-foot-stat{ font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--weight-semibold); }
-  .doc-foot-label{ font-family: var(--font-mono); font-size:10.5px; color: var(--fg-muted); margin-top:2px; }
 </style>
 </head>
 <body>
@@ -217,9 +161,9 @@
     <a href="index.html" class="logo">CloneGuard</a>
     <div class="navlinks">
       <a href="#services">Services</a>
+      <a href="monitoring-takedowns.html">Monitoring</a>
       <a href="trademarks.html">Trademarks</a>
       <a href="#industries">Industries</a>
-      <a href="#how">How it works</a>
       <a href="#contact">Contact</a>
     </div>
     <a href="#contact" class="btn btn-gold btn-md navcta">Contact Us</a>
@@ -229,9 +173,9 @@
   </nav>
   <div class="mobile-nav" id="mobileNav">
     <a href="#services">Services</a>
+    <a href="monitoring-takedowns.html">Monitoring</a>
     <a href="trademarks.html">Trademarks</a>
     <a href="#industries">Industries</a>
-    <a href="#how">How it works</a>
     <a href="#contact">Contact</a>
     <a href="#contact" class="btn btn-gold btn-md">Contact Us</a>
   </div>
@@ -245,7 +189,7 @@
       <p class="lede">We monitor, detect, and take down the fake sites, accounts, and apps putting your brand and your customers at risk.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary btn-lg">Contact Us</a>
-        <a href="#how" class="btn btn-secondary btn-lg">See how it works</a>
+        <a href="monitoring-takedowns.html" class="btn btn-secondary btn-lg">See how it works</a>
       </div>
       <div class="hero-meta">
         <span><span class="dot"></span>Enterprise-grade detection, verified by human analysts</span>
@@ -325,7 +269,7 @@
           <li>Fake account, phishing site, and clone takedowns</li>
           <li>Every case verified by an analyst before action is taken</li>
         </ul>
-        <a href="#contact" class="svc-more">Learn more →</a>
+        <a href="monitoring-takedowns.html" class="svc-more">Learn more →</a>
       </div>
 
       <div class="svc-card card">
@@ -337,7 +281,7 @@
           <li>Conflict screening before you commit to filing</li>
           <li>Opposition, renewal, and ongoing defence support</li>
         </ul>
-        <a href="#contact" class="svc-more">Learn more →</a>
+        <a href="trademarks.html" class="svc-more">Learn more →</a>
       </div>
 
       <div class="svc-card card">
@@ -378,133 +322,7 @@
           <h3>Cloned exchanges. Fake deposit wallets.</h3>
           <p>Spoofed trading platforms, fake login pages, and impersonated support accounts built to phish credentials and drain funds.</p>
         </div>
-        <a href="#contact" class="who-link">Explore crypto protection →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="how-strip" id="how">
-  <div class="wrap">
-    <div class="section-head" style="margin-bottom:0;">
-      <div class="eyebrow on-inverse">How it works</div>
-      <h2 style="margin-top:var(--space-4);">Detect. Validate. Enforce.</h2>
-    </div>
-    <div class="how-grid">
-      <div class="how-step">
-        <div class="how-num">01 - Detect</div>
-        <h3>Continuous scanning</h3>
-        <p>We monitor domains, app stores, and social platforms around the clock for anything using your brand without permission.</p>
-      </div>
-      <div class="how-step">
-        <div class="how-num">02 - Validate</div>
-        <h3>Human review</h3>
-        <p>Every flagged case is checked by our team before action is taken - no false positives filed against genuine accounts.</p>
-      </div>
-      <div class="how-step">
-        <div class="how-num">03 - Enforce</div>
-        <h3>Takedown &amp; report</h3>
-        <p>Confirmed cases are actioned immediately. You receive a clear monthly report - no dashboard, no login required.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="proof" class="band-tint">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">How cases resolve</div>
-      <h2>What a takedown looks like.</h2>
-      <p>Every case follows the same path - detected, verified, actioned. Here's how that plays out across the services we run most.</p>
-    </div>
-    <div class="test-grid">
-      <div class="test-card card">
-        <div class="case-tag">iGaming - Monitoring &amp; Takedowns</div>
-        <h3>Detected, verified, removed.</h3>
-        <p>A cloned sportsbook login page is verified against your registered domain and reported to the host - usually removed before it captures a single credential.</p>
-        <span class="badge badge-verified">Typical resolution: under 24 hours</span>
-      </div>
-      <div class="test-card card">
-        <div class="case-tag">Crypto - Monitoring &amp; Takedowns</div>
-        <h3>Flagged, confirmed, filed.</h3>
-        <p>A spoofed exchange or wallet login page is confirmed against your brand assets and filed with the registrar - often gone before it reaches a real user.</p>
-        <span class="badge badge-verified">Typical resolution: under 24 hours</span>
-      </div>
-      <div class="test-card card">
-        <div class="case-tag">Trademark Registration</div>
-        <h3>Screened, filed, registered.</h3>
-        <p>Your mark is screened for conflicts and filed with the relevant IP office, closing the gap copycats rely on to register lookalike marks first.</p>
-        <span class="badge badge-verified">&lt;6 months to registration</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="get-report band-white" id="get-report">
-  <div class="wrap get-report-grid">
-    <div>
-      <div class="eyebrow">Get started</div>
-      <h2>Find out who's already cloning you.</h2>
-      <p class="lede">Fake sites, fake accounts, fake apps - all built to look like you. We'll run a free scan and send you exactly what's out there, no commitment needed.</p>
-      <a href="mailto:info@cloneguard.co?subject=Free%20Impersonation%20Report%20request&amp;body=Company%20name%3A%20%0APrimary%20domain%3A%20%0A%0APlease%20run%20a%20free%20impersonation%20report%20for%20us." class="btn btn-primary btn-lg">Get Your Free Impersonation Report</a>
-    </div>
-
-    <div class="doc-card" aria-hidden="true">
-      <div class="doc-head">
-        <div>
-          <div class="doc-brand">CloneGuard</div>
-          <div class="doc-type">Impersonation Report</div>
-        </div>
-        <div class="doc-id">CG-SCAN-0847<br>Prepared for Brand Casino Ltd.</div>
-      </div>
-      <div class="doc-body">
-        <div class="doc-meta-row">
-          <span>Domain scanned: <b>brand-casino.com</b></span>
-          <span>Channels checked: <b>Web, social, app stores, messaging</b></span>
-        </div>
-
-        <table class="doc-table">
-          <thead>
-            <tr>
-              <th>Channel</th>
-              <th>Flagged asset</th>
-              <th>Risk</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="doc-channel">Website</td>
-              <td>brand-casino-bonus.net</td>
-              <td><span class="doc-risk high"><span class="dot"></span><span>High</span></span></td>
-            </tr>
-            <tr>
-              <td class="doc-channel">Social</td>
-              <td>@brandcasino.wins</td>
-              <td><span class="doc-risk med"><span class="dot"></span><span>Medium</span></span></td>
-            </tr>
-            <tr>
-              <td class="doc-channel">App store</td>
-              <td>"Brand Casino VIP"</td>
-              <td><span class="doc-risk high"><span class="dot"></span><span>High</span></span></td>
-            </tr>
-            <tr>
-              <td class="doc-channel">Telegram</td>
-              <td>@brandcasino_support</td>
-              <td><span class="doc-risk med"><span class="dot"></span><span>Medium</span></span></td>
-            </tr>
-            <tr class="doc-more">
-              <td colspan="3">+ 123 more flagged across other channels</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div class="doc-foot">
-          <div>
-            <div class="doc-foot-stat">127</div>
-            <div class="doc-foot-label">Impersonations flagged</div>
-          </div>
-          <span class="badge badge-verified">Initiate Takedowns</span>
-        </div>
+        <a href="#contact" class="who-link">Explore Crypto protection →</a>
       </div>
     </div>
   </div>

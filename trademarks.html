@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trademark Registration - CloneGuard</title>
-<meta name="description" content="Attorney-filed trademark registration for iGaming and crypto brands. Free clearance check, itemized flat fees, one point of contact from filing to registration.">
+<meta name="description" content="Attorney-filed trademark registration for iGaming and Crypto brands. Free trademark check, itemized flat fees, one point of contact from filing to registration.">
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cloneguard.co/trademarks.html">
 <meta property="og:title" content="Trademark Registration - CloneGuard">
-<meta property="og:description" content="Attorney-filed trademark registration for iGaming and crypto brands. Free clearance check, itemized flat fees, one point of contact from filing to registration.">
+<meta property="og:description" content="Attorney-filed trademark registration for iGaming and Crypto brands. Free trademark check, itemized flat fees, one point of contact from filing to registration.">
 <meta property="og:image" content="https://cloneguard.co/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,7 +24,7 @@
 <!-- Twitter card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Trademark Registration - CloneGuard">
-<meta name="twitter:description" content="Attorney-filed trademark registration for iGaming and crypto brands. Free clearance check, itemized flat fees, one point of contact from filing to registration.">
+<meta name="twitter:description" content="Attorney-filed trademark registration for iGaming and Crypto brands. Free trademark check, itemized flat fees, one point of contact from filing to registration.">
 <meta name="twitter:image" content="https://cloneguard.co/og-image.png">
 
 <!-- Design system: tokens + base only (see design-system/README.md). -->
@@ -71,27 +71,7 @@
   .cert-class{ font-family: var(--font-mono); font-size:11px; color: var(--fg-secondary); }
   .cert-registers{ border-top:1px solid var(--border-default); padding-top: var(--space-4); }
   .cert-register-row{ display:flex; justify-content:space-between; font-family: var(--font-mono); font-size:11.5px; padding:6px 0; color: var(--fg-secondary); }
-  .cert-clear{ color: var(--accent-verified-strong); font-weight: var(--weight-medium); }
   .cert-stamp{ position:absolute; right:-6px; bottom:18px; transform:rotate(-9deg); border:2px solid var(--accent-verified-strong); color: var(--accent-verified-strong); background: var(--accent-verified-soft); font-family: var(--font-mono); font-size:11.5px; font-weight: var(--weight-semibold); letter-spacing: var(--tracking-mono-label); text-transform:uppercase; padding:8px 14px; border-radius: var(--radius-sm); }
-
-  /* ---------- RISK (first-to-file) ---------- */
-  .risk-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-10); align-items:start; }
-  @media (max-width:900px){ .risk-grid{ grid-template-columns:1fr; } }
-  .risk-copy p{ color: var(--fg-secondary); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-bottom: var(--space-5); }
-  .risk-copy p:last-child{ margin-bottom:0; }
-  .tm-note{ background: var(--accent-verified-soft); border:1px solid var(--brass-gold-300); border-radius: var(--radius-md); padding: var(--space-6); }
-  .tm-note .tm-note-label{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--brass-gold-700); margin-bottom: var(--space-3); display:block; }
-  .tm-note p{ color: var(--ink-navy-800); font-size:14.5px; line-height: var(--leading-relaxed); margin-bottom: var(--space-4); }
-  .tm-note p:last-child{ margin-bottom:0; }
-
-  /* ---------- COMPARISON TABLE ---------- */
-  .cmp-wrap{ overflow-x:auto; margin-top: var(--space-10); }
-  .cmp-table{ width:100%; min-width:520px; border-collapse:collapse; }
-  .cmp-table th{ font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; font-weight: var(--weight-medium); color: var(--fg-muted); text-align:left; padding:0 var(--space-4) var(--space-3) 0; border-bottom:2px solid var(--ink-navy-900); }
-  .cmp-table td{ font-size:14px; color: var(--fg-secondary); padding: var(--space-4) var(--space-4) var(--space-4) 0; border-bottom:1px solid var(--border-default); vertical-align:top; line-height: var(--leading-normal); }
-  .cmp-table td:first-child{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); white-space:nowrap; padding-right: var(--space-6); }
-  .cmp-table td.cmp-us{ color: var(--fg-primary); font-weight: var(--weight-medium); }
-  .cmp-table tr:last-child td{ border-bottom:none; }
 
   /* ---------- TIMELINE ---------- */
   .tl-track{ position:relative; display:flex; justify-content:space-between; margin-top: var(--space-12); gap: var(--space-6); }
@@ -108,24 +88,21 @@
     .tl-dot{ position:absolute; left:-1px; top:2px; margin-bottom:0; }
   }
 
-  /* ---------- JURISDICTIONS (list, not a card grid) ---------- */
-  .juris-row{ display:flex; gap: var(--space-8); padding: var(--space-6) 0; border-top:1px solid var(--border-default); }
-  .juris-row:first-child{ border-top:none; }
-  @media (max-width:700px){ .juris-row{ flex-direction:column; gap: var(--space-2); } }
-  .juris-row-label{ flex:0 0 220px; }
-  .juris-row-label .flag{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); margin-bottom: var(--space-2); }
-  .juris-row-label h3{ font-family: var(--font-display); font-size: var(--text-lg); letter-spacing: var(--tracking-tight); }
-  .juris-row-body{ flex:1; }
-  .juris-row-body p{ color: var(--fg-secondary); font-size:14.5px; line-height: var(--leading-relaxed); }
+  /* ---------- JURISDICTIONS ---------- */
+  .where-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-6); }
+  @media (max-width:900px){ .where-grid{ grid-template-columns:1fr; } }
+  .where-card{ padding: var(--space-8) var(--space-6) var(--space-6); }
+  .where-flag{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--brass-gold-700); margin-bottom: var(--space-3); }
+  .where-card h3{ font-family: var(--font-display); font-size: var(--text-lg); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
+  .where-card p{ color: var(--fg-secondary); font-size:14.5px; line-height: var(--leading-normal); }
 
-  /* ---------- INCLUDED CHECKLIST ---------- */
-  .incl-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-4) var(--space-10); margin-top: var(--space-10); }
-  @media (max-width:800px){ .incl-grid{ grid-template-columns:1fr; } }
-  .incl-item{ display:flex; gap: var(--space-3); align-items:flex-start; padding: var(--space-4) 0; border-top:1px solid var(--border-default); }
-  .incl-item:nth-child(-n+2){ border-top:none; }
-  @media (max-width:800px){ .incl-item:nth-child(2){ border-top:1px solid var(--border-default); } .incl-item:first-child{ border-top:none; } }
-  .incl-item i{ color: var(--brass-gold-700); flex-shrink:0; margin-top:2px; }
-  .incl-item p{ font-size:14.5px; color: var(--fg-primary); line-height: var(--leading-normal); }
+  /* ---------- INCLUDED ---------- */
+  .incl-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-6); margin-top: var(--space-10); }
+  @media (max-width:900px){ .incl-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:600px){ .incl-grid{ grid-template-columns:1fr; } }
+  .incl-card{ padding: var(--space-6); }
+  .incl-card h3{ font-family: var(--font-display); font-size:16px; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-2); }
+  .incl-card p{ font-size:13.5px; color: var(--fg-secondary); line-height: var(--leading-normal); }
 
   /* ---------- CLOSE ---------- */
   .tm-close{ text-align:center; background: var(--bg-surface); }
@@ -141,9 +118,9 @@
     <a href="index.html" class="logo">CloneGuard</a>
     <div class="navlinks">
       <a href="index.html#services">Services</a>
+      <a href="monitoring-takedowns.html">Monitoring</a>
       <a href="trademarks.html" class="active">Trademarks</a>
       <a href="index.html#industries">Industries</a>
-      <a href="index.html#how">How it works</a>
       <a href="index.html#contact">Contact</a>
     </div>
     <a href="index.html#contact" class="btn btn-gold btn-md navcta">Contact Us</a>
@@ -153,9 +130,9 @@
   </nav>
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html#services">Services</a>
+    <a href="monitoring-takedowns.html">Monitoring</a>
     <a href="trademarks.html">Trademarks</a>
     <a href="index.html#industries">Industries</a>
-    <a href="index.html#how">How it works</a>
     <a href="index.html#contact">Contact</a>
     <a href="index.html#contact" class="btn btn-gold btn-md">Contact Us</a>
   </div>
@@ -166,9 +143,9 @@
     <div>
       <div class="eyebrow">Trademark Registration</div>
       <h1>Own the name before <span class="accent">someone else files it.</span></h1>
-      <p class="lede">Registration is the legal foundation everything else stands on. Without it, a takedown is a favour a platform does you. With it, it's a right you can enforce. Filed end to end by a licensed trademark attorney, built for how iGaming and crypto brands actually operate - one point of contact, one flat process, no law-firm hourly billing.</p>
+      <p class="lede">Registration is the legal foundation everything else stands on. Without it, a takedown is a favour a platform does you. With it, it's a right you can enforce. Filed end to end by a licensed trademark attorney, built for how iGaming and Crypto brands actually operate - one point of contact, one flat process, no law-firm hourly billing.</p>
       <div class="tm-hero-ctas">
-        <a href="#file" class="btn btn-primary btn-lg">Get a Free Clearance Check</a>
+        <a href="#file" class="btn btn-primary btn-lg">Check Your Trademark for Free</a>
         <a href="#timeline" class="btn btn-secondary btn-lg">See the timeline</a>
       </div>
       <div class="tm-hero-meta">
@@ -179,7 +156,7 @@
 
     <div class="cert-card" aria-hidden="true">
       <div class="cert-top">
-        <span class="cert-label">Clearance Check</span>
+        <span class="cert-label">Certificate of Registration</span>
         <span class="cert-id">CG-TM-2214</span>
       </div>
       <div class="cert-mark">BRAND CASINO</div>
@@ -188,10 +165,11 @@
         <span class="cert-class">Class 9 - Software &amp; platforms</span>
       </div>
       <div class="cert-registers">
-        <div class="cert-register-row"><span>UKIPO register</span><span class="cert-clear">No conflict found</span></div>
-        <div class="cert-register-row"><span>EUIPO register</span><span class="cert-clear">No conflict found</span></div>
+        <div class="cert-register-row"><span>Register</span><span>UKIPO</span></div>
+        <div class="cert-register-row"><span>Filed</span><span>04 Feb 2026</span></div>
+        <div class="cert-register-row"><span>Renewal due</span><span>04 Feb 2036</span></div>
       </div>
-      <div class="cert-stamp">Clear to file</div>
+      <div class="cert-stamp">Registered</div>
     </div>
   </div>
 </section>
@@ -200,17 +178,24 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Why speed matters</div>
-      <h2>Most trademark registers reward whoever files first, not whoever used the name first.</h2>
+      <h2>Filing early doesn't just protect the name. It's what makes every takedown after that enforceable.</h2>
+      <p>Most trademark registers reward whoever files first, not whoever used the name first. In iGaming and Crypto, where a live brand is worth copying fast, that gap gets exploited.</p>
     </div>
-    <div class="risk-grid">
-      <div class="risk-copy">
-        <p>In the UK, the EU, and most jurisdictions worldwide, trademark rights are generally granted on a first-to-file basis, not first-to-use. A name you've been operating under for years isn't automatically yours in the eyes of the register. If someone else files for it first, in a class that covers what you do, they can hold the legal right to it, and you can be the one asked to stop using your own name.</p>
-        <p>This shows up most in fast-moving sectors like iGaming and crypto, where a live, recognizable brand is worth copying and a competitor, an opportunist, or an unrelated party filing in another jurisdiction can move faster than you'd expect. Filing early isn't caution. It's the only way to make sure the name stays yours.</p>
+    <div class="impact-grid">
+      <div class="impact-card card">
+        <div class="svc-icon"><i data-lucide="flag" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>First-to-file, not first-to-use</h3>
+        <p>In the UK, EU, and most jurisdictions, someone else can file for your name before you and legally hold the right to it, even if you built the brand.</p>
       </div>
-      <div class="tm-note">
-        <span class="tm-note-label">What actually gets protected first</span>
-        <p>Registration itself isn't instant, most jurisdictions take somewhere between 4 and 18 months to reach full registration. But the filing date is what counts: it's protected from the day you file, even while examination is still running.</p>
-        <p>That's why waiting until "things are more settled" is the wrong instinct. What you're securing is the date, not the certificate.</p>
+      <div class="impact-card card">
+        <div class="svc-icon"><i data-lucide="clock" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>The filing date is what's protected</h3>
+        <p>Full registration takes 4 to 18 months, but the date you filed is what counts, protected from day one, while examination is still running.</p>
+      </div>
+      <div class="impact-card card">
+        <div class="svc-icon"><i data-lucide="scale" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>It's what makes takedowns enforceable</h3>
+        <p>A takedown backed by a registered mark is a legal right a platform has to act on. Without one, it's a request they can ignore.</p>
       </div>
     </div>
   </div>
@@ -221,7 +206,7 @@
     <div class="section-head">
       <div class="eyebrow">Filing it right</div>
       <h2>A template form doesn't know what class your business actually operates in.</h2>
-      <p>Generic filing services are built for any business. iGaming and crypto brands run into specification, class, and registrability issues those services aren't built to catch.</p>
+      <p>Generic filing services are built for any business. iGaming and Crypto brands run into specification, class, and registrability issues those services aren't built to catch.</p>
     </div>
     <div class="cmp-wrap">
       <table class="cmp-table">
@@ -235,28 +220,28 @@
         <tbody>
           <tr>
             <td>Initial check</td>
-            <td>Skipped, or a generic paid search with no sector context</td>
-            <td class="cmp-us">Free clearance check from a licensed attorney</td>
+            <td><span class="cmp-cell cmp-no"><i data-lucide="x" width="14" height="14" stroke-width="2.5"></i>Skipped, or a generic paid search with no sector context</span></td>
+            <td class="cmp-us"><span class="cmp-cell cmp-yes"><i data-lucide="check" width="14" height="14" stroke-width="2.5"></i>Free trademark check from a licensed attorney</span></td>
           </tr>
           <tr>
             <td>Who files</td>
-            <td>You, or an unqualified formatting service</td>
-            <td class="cmp-us">A licensed trademark attorney, filed as attorney of record</td>
+            <td><span class="cmp-cell cmp-no"><i data-lucide="x" width="14" height="14" stroke-width="2.5"></i>You, or an unqualified formatting service</span></td>
+            <td class="cmp-us"><span class="cmp-cell cmp-yes"><i data-lucide="check" width="14" height="14" stroke-width="2.5"></i>A licensed trademark attorney, filed as attorney of record</span></td>
           </tr>
           <tr>
             <td>Sector fit</td>
-            <td>Generic forms, not built for iGaming or crypto</td>
-            <td class="cmp-us">Classes and specifications drafted for how your brand actually operates</td>
+            <td><span class="cmp-cell cmp-no"><i data-lucide="x" width="14" height="14" stroke-width="2.5"></i>Generic forms, not built for iGaming or Crypto</span></td>
+            <td class="cmp-us"><span class="cmp-cell cmp-yes"><i data-lucide="check" width="14" height="14" stroke-width="2.5"></i>Classes and specifications drafted for how your brand actually operates</span></td>
           </tr>
           <tr>
             <td>Pricing</td>
-            <td>Government fee plus hourly billing that's hard to predict</td>
-            <td class="cmp-us">One itemized quote, agreed before any work begins</td>
+            <td><span class="cmp-cell cmp-no"><i data-lucide="x" width="14" height="14" stroke-width="2.5"></i>Government fee plus hourly billing that's hard to predict</span></td>
+            <td class="cmp-us"><span class="cmp-cell cmp-yes"><i data-lucide="check" width="14" height="14" stroke-width="2.5"></i>One itemized quote, agreed before any work begins</span></td>
           </tr>
           <tr>
             <td>After filing</td>
-            <td>You're on your own for examination queries and renewals</td>
-            <td class="cmp-us">Examination tracked, renewals flagged, one point of contact throughout</td>
+            <td><span class="cmp-cell cmp-no"><i data-lucide="x" width="14" height="14" stroke-width="2.5"></i>You're on your own for examination queries and renewals</span></td>
+            <td class="cmp-us"><span class="cmp-cell cmp-yes"><i data-lucide="check" width="14" height="14" stroke-width="2.5"></i>Examination tracked, renewals flagged, one point of contact throughout</span></td>
           </tr>
         </tbody>
       </table>
@@ -305,40 +290,25 @@
     <div class="section-head">
       <div class="eyebrow">Where to file</div>
       <h2>Register where you're actually licensed and operating, not just where it's simplest to file.</h2>
-      <p>The right jurisdiction depends on where your licence sits and where your players are, not a default. These are the markets we see iGaming and crypto brands need most often.</p>
+      <p>The right jurisdiction depends on where your licence sits and where your players are, not a default. These are the markets we see iGaming and Crypto brands need most often.</p>
     </div>
 
-    <div class="juris-row">
-      <div class="juris-row-label">
-        <div class="flag">United Kingdom - UKIPO</div>
+    <div class="where-grid">
+      <div class="where-card card">
+        <div class="where-flag">United Kingdom - UKIPO</div>
         <h3>United Kingdom</h3>
-      </div>
-      <div class="juris-row-body">
         <p>One of the largest regulated online gambling markets in the world, with its own register independent of the EU since Brexit. The default first filing for any brand touching UK-facing players.</p>
       </div>
-    </div>
-    <div class="juris-row">
-      <div class="juris-row-label">
-        <div class="flag">European Union - EUIPO</div>
+      <div class="where-card card">
+        <div class="where-flag">European Union - EUIPO</div>
         <h3>European Union</h3>
-      </div>
-      <div class="juris-row-body">
         <p>A single filing covers all 27 member states in one registration, including Malta, home to the MGA and the jurisdiction most iGaming operators are actually licensed in. One of the most efficient filings available for this sector.</p>
       </div>
-    </div>
-    <div class="juris-row">
-      <div class="juris-row-label">
-        <div class="flag">United Arab Emirates</div>
-        <h3>United Arab Emirates</h3>
+      <div class="where-card card">
+        <div class="where-flag">100+ jurisdictions - Madrid Protocol</div>
+        <h3>Rest of world</h3>
+        <p>Direct filing in over 100 jurisdictions, including the UAE, anchored by Dubai's VARA framework for Web3 and Crypto brands. A single base filing can extend to 130+ countries through the Madrid Protocol. On the US specifically: real-money gambling faces registrability restrictions at the USPTO that don't apply to most Crypto and fintech brands, so we check that with you first. We'd rather tell you a market's wrong for you than take the filing fee anyway.</p>
       </div>
-      <div class="juris-row-body">
-        <p>The live licensing and commercial hub for Web3 and crypto brands, anchored by Dubai's VARA framework. Increasingly the first filing crypto-native brands need alongside their home market.</p>
-      </div>
-    </div>
-
-    <div class="tm-note" style="margin-top:var(--space-8);">
-      <span class="tm-note-label">Operating somewhere else, or in several markets at once?</span>
-      <p>We file directly in 100+ jurisdictions worldwide, and can extend a single base filing to 130+ countries through the Madrid Protocol if you're scaling into ten or more markets at once. On US filings specifically: real-money gambling services face real registrability restrictions at the USPTO that don't apply to most crypto and fintech brands, so we check that with you before recommending it. We'd rather tell you a market's wrong for you than take the filing fee anyway.</p>
     </div>
   </div>
 </section>
@@ -350,12 +320,36 @@
       <h2>Every filing, handled properly.</h2>
     </div>
     <div class="incl-grid">
-      <div class="incl-item"><i data-lucide="check" width="18" height="18" stroke-width="2.25"></i><p>Register search and conflict check before you commit to filing</p></div>
-      <div class="incl-item"><i data-lucide="check" width="18" height="18" stroke-width="2.25"></i><p>Goods &amp; services drafted and classified correctly for your sector</p></div>
-      <div class="incl-item"><i data-lucide="check" width="18" height="18" stroke-width="2.25"></i><p>Application filed by a licensed attorney of record</p></div>
-      <div class="incl-item"><i data-lucide="check" width="18" height="18" stroke-width="2.25"></i><p>Examination monitored, with procedural queries handled for you</p></div>
-      <div class="incl-item"><i data-lucide="check" width="18" height="18" stroke-width="2.25"></i><p>Every fee itemized and agreed before any work begins</p></div>
-      <div class="incl-item"><i data-lucide="check" width="18" height="18" stroke-width="2.25"></i><p>One CloneGuard contact throughout, no separate law firm relationship to manage</p></div>
+      <div class="incl-card card">
+        <div class="svc-icon"><i data-lucide="search" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Register search</h3>
+        <p>Conflict check across the relevant register before you commit to filing.</p>
+      </div>
+      <div class="incl-card card">
+        <div class="svc-icon"><i data-lucide="layers" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Sector-fit classes</h3>
+        <p>Goods and services drafted and classified correctly for iGaming and Crypto.</p>
+      </div>
+      <div class="incl-card card">
+        <div class="svc-icon"><i data-lucide="scale" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Attorney of record</h3>
+        <p>Application filed by a licensed trademark attorney, not a template.</p>
+      </div>
+      <div class="incl-card card">
+        <div class="svc-icon"><i data-lucide="eye" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Examination tracked</h3>
+        <p>Procedural queries and deadlines handled for you, start to finish.</p>
+      </div>
+      <div class="incl-card card">
+        <div class="svc-icon"><i data-lucide="receipt" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Itemized fees</h3>
+        <p>Every cost agreed in writing before any work begins.</p>
+      </div>
+      <div class="incl-card card">
+        <div class="svc-icon"><i data-lucide="user" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>One point of contact</h3>
+        <p>No separate law firm relationship to manage.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -363,9 +357,9 @@
 <section class="tm-close" id="file">
   <div class="wrap">
     <div class="eyebrow" style="justify-content:center;">Get started</div>
-    <h2>Find out if the name is still yours to take.</h2>
-    <p>A free clearance check from a licensed attorney, no commitment. We'll tell you plainly whether you're clear to file, and in which markets.</p>
-    <a href="mailto:info@cloneguard.co?subject=Free%20Clearance%20Check%20request&amp;body=Company%20name%3A%20%0ABrand%2Fmark%20to%20check%3A%20%0AMarkets%20of%20interest%3A%20%0A%0APlease%20run%20a%20free%20trademark%20clearance%20check%20for%20us." class="btn btn-primary btn-lg">Get a Free Clearance Check</a>
+    <h2>Find out if your name is still available to register.</h2>
+    <p>A free trademark check from a licensed attorney, no commitment. We'll tell you plainly whether the name's available, and in which markets.</p>
+    <a href="mailto:info@cloneguard.co?subject=Free%20Trademark%20Check%20request&amp;body=Company%20name%3A%20%0ABrand%2Fmark%20to%20check%3A%20%0AMarkets%20of%20interest%3A%20%0A%0APlease%20check%20trademark%20availability%20for%20us." class="btn btn-primary btn-lg">Check Your Trademark for Free</a>
   </div>
 </section>
 
