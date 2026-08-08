@@ -117,9 +117,14 @@
   <nav class="wrap">
     <a href="index.html" class="logo">CloneGuard</a>
     <div class="navlinks">
-      <a href="index.html#services">Services</a>
-      <a href="monitoring-takedowns.html">Monitoring</a>
-      <a href="trademarks.html" class="active">Trademarks</a>
+      <div class="navdrop">
+        <button class="navdrop-trigger active" type="button">Services <i data-lucide="chevron-down" width="14" height="14"></i></button>
+        <div class="navdrop-panel">
+          <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns<span>Detect, verify, and take down impersonators</span></a>
+          <a href="trademarks.html" class="active">Trademark Registration<span>UK, EU, and global filing</span></a>
+        </div>
+      </div>
+      <a href="pricing.html">Pricing</a>
       <a href="index.html#industries">Industries</a>
       <a href="index.html#contact">Contact</a>
     </div>
@@ -129,9 +134,14 @@
     </button>
   </nav>
   <div class="mobile-nav" id="mobileNav">
-    <a href="index.html#services">Services</a>
-    <a href="monitoring-takedowns.html">Monitoring</a>
-    <a href="trademarks.html">Trademarks</a>
+    <div class="mnav-group">
+      <button class="mnav-head" type="button">Services <i data-lucide="chevron-down" width="16" height="16"></i></button>
+      <div class="mnav-sub">
+        <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns</a>
+        <a href="trademarks.html">Trademark Registration</a>
+      </div>
+    </div>
+    <a href="pricing.html">Pricing</a>
     <a href="index.html#industries">Industries</a>
     <a href="index.html#contact">Contact</a>
     <a href="index.html#contact" class="btn btn-gold btn-md">Contact Us</a>
@@ -360,6 +370,7 @@
     <h2>Find out if your name is still available to register.</h2>
     <p>A free trademark check from a licensed attorney, no commitment. We'll tell you plainly whether the name's available, and in which markets.</p>
     <a href="mailto:info@cloneguard.co?subject=Free%20Trademark%20Check%20request&amp;body=Company%20name%3A%20%0ABrand%2Fmark%20to%20check%3A%20%0AMarkets%20of%20interest%3A%20%0A%0APlease%20check%20trademark%20availability%20for%20us." class="btn btn-primary btn-lg">Check Your Trademark for Free</a>
+    <p style="margin:var(--space-6) 0 0; font-size:13.5px;"><a href="pricing.html" style="color:var(--accent-verified-strong); text-decoration:underline; text-underline-offset:2px;">See filing fees and subscription pricing →</a></p>
   </div>
 </section>
 
@@ -389,6 +400,10 @@
   };
   navBurger.addEventListener('click', () => setBurgerState(!mobileNav.classList.contains('open')));
   mobileNav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setBurgerState(false)));
+
+  mobileNav.querySelectorAll('.mnav-head').forEach((head) => {
+    head.addEventListener('click', () => head.closest('.mnav-group').classList.toggle('open'));
+  });
 </script>
 </body>
 </html>

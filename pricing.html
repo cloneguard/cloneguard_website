@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing - CloneGuard</title>
+<meta name="description" content="Foundation, Growth, and Enterprise subscriptions for iGaming and Crypto brand protection, plus a la carte monitoring, takedown, and trademark services for non-subscribers.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cloneguard.co/pricing.html">
+<meta property="og:title" content="Pricing - CloneGuard">
+<meta property="og:description" content="Foundation, Growth, and Enterprise subscriptions for iGaming and Crypto brand protection, plus a la carte monitoring, takedown, and trademark services for non-subscribers.">
+<meta property="og:image" content="https://cloneguard.co/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pricing - CloneGuard">
+<meta name="twitter:description" content="Foundation, Growth, and Enterprise subscriptions for iGaming and Crypto brand protection, plus a la carte monitoring, takedown, and trademark services for non-subscribers.">
+<meta name="twitter:image" content="https://cloneguard.co/og-image.png">
+
+<!-- Design system: tokens + base only (see design-system/README.md). -->
+<link rel="stylesheet" href="design-system/styles.css">
+
+<!-- Shared site chrome: reset, nav, buttons, cards, footer (see assets/site.css). -->
+<link rel="stylesheet" href="assets/site.css">
+
+<!-- Lucide - same icon system + version referenced by components/brand/Icon.jsx -->
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+
+<style>
+  /*
+    Page-specific styles only - shared chrome (nav, buttons, cards, footer,
+    section shell) lives in assets/site.css.
+  */
+
+  /* ---------- HERO ---------- */
+  .pr-hero{ padding: var(--space-20) 0 var(--space-12); text-align:center; }
+  .pr-hero .wrap{ max-width: 720px; }
+  .pr-hero h1{ font-family: var(--font-display); font-size: clamp(32px, 4.4vw, var(--text-3xl)); line-height: var(--leading-tight); letter-spacing: var(--tracking-tighter); margin: var(--space-5) 0 var(--space-5); }
+  .pr-hero .eyebrow{ justify-content:center; }
+  .pr-hero p.lede{ font-size: var(--text-md); color: var(--fg-secondary); line-height: var(--leading-relaxed); margin:0 auto; }
+
+  /* ---------- CONTROLS BAR ---------- */
+  .pr-controls{ display:flex; flex-wrap:wrap; justify-content:center; gap: var(--space-8); padding-bottom: var(--space-12); }
+  .pr-control-label{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); margin-bottom: var(--space-2); text-align:center; }
+  .opt-group{ display:inline-flex; border:1px solid var(--border-default); border-radius: var(--radius-pill); padding:3px; background: var(--bg-surface); }
+  .opt-btn{ border:none; background:none; font-family: var(--font-body); font-size:13.5px; font-weight: var(--weight-medium); color: var(--fg-secondary); padding:7px 16px; border-radius: var(--radius-pill); cursor:pointer; transition: background var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard); }
+  .opt-btn.active{ background: var(--ink-navy-900); color: var(--fg-on-inverse); }
+  .stepper{ display:inline-flex; align-items:center; gap: var(--space-3); border:1px solid var(--border-default); border-radius: var(--radius-pill); padding:5px 8px; background: var(--bg-surface); }
+  .stepper button{ width:26px; height:26px; border-radius:50%; border:1px solid var(--border-default); background: var(--bg-surface); color: var(--fg-primary); font-size:15px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .stepper button:hover{ border-color: var(--brass-gold-700); }
+  .stepper span{ font-size:14px; font-weight: var(--weight-semibold); min-width:14px; text-align:center; }
+
+  /* ---------- TIER GRID ---------- */
+  .tier-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-6); align-items:stretch; }
+  @media (max-width:900px){ .tier-grid{ grid-template-columns:1fr; } }
+  .tier-card{ padding: var(--space-8) var(--space-6); display:flex; flex-direction:column; position:relative; }
+  .tier-card.tier-highlight{ border-color: var(--brass-gold-500); box-shadow: var(--shadow-md); }
+  .tier-flag{ position:absolute; top:-13px; left:50%; transform:translateX(-50%); background: var(--ink-navy-900); color: var(--brass-gold-300); font-family: var(--font-mono); font-size:10.5px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; padding:5px 14px; border-radius: var(--radius-pill); }
+  .tier-name{ font-family: var(--font-display); font-size: var(--text-lg); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-1); }
+  .tier-period{ font-size:12.5px; color: var(--fg-muted); margin-bottom: var(--space-5); }
+  .tier-price{ font-family: var(--font-display); font-size: var(--text-2xl); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-6); }
+  .tier-price sup{ font-size:14px; font-weight: var(--weight-medium); color: var(--fg-muted); margin-left:2px; }
+  .tier-list{ list-style:none; font-size:13.5px; color: var(--fg-secondary); line-height: var(--leading-normal); flex-grow:1; }
+  .tier-list li{ display:flex; gap:8px; padding: var(--space-3) 0; border-top:1px solid var(--border-default); }
+  .tier-list li:first-child{ border-top:none; }
+  .tier-list i{ flex-shrink:0; margin-top:2px; color: var(--accent-verified-strong); }
+  .tier-card .btn{ width:100%; margin-top: var(--space-6); }
+
+  /* ---------- A LA CARTE ---------- */
+  .alc-note{ background: var(--neutral-100); border:1px solid var(--border-default); border-radius: var(--radius-md); padding: var(--space-5) var(--space-6); font-size:13.5px; color: var(--fg-secondary); line-height: var(--leading-relaxed); margin-bottom: var(--space-10); }
+  .alc-wrap{ overflow-x:auto; }
+  .alc-table{ width:100%; min-width:600px; border-collapse:separate; border-spacing:0; }
+  .alc-table th{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; font-weight: var(--weight-semibold); color: var(--fg-muted); text-align:left; padding: var(--space-3) var(--space-4); border-bottom:2px solid var(--ink-navy-900); }
+  .alc-table th:not(:first-child){ text-align:right; }
+  .alc-table td{ font-size:14px; color: var(--fg-primary); padding: var(--space-4); border-bottom:1px solid var(--border-default); }
+  .alc-table td:not(:first-child){ text-align:right; font-family: var(--font-mono); }
+  .alc-table td.alc-sub{ color: var(--brass-gold-700); font-weight: var(--weight-semibold); }
+  .alc-table tr:last-child td{ border-bottom:none; }
+
+  /* ---------- FINAL CTA ---------- */
+  .pr-close{ text-align:center; }
+  .pr-close .wrap{ max-width:560px; }
+  .pr-close h2{ font-family: var(--font-display); font-size: clamp(26px,3.2vw,var(--text-2xl)); letter-spacing: var(--tracking-tight); margin: var(--space-4) 0 var(--space-4); }
+  .pr-close p{ color: var(--fg-secondary); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-bottom: var(--space-8); }
+  .pr-close .eyebrow{ justify-content:center; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo">CloneGuard</a>
+    <div class="navlinks">
+      <div class="navdrop">
+        <button class="navdrop-trigger" type="button">Services <i data-lucide="chevron-down" width="14" height="14"></i></button>
+        <div class="navdrop-panel">
+          <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns<span>Detect, verify, and take down impersonators</span></a>
+          <a href="trademarks.html">Trademark Registration<span>UK, EU, and global filing</span></a>
+        </div>
+      </div>
+      <a href="pricing.html" class="active">Pricing</a>
+      <a href="index.html#industries">Industries</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <a href="index.html#contact" class="btn btn-gold btn-md navcta">Contact Us</a>
+    <button class="navburger" id="navburger" aria-label="Open menu" aria-expanded="false">
+      <i data-lucide="menu" width="20" height="20"></i>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mnav-group">
+      <button class="mnav-head" type="button">Services <i data-lucide="chevron-down" width="16" height="16"></i></button>
+      <div class="mnav-sub">
+        <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns</a>
+        <a href="trademarks.html">Trademark Registration</a>
+      </div>
+    </div>
+    <a href="pricing.html">Pricing</a>
+    <a href="index.html#industries">Industries</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="index.html#contact" class="btn btn-gold btn-md">Contact Us</a>
+  </div>
+</header>
+
+<section class="pr-hero band-white">
+  <div class="wrap">
+    <div class="eyebrow">Pricing</div>
+    <h1>One flat subscription. Or pay only for what you need.</h1>
+    <p class="lede">Foundation, Growth, and Enterprise cover monitoring, takedowns, and trademark filing for a fixed monthly cost. Every service is also available a la carte, at a discount if you're already subscribed.</p>
+  </div>
+</section>
+
+<section class="band-white" style="padding-top:0;">
+  <div class="wrap">
+    <div class="pr-controls">
+      <div>
+        <div class="pr-control-label">Currency</div>
+        <div class="opt-group" id="currency-group">
+          <button data-val="USD" class="opt-btn active">USD</button>
+          <button data-val="GBP" class="opt-btn">GBP</button>
+          <button data-val="EUR" class="opt-btn">EUR</button>
+        </div>
+      </div>
+      <div>
+        <div class="pr-control-label">Billing</div>
+        <div class="opt-group" id="billing-group">
+          <button data-val="annual" class="opt-btn active">Annual</button>
+          <button data-val="monthly" class="opt-btn">Monthly</button>
+        </div>
+      </div>
+      <div>
+        <div class="pr-control-label">Additional brands</div>
+        <div class="stepper">
+          <button id="brand-minus" type="button" aria-label="Remove a brand">&minus;</button>
+          <span id="brand-count">0</span>
+          <button id="brand-plus" type="button" aria-label="Add a brand">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="tier-grid" id="tier-grid"></div>
+  </div>
+</section>
+
+<section id="ala-carte" class="band-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">A la carte</div>
+      <h2>Not ready for a subscription? Pay per service.</h2>
+      <p>Every service we offer is available on its own, with no commitment. Existing subscribers get a discounted rate on the same services, shown in the right-hand column.</p>
+    </div>
+
+    <div class="alc-note">
+      Prices shown are per case and assume a standard iGaming or Crypto brand scope. Complex or contested matters (multi-jurisdiction opposition, litigation-adjacent disputes) are quoted individually.
+    </div>
+
+    <div class="alc-wrap">
+      <table class="alc-table">
+        <thead>
+          <tr><th>Service</th><th>Standard</th><th>Subscriber rate</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Takedown (single case)</td><td>$199</td><td class="alc-sub">$149</td></tr>
+          <tr><td>Takedown pack (5 cases)</td><td>$750</td><td class="alc-sub">$550</td></tr>
+          <tr><td>Cease and desist letter</td><td>$450</td><td class="alc-sub">$350</td></tr>
+          <tr><td>Negotiations</td><td>$750</td><td class="alc-sub">$600</td></tr>
+          <tr><td>Letter of protest (US)</td><td>$900</td><td class="alc-sub">$700</td></tr>
+          <tr><td>Opposition (basic)</td><td>$950</td><td class="alc-sub">$750</td></tr>
+          <tr><td>Opposition (pro)</td><td>$3,500</td><td class="alc-sub">$2,800</td></tr>
+          <tr><td>Cancellation</td><td>$4,000</td><td class="alc-sub">$3,200</td></tr>
+          <tr><td>Domain dispute</td><td>$4,500</td><td class="alc-sub">$3,600</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="pr-close band-white">
+  <div class="wrap">
+    <div class="eyebrow">Get started</div>
+    <h2>Tell us what you need protected. We'll recommend a tier.</h2>
+    <p>Most iGaming and Crypto brands start on Foundation or Growth. If you're not sure which fits, send us your brand and we'll size it before you commit to anything.</p>
+    <a href="index.html#contact" class="btn btn-primary btn-lg">Contact Us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <a href="index.html" class="logo" style="display:inline-block;">CloneGuard</a>
+    </div>
+    <div class="foot-copyright">&copy; CloneGuard Ltd. All rights reserved.</div>
+    <div class="foot-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+
+  const navBurger = document.getElementById('navburger');
+  const mobileNav = document.getElementById('mobileNav');
+  const setBurgerState = (open) => {
+    mobileNav.classList.toggle('open', open);
+    navBurger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navBurger.querySelector('i').setAttribute('data-lucide', open ? 'x' : 'menu');
+    lucide.createIcons();
+  };
+  navBurger.addEventListener('click', () => setBurgerState(!mobileNav.classList.contains('open')));
+  mobileNav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setBurgerState(false)));
+  mobileNav.querySelectorAll('.mnav-head').forEach((head) => {
+    head.addEventListener('click', () => head.closest('.mnav-group').classList.toggle('open'));
+  });
+
+  /* ---------- PRICING CALCULATOR ---------- */
+  const rates = { USD: 1, GBP: 0.79, EUR: 0.92 };
+  const symbols = { USD: '$', GBP: '£', EUR: '€' };
+  const tiers = [
+    { key:'foundation', name:'Foundation', annual:299, includedTakedowns:'2 per month', brandPrice:150, extra:'+5 takedowns for $249', highlight:false },
+    { key:'growth', name:'Growth', annual:799, includedTakedowns:'5 per month', brandPrice:400, extra:'+10 takedowns for $1,399', highlight:true },
+    { key:'enterprise', name:'Enterprise', annual:12000, includedTakedowns:'25 per year', brandPrice:null, extra:null, highlight:false }
+  ];
+  let state = { currency:'USD', billing:'annual', brands:0 };
+
+  function fmt(n, cur){
+    const v = Math.round(n * rates[cur]);
+    return symbols[cur] + v.toLocaleString();
+  }
+
+  function render(){
+    const grid = document.getElementById('tier-grid');
+    grid.innerHTML = '';
+    tiers.forEach((t) => {
+      const isEnterprise = t.key === 'enterprise';
+      let base = t.annual;
+      if (!isEnterprise && state.billing === 'monthly') base = Math.round(base * 1.2);
+      const brandCost = (!isEnterprise && t.brandPrice) ? Math.round(t.brandPrice * state.brands) : 0;
+      const total = base + brandCost;
+      const priceLabel = fmt(total, state.currency) + '<sup>' + (isEnterprise ? '/yr' : '/mo') + '</sup>';
+      const periodLabel = isEnterprise ? 'per year, billed annually' : (state.billing === 'annual' ? 'per month, billed annually' : 'per month, billed monthly');
+
+      const card = document.createElement('div');
+      card.className = 'card tier-card' + (t.highlight ? ' tier-highlight' : '');
+      card.innerHTML =
+        (t.highlight ? '<div class="tier-flag">Most common</div>' : '') +
+        '<div class="tier-name">' + t.name + '</div>' +
+        '<div class="tier-period">' + periodLabel + '</div>' +
+        '<div class="tier-price">' + priceLabel + '</div>' +
+        '<ul class="tier-list">' +
+          '<li><i data-lucide="check" width="15" height="15"></i>' + t.includedTakedowns + ' included takedowns</li>' +
+          (!isEnterprise
+            ? '<li><i data-lucide="check" width="15" height="15"></i>Additional brands: ' + state.brands + ' × ' + fmt(t.brandPrice, state.currency) + '/mo</li>' +
+              '<li><i data-lucide="check" width="15" height="15"></i>Extra takedowns: ' + t.extra + '</li>'
+            : '<li><i data-lucide="check" width="15" height="15"></i>Full platform coverage, 24/7 SOC</li>' +
+              '<li><i data-lucide="check" width="15" height="15"></i>Dedicated account manager</li>') +
+          (state.billing === 'annual' && !isEnterprise ? '<li><i data-lucide="check" width="15" height="15"></i>One trademark filing included</li>' : '') +
+          '<li><i data-lucide="check" width="15" height="15"></i>Analyst-verified cases only</li>' +
+        '</ul>' +
+        '<a href="index.html#contact" class="btn ' + (t.highlight ? 'btn-primary' : 'btn-secondary') + ' btn-md">Get started</a>';
+      grid.appendChild(card);
+    });
+    lucide.createIcons();
+  }
+
+  function wireGroup(id, key){
+    document.getElementById(id).querySelectorAll('.opt-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        state[key] = btn.dataset.val;
+        document.getElementById(id).querySelectorAll('.opt-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        render();
+      });
+    });
+  }
+  wireGroup('currency-group', 'currency');
+  wireGroup('billing-group', 'billing');
+  document.getElementById('brand-plus').addEventListener('click', () => { state.brands++; document.getElementById('brand-count').textContent = state.brands; render(); });
+  document.getElementById('brand-minus').addEventListener('click', () => { state.brands = Math.max(0, state.brands - 1); document.getElementById('brand-count').textContent = state.brands; render(); });
+
+  render();
+</script>
+</body>
+</html>

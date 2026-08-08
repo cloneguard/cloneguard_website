@@ -160,9 +160,14 @@
   <nav class="wrap">
     <a href="index.html" class="logo">CloneGuard</a>
     <div class="navlinks">
-      <a href="#services">Services</a>
-      <a href="monitoring-takedowns.html">Monitoring</a>
-      <a href="trademarks.html">Trademarks</a>
+      <div class="navdrop">
+        <button class="navdrop-trigger" type="button">Services <i data-lucide="chevron-down" width="14" height="14"></i></button>
+        <div class="navdrop-panel">
+          <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns<span>Detect, verify, and take down impersonators</span></a>
+          <a href="trademarks.html">Trademark Registration<span>UK, EU, and global filing</span></a>
+        </div>
+      </div>
+      <a href="pricing.html">Pricing</a>
       <a href="#industries">Industries</a>
       <a href="#contact">Contact</a>
     </div>
@@ -172,9 +177,14 @@
     </button>
   </nav>
   <div class="mobile-nav" id="mobileNav">
-    <a href="#services">Services</a>
-    <a href="monitoring-takedowns.html">Monitoring</a>
-    <a href="trademarks.html">Trademarks</a>
+    <div class="mnav-group">
+      <button class="mnav-head" type="button">Services <i data-lucide="chevron-down" width="16" height="16"></i></button>
+      <div class="mnav-sub">
+        <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns</a>
+        <a href="trademarks.html">Trademark Registration</a>
+      </div>
+    </div>
+    <a href="pricing.html">Pricing</a>
     <a href="#industries">Industries</a>
     <a href="#contact">Contact</a>
     <a href="#contact" class="btn btn-gold btn-md">Contact Us</a>
@@ -296,6 +306,7 @@
         <a href="#contact" class="svc-more">Learn more →</a>
       </div>
     </div>
+    <p style="margin-top:var(--space-8); font-size:14.5px; color:var(--fg-secondary);">Subscriptions from Foundation to Enterprise, plus a la carte pricing for every service. <a href="pricing.html" style="color:var(--accent-verified-strong); font-weight:var(--weight-semibold); text-decoration:underline; text-underline-offset:2px;">See pricing →</a></p>
   </div>
 </section>
 
@@ -376,6 +387,10 @@
   };
   navBurger.addEventListener('click', () => setBurgerState(!mobileNav.classList.contains('open')));
   mobileNav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setBurgerState(false)));
+
+  mobileNav.querySelectorAll('.mnav-head').forEach((head) => {
+    head.addEventListener('click', () => head.closest('.mnav-group').classList.toggle('open'));
+  });
 </script>
 </body>
 </html>

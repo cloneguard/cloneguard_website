@@ -76,8 +76,48 @@ a.logo{ display:inline-block; }
 @media (min-width:960px){ .navlinks{ display:flex; } }
 .navlinks a{ color: var(--fg-secondary); transition: color var(--duration-fast) var(--ease-standard); }
 .navlinks a:hover{ color: var(--fg-primary); }
+.navlinks a.active, .navdrop-trigger.active, .navdrop-panel a.active{ color: var(--fg-primary); font-weight: var(--weight-semibold); }
 .navcta{ display:none; }
 @media (min-width:960px){ .navcta{ display:inline-flex; } }
+
+/* ---------- NAV DROPDOWN (Services / Industries) ---------- */
+.navdrop{ position:relative; }
+.navdrop-trigger{
+  display:flex; align-items:center; gap:4px; cursor:pointer;
+  color: var(--fg-secondary); background:none; border:none; font: inherit;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+.navdrop-trigger i{ transition: transform var(--duration-fast) var(--ease-standard); }
+.navdrop:hover .navdrop-trigger, .navdrop-trigger:hover{ color: var(--fg-primary); }
+.navdrop:hover .navdrop-trigger i{ transform: rotate(180deg); }
+.navdrop-panel{
+  position:absolute; top:calc(100% + 14px); left:50%; transform: translateX(-50%);
+  min-width:250px; background: var(--bg-surface); border:1px solid var(--border-default);
+  border-radius: var(--radius-md); box-shadow: var(--shadow-lg); padding: var(--space-2);
+  opacity:0; visibility:hidden; transform: translateX(-50%) translateY(4px);
+  transition: opacity var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard), visibility var(--duration-fast);
+}
+.navdrop:hover .navdrop-panel, .navdrop-panel:hover{ opacity:1; visibility:visible; transform: translateX(-50%) translateY(0); }
+.navdrop-panel a{
+  display:flex; flex-direction:column; gap:2px; padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-sm); color: var(--fg-primary); font-size:14px; font-weight: var(--weight-medium);
+}
+.navdrop-panel a:hover{ background: var(--neutral-100); }
+.navdrop-panel a span{ display:block; font-size:12.5px; font-weight: var(--weight-regular); color: var(--fg-muted); }
+
+/* Mobile nav dropdown: plain expandable sublist, no hover panel */
+.mnav-group .mnav-head{
+  display:flex; align-items:center; justify-content:space-between; width:100%;
+  padding: var(--space-4) 0; font-size:15px; font-weight: var(--weight-medium);
+  color: var(--fg-primary); border-top:1px solid var(--border-default);
+  background:none; border-left:none; border-right:none; border-bottom:none; text-align:left; cursor:pointer; font-family:inherit;
+}
+.mnav-group:first-child .mnav-head{ border-top:none; }
+.mnav-group .mnav-head i{ transition: transform var(--duration-fast) var(--ease-standard); }
+.mnav-group.open .mnav-head i{ transform: rotate(180deg); }
+.mnav-sub{ display:none; flex-direction:column; padding-left: var(--space-4); padding-bottom: var(--space-2); }
+.mnav-group.open .mnav-sub{ display:flex; }
+.mnav-sub a{ padding: var(--space-3) 0; font-size:14px; color: var(--fg-secondary); border-top:none !important; }
 
 /* ---------- MOBILE NAV (burger, <960px) ---------- */
 .navburger{
