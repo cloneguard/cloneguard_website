@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crypto Exchange Brand Protection - CloneGuard</title>
+<meta name="description" content="Brand protection for crypto exchanges and platforms. CloneGuard detects and takes down lookalike domains, fake wallet extensions, and impersonating support accounts before they cost you users.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cloneguard.co/crypto.html">
+<meta property="og:title" content="Crypto Exchange Brand Protection - CloneGuard">
+<meta property="og:description" content="Brand protection for crypto exchanges and platforms. CloneGuard detects and takes down lookalike domains, fake wallet extensions, and impersonating support accounts before they cost you users.">
+<meta property="og:image" content="https://cloneguard.co/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Crypto Exchange Brand Protection - CloneGuard">
+<meta name="twitter:description" content="Brand protection for crypto exchanges and platforms. CloneGuard detects and takes down lookalike domains, fake wallet extensions, and impersonating support accounts before they cost you users.">
+<meta name="twitter:image" content="https://cloneguard.co/og-image.png">
+
+<!-- Design system: tokens + base only (see design-system/README.md). -->
+<link rel="stylesheet" href="design-system/styles.css">
+
+<!-- Shared site chrome: reset, nav, buttons, cards, footer (see assets/site.css). -->
+<link rel="stylesheet" href="assets/site.css">
+
+<!-- Lucide - same icon system + version referenced by components/brand/Icon.jsx -->
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "CloneGuard Crypto Brand Protection",
+  "serviceType": "Brand protection, monitoring, and takedowns for crypto exchanges and platforms",
+  "provider": { "@type": "Organization", "name": "CloneGuard", "url": "https://cloneguard.co" },
+  "areaServed": "Worldwide",
+  "audience": { "@type": "Audience", "audienceType": "Crypto exchanges and platform operators" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How do I know if someone is impersonating my exchange?", "acceptedAnswer": { "@type": "Answer", "text": "Lookalike domains showing up in search ads, fake support accounts on Telegram or Discord, and unfamiliar browser extensions using your name are the most common signs. Continuous monitoring catches these before users report fund loss to you." } },
+    { "@type": "Question", "name": "Can a phishing domain impersonating my exchange be taken down?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Registrars, hosts, and ad networks will act on a properly evidenced takedown request, and a registered trademark strengthens that request considerably." } },
+    { "@type": "Question", "name": "What can be done about fake support accounts on Telegram or Discord?", "acceptedAnswer": { "@type": "Answer", "text": "Platform impersonation reports plus evidenced takedown requests get fake accounts removed, typically within a day of confirmation once verified." } },
+    { "@type": "Question", "name": "Does trademark registration help against on-chain or wallet-based impersonation?", "acceptedAnswer": { "@type": "Answer", "text": "Indirectly. It doesn't stop on-chain activity, but it strengthens takedown requests against the phishing domains, fake extensions, and impersonating accounts that drive users toward wallet-draining scams in the first place." } },
+    { "@type": "Question", "name": "How fast can a fake exchange app or browser extension be removed?", "acceptedAnswer": { "@type": "Answer", "text": "Verified cases are typically actioned within 24 hours of confirmation, though app store and extension marketplace review times vary by platform." } }
+  ]
+}
+</script>
+
+<style>
+  /*
+    Page-specific styles only - shared chrome, threat/cost/protect grids,
+    timeline, and FAQ live in assets/site.css. Shares its full template
+    with igaming.html - only copy and threat/cost/protect content differ.
+  */
+
+  /* ---------- HERO ---------- */
+  .ig-hero{ padding: var(--space-20) 0 var(--space-16); }
+  .ig-hero-grid{ display:grid; grid-template-columns: 1.05fr 0.95fr; gap: var(--space-16); align-items:center; }
+  @media (max-width:900px){ .ig-hero-grid{ grid-template-columns:1fr; gap: var(--space-12); } }
+  .ig-hero h1{ font-family: var(--font-display); font-size: clamp(32px, 4.4vw, var(--text-3xl)); line-height: var(--leading-tight); letter-spacing: var(--tracking-tighter); margin: var(--space-5) 0 var(--space-5); }
+  .ig-hero h1 .accent{ color: var(--brass-gold-700); }
+  .ig-hero p.lede{ font-size: var(--text-md); color: var(--fg-secondary); line-height: var(--leading-relaxed); max-width: 460px; margin-bottom: var(--space-8); }
+  .ig-hero-ctas{ display:flex; gap: var(--space-3); flex-wrap:wrap; }
+
+  /* ---------- SCENARIO ---------- */
+  .scenario-eyebrow{ justify-content:center; }
+  .scenario-head{ max-width:640px; margin:0 auto var(--space-4); text-align:center; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo">CloneGuard</a>
+    <div class="navlinks">
+      <div class="navdrop">
+        <button class="navdrop-trigger" type="button">Services <i data-lucide="chevron-down" width="14" height="14"></i></button>
+        <div class="navdrop-panel">
+          <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns<span>Detect, verify, and take down impersonators</span></a>
+          <a href="trademarks.html">Trademark Registration<span>UK, EU, and global filing</span></a>
+          <a href="brand-enforcement.html">Brand Enforcement<span>Cease and desist, disputes, and legal escalation</span></a>
+          <a href="specialist-services.html">Specialist Services<span>Executive protection, insurance, IP strategy</span></a>
+        </div>
+      </div>
+      <a href="protection-plans.html">Protection Plans</a>
+      <a href="igaming.html">iGaming</a>
+      <a href="crypto.html" class="active">Crypto</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="btn btn-gold btn-md navcta">Contact Us</a>
+    <button class="navburger" id="navburger" aria-label="Open menu" aria-expanded="false">
+      <i data-lucide="menu" width="20" height="20"></i>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mnav-group">
+      <button class="mnav-head" type="button">Services <i data-lucide="chevron-down" width="16" height="16"></i></button>
+      <div class="mnav-sub">
+        <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns</a>
+        <a href="trademarks.html">Trademark Registration</a>
+        <a href="brand-enforcement.html">Brand Enforcement</a>
+        <a href="specialist-services.html">Specialist Services</a>
+      </div>
+    </div>
+    <a href="protection-plans.html">Protection Plans</a>
+    <a href="igaming.html">iGaming</a>
+    <a href="crypto.html">Crypto</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-gold btn-md">Contact Us</a>
+  </div>
+</header>
+
+<section class="ig-hero band-white">
+  <div class="wrap ig-hero-grid">
+    <div>
+      <div class="eyebrow">Crypto</div>
+      <h1>One fake support account can undo years of <span class="accent">user trust</span>.</h1>
+      <p class="lede">Lookalike domains, fake wallet extensions, and impersonating support accounts are built to drain your users' funds and put your brand on the story. We find them and take them down before that happens.</p>
+      <div class="ig-hero-ctas">
+        <a href="mailto:info@cloneguard.co?subject=Free%20Scan%20request%20(Crypto)&amp;body=Company%20name%3A%20%0APrimary%20domain%3A%20%0A%0APlease%20run%20a%20free%20scan%20for%20us." class="btn btn-primary btn-lg">Request a Free Scan</a>
+        <a href="protection-plans.html" class="btn btn-secondary btn-lg">See Protection Plans</a>
+      </div>
+    </div>
+
+    <div class="feed-card" aria-hidden="true">
+      <div class="feed-label">Illustrative flagged activity</div>
+      <div class="feed-row">
+        <span class="feed-desc">Phishing domain detected - brandexchange-secure.io</span>
+        <span class="feed-status status-flagged">Flagged</span>
+      </div>
+      <div class="feed-row">
+        <span class="feed-desc">Fake support account - Telegram</span>
+        <span class="feed-status status-removed">Removed</span>
+      </div>
+      <div class="feed-row">
+        <span class="feed-desc">Malicious wallet extension - Chrome Web Store</span>
+        <span class="feed-status status-flagged">Flagged</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-white" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What's targeting your brand</div>
+      <h2>Four ways exchanges and platforms get impersonated.</h2>
+    </div>
+    <div class="threat-grid">
+      <div class="threat-card card">
+        <h3>Lookalike exchange domains</h3>
+        <p>Near-identical domains served through paid search ads or single-character URL typos, harvesting real login credentials.</p>
+      </div>
+      <div class="threat-card card">
+        <h3>Fake wallet browser extensions</h3>
+        <p>Extensions disguised as legitimate tools that inject malicious code and alter transactions once connected to a wallet.</p>
+      </div>
+      <div class="threat-card card">
+        <h3>Airdrop &amp; project impersonation phishing</h3>
+        <p>Fake airdrop campaigns and impersonated project accounts luring a wallet connect or seed phrase.</p>
+      </div>
+      <div class="threat-card card">
+        <h3>Deepfake support impersonation</h3>
+        <p>AI-swapped face and voice on Telegram or Zoom calls, impersonating exchange support or a project lead.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What it costs you</div>
+      <h2>This isn't just a fake website problem.</h2>
+    </div>
+    <div class="cost-grid">
+      <div class="cost-card card">
+        <h3>User fund loss going viral</h3>
+        <p>One user losing funds to a fake support account and posting about it can do lasting reputational damage in a way few industries experience.</p>
+      </div>
+      <div class="cost-card card">
+        <h3>Executive &amp; staff social engineering</h3>
+        <p>Deepfake calls used to pressure your own team into wire transfers or fake partnership approvals.</p>
+      </div>
+      <div class="cost-card card">
+        <h3>Regulatory scrutiny</h3>
+        <p>Exchanges already operate under growing regulatory attention. Association with scams, even via impersonation, invites more of it.</p>
+      </div>
+      <div class="cost-card card">
+        <h3>Banking &amp; liquidity partner risk</h3>
+        <p>Fraud reports tied to your brand name can strain the banking and liquidity relationships exchanges depend on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-white">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How CloneGuard protects you</div>
+      <h2>Mapped to how exchanges actually get attacked.</h2>
+    </div>
+    <div class="protect-grid">
+      <div class="protect-card card">
+        <div class="svc-icon"><i data-lucide="search" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Monitoring &amp; Takedowns</h3>
+        <p>24/7 detection across domains, wallet extensions, app stores, and support channels, with takedowns actioned by analysts, not scripts.</p>
+        <a href="monitoring-takedowns.html">Learn more →</a>
+      </div>
+      <div class="protect-card card">
+        <div class="svc-icon"><i data-lucide="file-check" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Trademark Registration</h3>
+        <p>A registered mark gives every takedown and cease and desist request real legal standing.</p>
+        <a href="trademarks.html">Learn more →</a>
+      </div>
+      <div class="protect-card card">
+        <div class="svc-icon"><i data-lucide="shield-check" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Executive Protection</h3>
+        <p>Protects your team from the deepfake and live-injection social engineering used to compromise exchanges from the inside.</p>
+        <a href="specialist-services.html">Ask about this →</a>
+      </div>
+    </div>
+    <p style="margin-top:var(--space-8); font-size:14.5px; color:var(--fg-secondary);">Most exchanges start on Growth, which bundles all three under one contract. <a href="protection-plans.html" style="color:var(--accent-verified-strong); font-weight:var(--weight-semibold); text-decoration:underline; text-underline-offset:2px;">See Protection Plans →</a></p>
+  </div>
+</section>
+
+<section class="band-tint">
+  <div class="wrap">
+    <div class="scenario-head">
+      <div class="eyebrow scenario-eyebrow">A representative example of how we work</div>
+      <h2>Exchange A: from active threat to standing protection.</h2>
+    </div>
+    <div class="tl-track">
+      <div class="tl-step">
+        <span class="tl-dot"></span>
+        <div class="tl-when">The threat</div>
+        <h3>Users already losing funds</h3>
+        <p>Exchange A came to us after users reported losing funds to a fake support account impersonating them on Telegram, alongside a cloned trading site running paid search ads under their name.</p>
+      </div>
+      <div class="tl-step">
+        <span class="tl-dot"></span>
+        <div class="tl-when">Enforcement</div>
+        <h3>Stop the bleeding first</h3>
+        <p>We took down the phishing domain and the fake support account immediately, and issued a cease and desist to the ad network running the clone's search campaign.</p>
+      </div>
+      <div class="tl-step">
+        <span class="tl-dot"></span>
+        <div class="tl-when">Protection</div>
+        <h3>Make sure it doesn't happen unnoticed again</h3>
+        <p>We filed their trademark for legal standing and moved them onto 24/7 monitoring across domains, app stores, and support channels, so new impersonators are caught before draining more users.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-white">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Crypto brand protection, answered plainly.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>How do I know if someone is impersonating my exchange?</h3>
+        <p>Lookalike domains showing up in search ads, fake support accounts on Telegram or Discord, and unfamiliar browser extensions using your name are the most common signs. Continuous monitoring catches these before users report fund loss to you.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can a phishing domain impersonating my exchange be taken down?</h3>
+        <p>Yes. Registrars, hosts, and ad networks will act on a properly evidenced takedown request, and a registered trademark strengthens that request considerably.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What can be done about fake support accounts on Telegram or Discord?</h3>
+        <p>Platform impersonation reports plus evidenced takedown requests get fake accounts removed, typically within a day of confirmation once verified.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does trademark registration help against on-chain or wallet-based impersonation?</h3>
+        <p>Indirectly. It doesn't stop on-chain activity, but it strengthens takedown requests against the phishing domains, fake extensions, and impersonating accounts that drive users toward wallet-draining scams in the first place.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How fast can a fake exchange app or browser extension be removed?</h3>
+        <p>Verified cases are typically actioned within 24 hours of confirmation, though app store and extension marketplace review times vary by platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pr-close band-white" style="text-align:center;">
+  <div class="wrap" style="max-width:560px;">
+    <div class="eyebrow" style="justify-content:center;">Get started</div>
+    <h2 style="font-family:var(--font-display); font-size:clamp(26px,3.2vw,var(--text-2xl)); letter-spacing:var(--tracking-tight); margin:var(--space-4) 0;">See what's already targeting your exchange.</h2>
+    <p style="color:var(--fg-secondary); font-size:var(--text-base); line-height:var(--leading-relaxed); margin-bottom:var(--space-8);">Send us your brand and primary domain. We'll tell you plainly what we find.</p>
+    <a href="mailto:info@cloneguard.co?subject=Free%20Scan%20request%20(Crypto)&amp;body=Company%20name%3A%20%0APrimary%20domain%3A%20%0A%0APlease%20run%20a%20free%20scan%20for%20us." class="btn btn-primary btn-lg">Request a Free Scan</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <a href="index.html" class="logo" style="display:inline-block;">CloneGuard</a>
+    </div>
+    <div class="foot-copyright">&copy; CloneGuard Ltd. All rights reserved.</div>
+    <div class="foot-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+
+  const navBurger = document.getElementById('navburger');
+  const mobileNav = document.getElementById('mobileNav');
+  const setBurgerState = (open) => {
+    mobileNav.classList.toggle('open', open);
+    navBurger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navBurger.querySelector('i').setAttribute('data-lucide', open ? 'x' : 'menu');
+    lucide.createIcons();
+  };
+  navBurger.addEventListener('click', () => setBurgerState(!mobileNav.classList.contains('open')));
+  mobileNav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setBurgerState(false)));
+  mobileNav.querySelectorAll('.mnav-head').forEach((head) => {
+    head.addEventListener('click', () => head.closest('.mnav-group').classList.toggle('open'));
+  });
+</script>
+</body>
+</html>

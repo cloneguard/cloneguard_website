@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iGaming Brand Protection - CloneGuard</title>
+<meta name="description" content="Brand protection for online casinos and sportsbooks. CloneGuard detects and takes down cloned casino sites, fake apps, and impersonating ad campaigns before they cost you players.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cloneguard.co/igaming.html">
+<meta property="og:title" content="iGaming Brand Protection - CloneGuard">
+<meta property="og:description" content="Brand protection for online casinos and sportsbooks. CloneGuard detects and takes down cloned casino sites, fake apps, and impersonating ad campaigns before they cost you players.">
+<meta property="og:image" content="https://cloneguard.co/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="iGaming Brand Protection - CloneGuard">
+<meta name="twitter:description" content="Brand protection for online casinos and sportsbooks. CloneGuard detects and takes down cloned casino sites, fake apps, and impersonating ad campaigns before they cost you players.">
+<meta name="twitter:image" content="https://cloneguard.co/og-image.png">
+
+<!-- Design system: tokens + base only (see design-system/README.md). -->
+<link rel="stylesheet" href="design-system/styles.css">
+
+<!-- Shared site chrome: reset, nav, buttons, cards, footer (see assets/site.css). -->
+<link rel="stylesheet" href="assets/site.css">
+
+<!-- Lucide - same icon system + version referenced by components/brand/Icon.jsx -->
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "CloneGuard iGaming Brand Protection",
+  "serviceType": "Brand protection, monitoring, and takedowns for online casinos and sportsbooks",
+  "provider": { "@type": "Organization", "name": "CloneGuard", "url": "https://cloneguard.co" },
+  "areaServed": "Worldwide",
+  "audience": { "@type": "Audience", "audienceType": "Online casino and sportsbook operators" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How do I know if someone is cloning my casino site?", "acceptedAnswer": { "@type": "Answer", "text": "Common signs are new domains reproducing your design, ads running under your brand name that you didn't buy, or app store listings you don't recognize. Continuous monitoring catches these before players report them to you." } },
+    { "@type": "Question", "name": "Can a cloned casino site actually be taken down?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Hosting providers, registrars, and ad networks will act on a properly evidenced takedown request, and a registered trademark makes that request considerably stronger." } },
+    { "@type": "Question", "name": "What if the clone is hosted outside my licensing jurisdiction?", "acceptedAnswer": { "@type": "Answer", "text": "Cross-border takedowns are slower but not impossible. We pursue the registrar, host, and any ad network involved regardless of where the clone is hosted." } },
+    { "@type": "Question", "name": "Does trademark registration actually stop clone sites?", "acceptedAnswer": { "@type": "Answer", "text": "Not on its own, but it gives every takedown and enforcement action real legal standing, which speeds up how fast hosts and platforms act." } },
+    { "@type": "Question", "name": "How fast can a fake casino app be removed from an app store?", "acceptedAnswer": { "@type": "Answer", "text": "Verified cases are typically actioned within 24 hours of confirmation, though app store review times vary by platform." } }
+  ]
+}
+</script>
+
+<style>
+  /*
+    Page-specific styles only - shared chrome, impact/threat/cost/protect
+    grids, timeline, and FAQ live in assets/site.css. Shares its full
+    template with crypto.html - only copy and threat/cost/protect content
+    differ between the two.
+  */
+
+  /* ---------- HERO ---------- */
+  .ig-hero{ padding: var(--space-20) 0 var(--space-16); }
+  .ig-hero-grid{ display:grid; grid-template-columns: 1.05fr 0.95fr; gap: var(--space-16); align-items:center; }
+  @media (max-width:900px){ .ig-hero-grid{ grid-template-columns:1fr; gap: var(--space-12); } }
+  .ig-hero h1{ font-family: var(--font-display); font-size: clamp(32px, 4.4vw, var(--text-3xl)); line-height: var(--leading-tight); letter-spacing: var(--tracking-tighter); margin: var(--space-5) 0 var(--space-5); }
+  .ig-hero h1 .accent{ color: var(--brass-gold-700); }
+  .ig-hero p.lede{ font-size: var(--text-md); color: var(--fg-secondary); line-height: var(--leading-relaxed); max-width: 460px; margin-bottom: var(--space-8); }
+  .ig-hero-ctas{ display:flex; gap: var(--space-3); flex-wrap:wrap; }
+
+  /* ---------- SCENARIO ---------- */
+  .scenario-eyebrow{ justify-content:center; }
+  .scenario-head{ max-width:640px; margin:0 auto var(--space-4); text-align:center; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo">CloneGuard</a>
+    <div class="navlinks">
+      <div class="navdrop">
+        <button class="navdrop-trigger" type="button">Services <i data-lucide="chevron-down" width="14" height="14"></i></button>
+        <div class="navdrop-panel">
+          <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns<span>Detect, verify, and take down impersonators</span></a>
+          <a href="trademarks.html">Trademark Registration<span>UK, EU, and global filing</span></a>
+          <a href="brand-enforcement.html">Brand Enforcement<span>Cease and desist, disputes, and legal escalation</span></a>
+          <a href="specialist-services.html">Specialist Services<span>Executive protection, insurance, IP strategy</span></a>
+        </div>
+      </div>
+      <a href="protection-plans.html">Protection Plans</a>
+      <a href="igaming.html" class="active">iGaming</a>
+      <a href="crypto.html">Crypto</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="btn btn-gold btn-md navcta">Contact Us</a>
+    <button class="navburger" id="navburger" aria-label="Open menu" aria-expanded="false">
+      <i data-lucide="menu" width="20" height="20"></i>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mnav-group">
+      <button class="mnav-head" type="button">Services <i data-lucide="chevron-down" width="16" height="16"></i></button>
+      <div class="mnav-sub">
+        <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns</a>
+        <a href="trademarks.html">Trademark Registration</a>
+        <a href="brand-enforcement.html">Brand Enforcement</a>
+        <a href="specialist-services.html">Specialist Services</a>
+      </div>
+    </div>
+    <a href="protection-plans.html">Protection Plans</a>
+    <a href="igaming.html">iGaming</a>
+    <a href="crypto.html">Crypto</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-gold btn-md">Contact Us</a>
+  </div>
+</header>
+
+<section class="ig-hero band-white">
+  <div class="wrap ig-hero-grid">
+    <div>
+      <div class="eyebrow">iGaming</div>
+      <h1>Every cloned casino costs you <span class="accent">players</span> before you know it exists.</h1>
+      <p class="lede">Fake sportsbooks, spoofed deposit pages, and impersonating apps are built to capture your players and your revenue. We find them and take them down before the damage compounds.</p>
+      <div class="ig-hero-ctas">
+        <a href="mailto:info@cloneguard.co?subject=Free%20Scan%20request%20(iGaming)&amp;body=Company%20name%3A%20%0APrimary%20domain%3A%20%0A%0APlease%20run%20a%20free%20scan%20for%20us." class="btn btn-primary btn-lg">Request a Free Scan</a>
+        <a href="protection-plans.html" class="btn btn-secondary btn-lg">See Protection Plans</a>
+      </div>
+    </div>
+
+    <div class="feed-card" aria-hidden="true">
+      <div class="feed-label">Illustrative flagged activity</div>
+      <div class="feed-row">
+        <span class="feed-desc">Clone site detected - brand-casino-vip.net</span>
+        <span class="feed-status status-flagged">Flagged</span>
+      </div>
+      <div class="feed-row">
+        <span class="feed-desc">Fake sportsbook ad - Instagram</span>
+        <span class="feed-status status-flagged">Flagged</span>
+      </div>
+      <div class="feed-row">
+        <span class="feed-desc">Impersonating app - Google Play</span>
+        <span class="feed-status status-removed">Removed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-white" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What's targeting your brand</div>
+      <h2>Four ways casinos and sportsbooks get cloned.</h2>
+    </div>
+    <div class="threat-grid">
+      <div class="threat-card card">
+        <h3>Clone sites &amp; fake sportsbooks</h3>
+        <p>Full-design replicas of your site and game library, built to capture deposits and login credentials.</p>
+      </div>
+      <div class="threat-card card">
+        <h3>Brand-hijacking ad campaigns</h3>
+        <p>Paid ads on Facebook, Instagram, and TikTok claiming your brand launched a new slots or betting app.</p>
+      </div>
+      <div class="threat-card card">
+        <h3>Fake app store listings</h3>
+        <p>Impersonating apps in Google Play and the App Store, capturing installs meant for you.</p>
+      </div>
+      <div class="threat-card card">
+        <h3>AI-generated clone sites</h3>
+        <p>Machine-generated casino sites, some with deepfake KYC flows, built and taken live faster than manual detection can catch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What it costs you</div>
+      <h2>This isn't just a fake website problem.</h2>
+    </div>
+    <div class="cost-grid">
+      <div class="cost-card card">
+        <h3>Player fund loss &amp; chargebacks</h3>
+        <p>Players lose money on a fake deposit page and blame the real brand, driving refund and chargeback disputes.</p>
+      </div>
+      <div class="cost-card card">
+        <h3>Payment processor &amp; banking risk</h3>
+        <p>A spike in fraud reports tied to your brand name can jeopardize the processor and banking relationships iGaming already struggles to secure.</p>
+      </div>
+      <div class="cost-card card">
+        <h3>Regulatory &amp; licensing scrutiny</h3>
+        <p>Regulators increasingly track illegal gambling ads and clone activity under your brand, even when you didn't run them.</p>
+      </div>
+      <div class="cost-card card">
+        <h3>Rogue affiliate &amp; bonus abuse</h3>
+        <p>Affiliates cloning your landing pages to run unauthorized bonus and referral schemes under your name.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-white">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How CloneGuard protects you</div>
+      <h2>Mapped to how casinos actually get attacked.</h2>
+    </div>
+    <div class="protect-grid">
+      <div class="protect-card card">
+        <div class="svc-icon"><i data-lucide="search" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Monitoring &amp; Takedowns</h3>
+        <p>24/7 detection across web, app stores, and social, with takedowns actioned by analysts, not scripts.</p>
+        <a href="monitoring-takedowns.html">Learn more →</a>
+      </div>
+      <div class="protect-card card">
+        <div class="svc-icon"><i data-lucide="file-check" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Trademark Registration</h3>
+        <p>A registered mark gives every takedown and cease and desist request real legal standing.</p>
+        <a href="trademarks.html">Learn more →</a>
+      </div>
+      <div class="protect-card card">
+        <div class="svc-icon"><i data-lucide="shield-check" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Executive Protection</h3>
+        <p>Protects the people signing off on your brand from deepfake and social-engineering attacks used to compromise it.</p>
+        <a href="specialist-services.html">Ask about this →</a>
+      </div>
+    </div>
+    <p style="margin-top:var(--space-8); font-size:14.5px; color:var(--fg-secondary);">Most iGaming operators start on Growth, which bundles all three under one contract. <a href="protection-plans.html" style="color:var(--accent-verified-strong); font-weight:var(--weight-semibold); text-decoration:underline; text-underline-offset:2px;">See Protection Plans →</a></p>
+  </div>
+</section>
+
+<section class="band-tint">
+  <div class="wrap">
+    <div class="scenario-head">
+      <div class="eyebrow scenario-eyebrow">A representative example of how we work</div>
+      <h2>Casino A: from active threat to standing protection.</h2>
+    </div>
+    <div class="tl-track">
+      <div class="tl-step">
+        <span class="tl-dot"></span>
+        <div class="tl-when">The threat</div>
+        <h3>Impersonators already live</h3>
+        <p>Casino A came to us with cloned sites already live and players reporting lost deposits on fake payment pages.</p>
+      </div>
+      <div class="tl-step">
+        <span class="tl-dot"></span>
+        <div class="tl-when">Enforcement</div>
+        <h3>Stop the bleeding first</h3>
+        <p>We identified the clone sites and fake ad campaigns and pursued takedowns immediately, halting the active losses within days.</p>
+      </div>
+      <div class="tl-step">
+        <span class="tl-dot"></span>
+        <div class="tl-when">Protection</div>
+        <h3>Make sure it doesn't happen unnoticed again</h3>
+        <p>Once contained, we filed their trademark for legal standing and moved them onto 24/7 monitoring, so the next clone is caught before it costs a player.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-white">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>iGaming brand protection, answered plainly.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>How do I know if someone is cloning my casino site?</h3>
+        <p>Common signs are new domains reproducing your design, ads running under your brand name that you didn't buy, or app store listings you don't recognize. Continuous monitoring catches these before players report them to you.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can a cloned casino site actually be taken down?</h3>
+        <p>Yes. Hosting providers, registrars, and ad networks will act on a properly evidenced takedown request, and a registered trademark makes that request considerably stronger.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if the clone is hosted outside my licensing jurisdiction?</h3>
+        <p>Cross-border takedowns are slower but not impossible. We pursue the registrar, host, and any ad network involved regardless of where the clone is hosted.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does trademark registration actually stop clone sites?</h3>
+        <p>Not on its own, but it gives every takedown and enforcement action real legal standing, which speeds up how fast hosts and platforms act.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How fast can a fake casino app be removed from an app store?</h3>
+        <p>Verified cases are typically actioned within 24 hours of confirmation, though app store review times vary by platform.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pr-close band-white" style="text-align:center;">
+  <div class="wrap" style="max-width:560px;">
+    <div class="eyebrow" style="justify-content:center;">Get started</div>
+    <h2 style="font-family:var(--font-display); font-size:clamp(26px,3.2vw,var(--text-2xl)); letter-spacing:var(--tracking-tight); margin:var(--space-4) 0;">See what's already targeting your casino or sportsbook.</h2>
+    <p style="color:var(--fg-secondary); font-size:var(--text-base); line-height:var(--leading-relaxed); margin-bottom:var(--space-8);">Send us your brand and primary domain. We'll tell you plainly what we find.</p>
+    <a href="mailto:info@cloneguard.co?subject=Free%20Scan%20request%20(iGaming)&amp;body=Company%20name%3A%20%0APrimary%20domain%3A%20%0A%0APlease%20run%20a%20free%20scan%20for%20us." class="btn btn-primary btn-lg">Request a Free Scan</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <a href="index.html" class="logo" style="display:inline-block;">CloneGuard</a>
+    </div>
+    <div class="foot-copyright">&copy; CloneGuard Ltd. All rights reserved.</div>
+    <div class="foot-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+
+  const navBurger = document.getElementById('navburger');
+  const mobileNav = document.getElementById('mobileNav');
+  const setBurgerState = (open) => {
+    mobileNav.classList.toggle('open', open);
+    navBurger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navBurger.querySelector('i').setAttribute('data-lucide', open ? 'x' : 'menu');
+    lucide.createIcons();
+  };
+  navBurger.addEventListener('click', () => setBurgerState(!mobileNav.classList.contains('open')));
+  mobileNav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setBurgerState(false)));
+  mobileNav.querySelectorAll('.mnav-head').forEach((head) => {
+    head.addEventListener('click', () => head.closest('.mnav-group').classList.toggle('open'));
+  });
+</script>
+</body>
+</html>

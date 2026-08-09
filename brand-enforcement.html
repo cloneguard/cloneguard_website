@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Enforcement - CloneGuard</title>
+<meta name="description" content="Cease and desist letters, negotiations, opposition filings, letters of protest, cancellations, and domain disputes for iGaming and Crypto brands. Escalation when a takedown request isn't enough.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<!-- Open Graph / social preview -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cloneguard.co/brand-enforcement.html">
+<meta property="og:title" content="Brand Enforcement - CloneGuard">
+<meta property="og:description" content="Cease and desist letters, negotiations, opposition filings, letters of protest, cancellations, and domain disputes for iGaming and Crypto brands. Escalation when a takedown request isn't enough.">
+<meta property="og:image" content="https://cloneguard.co/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Brand Enforcement - CloneGuard">
+<meta name="twitter:description" content="Cease and desist letters, negotiations, opposition filings, letters of protest, cancellations, and domain disputes for iGaming and Crypto brands. Escalation when a takedown request isn't enough.">
+<meta name="twitter:image" content="https://cloneguard.co/og-image.png">
+
+<!-- Design system: tokens + base only (see design-system/README.md). -->
+<link rel="stylesheet" href="design-system/styles.css">
+
+<!-- Shared site chrome: reset, nav, buttons, cards, footer (see assets/site.css). -->
+<link rel="stylesheet" href="assets/site.css">
+
+<!-- Lucide - same icon system + version referenced by components/brand/Icon.jsx -->
+<script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "CloneGuard Brand Enforcement",
+  "serviceType": "Cease and desist, negotiations, opposition filings, letters of protest, cancellations, and domain disputes",
+  "provider": { "@type": "Organization", "name": "CloneGuard", "url": "https://cloneguard.co" },
+  "areaServed": "Worldwide",
+  "audience": { "@type": "Audience", "audienceType": "iGaming and Crypto businesses" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What's the difference between a takedown request and an enforcement action?", "acceptedAnswer": { "@type": "Answer", "text": "A takedown request asks a host, registrar, or platform to remove content. Enforcement goes further, formal legal notices, opposition filings, and dispute proceedings, used when a takedown request alone doesn't resolve the issue." } },
+    { "@type": "Question", "name": "When do you escalate from a takedown request to a cease and desist?", "acceptedAnswer": { "@type": "Answer", "text": "When the host or operator ignores an initial takedown request, or when the infringing party is identifiable and a direct legal notice is likely to be more effective." } },
+    { "@type": "Question", "name": "How long does an opposition or cancellation take?", "acceptedAnswer": { "@type": "Answer", "text": "It varies by jurisdiction and whether the other party contests it, typically months rather than weeks. We handle the filing and manage the timeline for you." } },
+    { "@type": "Question", "name": "Do I need a registered trademark before you can send a cease and desist?", "acceptedAnswer": { "@type": "Answer", "text": "No, but it strengthens the notice considerably. A registered mark gives every enforcement action real legal standing." } },
+    { "@type": "Question", "name": "What happens if the infringer ignores a cease and desist?", "acceptedAnswer": { "@type": "Answer", "text": "We escalate, to the host or registrar directly, to a formal dispute proceeding, or to litigation-adjacent options depending on the case." } }
+  ]
+}
+</script>
+
+<style>
+  /*
+    Page-specific styles only - shared chrome, impact/cmp/faq components
+    live in assets/site.css. Own identity: the enforcement-actions feed
+    (what was done, not what was found) and a 6-card service grid, distinct
+    from the certificate motif on Trademarks and the browser motif on
+    Monitoring.
+  */
+
+  /* ---------- HERO ---------- */
+  .be-hero{ padding: var(--space-20) 0 var(--space-16); }
+  .be-hero-grid{ display:grid; grid-template-columns: 1.05fr 0.95fr; gap: var(--space-16); align-items:center; }
+  @media (max-width:900px){ .be-hero-grid{ grid-template-columns:1fr; gap: var(--space-12); } }
+  .be-hero h1{ font-family: var(--font-display); font-size: clamp(32px, 4.4vw, var(--text-3xl)); line-height: var(--leading-tight); letter-spacing: var(--tracking-tighter); margin: var(--space-5) 0 var(--space-5); }
+  .be-hero h1 .accent{ color: var(--brass-gold-700); }
+  .be-hero p.lede{ font-size: var(--text-md); color: var(--fg-secondary); line-height: var(--leading-relaxed); max-width: 460px; margin-bottom: var(--space-8); }
+  .be-hero-ctas{ display:flex; gap: var(--space-3); flex-wrap:wrap; }
+
+  /* ---------- ACTIONS GRID ---------- */
+  .action-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-6); }
+  @media (max-width:900px){ .action-grid{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:600px){ .action-grid{ grid-template-columns:1fr; } }
+  .action-card{ padding: var(--space-6); }
+  .action-card h3{ font-family: var(--font-display); font-size:16px; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-2); }
+  .action-card p{ font-size:13.5px; color: var(--fg-secondary); line-height: var(--leading-normal); }
+
+  /* ---------- CLOSE ---------- */
+  .be-close{ text-align:center; }
+  .be-close .wrap{ max-width:600px; }
+  .be-close h2{ font-family: var(--font-display); font-size: clamp(26px,3.2vw,var(--text-2xl)); letter-spacing: var(--tracking-tight); margin: var(--space-4) 0 var(--space-4); }
+  .be-close p{ color: var(--fg-secondary); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-bottom: var(--space-8); }
+  .be-close .eyebrow{ justify-content:center; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo">CloneGuard</a>
+    <div class="navlinks">
+      <div class="navdrop">
+        <button class="navdrop-trigger active" type="button">Services <i data-lucide="chevron-down" width="14" height="14"></i></button>
+        <div class="navdrop-panel">
+          <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns<span>Detect, verify, and take down impersonators</span></a>
+          <a href="trademarks.html">Trademark Registration<span>UK, EU, and global filing</span></a>
+          <a href="brand-enforcement.html" class="active">Brand Enforcement<span>Cease and desist, disputes, and legal escalation</span></a>
+          <a href="specialist-services.html">Specialist Services<span>Executive protection, insurance, IP strategy</span></a>
+        </div>
+      </div>
+      <a href="protection-plans.html">Protection Plans</a>
+      <a href="igaming.html">iGaming</a>
+      <a href="crypto.html">Crypto</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="contact.html" class="btn btn-gold btn-md navcta">Contact Us</a>
+    <button class="navburger" id="navburger" aria-label="Open menu" aria-expanded="false">
+      <i data-lucide="menu" width="20" height="20"></i>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mnav-group">
+      <button class="mnav-head" type="button">Services <i data-lucide="chevron-down" width="16" height="16"></i></button>
+      <div class="mnav-sub">
+        <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns</a>
+        <a href="trademarks.html">Trademark Registration</a>
+        <a href="brand-enforcement.html">Brand Enforcement</a>
+        <a href="specialist-services.html">Specialist Services</a>
+      </div>
+    </div>
+    <a href="protection-plans.html">Protection Plans</a>
+    <a href="igaming.html">iGaming</a>
+    <a href="crypto.html">Crypto</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-gold btn-md">Contact Us</a>
+  </div>
+</header>
+
+<section class="be-hero band-white">
+  <div class="wrap be-hero-grid">
+    <div>
+      <div class="eyebrow">Brand Enforcement</div>
+      <h1>When a takedown request isn't enough, we <span class="accent">escalate</span>.</h1>
+      <p class="lede">Some impersonators ignore a takedown request. That's when we move from a request to a legal action, cease and desist letters, formal oppositions, and domain disputes, backed by your registered trademark.</p>
+      <div class="be-hero-ctas">
+        <a href="mailto:info@cloneguard.co?subject=Brand%20Enforcement%20request&amp;body=Company%20name%3A%20%0AWhat%20needs%20enforcement%3A%20%0A%0APlease%20send%20me%20a%20quote." class="btn btn-primary btn-lg">Request a Quote</a>
+        <a href="protection-plans.html" class="btn btn-secondary btn-lg">See Protection Plans</a>
+      </div>
+    </div>
+
+    <div class="feed-card" aria-hidden="true">
+      <div class="feed-label">Illustrative enforcement activity</div>
+      <div class="feed-row">
+        <span class="feed-desc">Cease and desist sent - brand-casino-vip.net</span>
+        <span class="feed-status status-flagged">Sent</span>
+      </div>
+      <div class="feed-row">
+        <span class="feed-desc">Opposition filed - conflicting application</span>
+        <span class="feed-status status-flagged">Filed</span>
+      </div>
+      <div class="feed-row">
+        <span class="feed-desc">Domain dispute - brandexchange-secure.io</span>
+        <span class="feed-status status-removed">Transferred</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-white" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What we handle</div>
+      <h2>Six actions, one team.</h2>
+    </div>
+    <div class="action-grid">
+      <div class="action-card card">
+        <h3>Cease and Desist Letters</h3>
+        <p>A formal legal notice demanding an infringer stop, sent directly to the operator or their registrar and host.</p>
+      </div>
+      <div class="action-card card">
+        <h3>Negotiations</h3>
+        <p>Direct negotiation with an infringer or affiliate to resolve a dispute without escalating to litigation.</p>
+      </div>
+      <div class="action-card card">
+        <h3>Opposition Filings</h3>
+        <p>Challenging a conflicting trademark application before it registers, protecting your position in a market.</p>
+      </div>
+      <div class="action-card card">
+        <h3>Letters of Protest</h3>
+        <p>A formal objection filed during another party's US trademark application, based on your existing rights.</p>
+      </div>
+      <div class="action-card card">
+        <h3>Cancellations</h3>
+        <p>Petitioning to cancel an existing registered trademark that conflicts with or infringes on yours.</p>
+      </div>
+      <div class="action-card card">
+        <h3>Domain Disputes</h3>
+        <p>Formal proceedings to reclaim or shut down a domain being used to impersonate you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why it matters</div>
+      <h2>A takedown request only goes so far.</h2>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-card card">
+        <h3>Not every host responds to a report</h3>
+        <p>Some hosts and registrars only act on a formal legal notice, not an informal takedown request.</p>
+      </div>
+      <div class="impact-card card">
+        <h3>Every day live compounds the damage</h3>
+        <p>The longer an infringer stays live, the more customers and search rankings they capture from you.</p>
+      </div>
+      <div class="impact-card card">
+        <h3>Legal standing changes outcomes</h3>
+        <p>Every enforcement action is stronger backed by a registered trademark, which is why we handle both under one team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-white">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">DIY vs CloneGuard</div>
+      <h2>What changes when we handle it.</h2>
+    </div>
+    <div class="cmp-wrap">
+      <table class="cmp-table">
+        <thead>
+          <tr><th>What matters</th><th>DIY</th><th>CloneGuard</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cease and desist drafting</td>
+            <td><div class="cmp-cell cmp-no"><i data-lucide="x" width="15" height="15"></i>Generic templates, no legal review</div></td>
+            <td class="cmp-us"><div class="cmp-cell cmp-yes"><i data-lucide="check" width="15" height="15"></i>Drafted and reviewed by specialist partners</div></td>
+          </tr>
+          <tr>
+            <td>Opposition and cancellation filings</td>
+            <td><div class="cmp-cell cmp-no"><i data-lucide="x" width="15" height="15"></i>Requires separate counsel per jurisdiction</div></td>
+            <td class="cmp-us"><div class="cmp-cell cmp-yes"><i data-lucide="check" width="15" height="15"></i>Filed and managed under one team</div></td>
+          </tr>
+          <tr>
+            <td>Domain dispute proceedings</td>
+            <td><div class="cmp-cell cmp-no"><i data-lucide="x" width="15" height="15"></i>Complex, unfamiliar process</div></td>
+            <td class="cmp-us"><div class="cmp-cell cmp-yes"><i data-lucide="check" width="15" height="15"></i>Handled end to end, including evidence</div></td>
+          </tr>
+          <tr>
+            <td>Legal standing</td>
+            <td><div class="cmp-cell cmp-no"><i data-lucide="x" width="15" height="15"></i>Weaker without a registered mark</div></td>
+            <td class="cmp-us"><div class="cmp-cell cmp-yes"><i data-lucide="check" width="15" height="15"></i>Backed by your CloneGuard trademark filing</div></td>
+          </tr>
+          <tr>
+            <td>Point of contact</td>
+            <td><div class="cmp-cell cmp-no"><i data-lucide="x" width="15" height="15"></i>Different vendor per action</div></td>
+            <td class="cmp-us"><div class="cmp-cell cmp-yes"><i data-lucide="check" width="15" height="15"></i>One team across every case</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="band-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Brand enforcement, answered plainly.</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>What's the difference between a takedown request and an enforcement action?</h3>
+        <p>A takedown request asks a host, registrar, or platform to remove content. Enforcement goes further, formal legal notices, opposition filings, and dispute proceedings, used when a takedown request alone doesn't resolve the issue.</p>
+      </div>
+      <div class="faq-item">
+        <h3>When do you escalate from a takedown request to a cease and desist?</h3>
+        <p>When the host or operator ignores an initial takedown request, or when the infringing party is identifiable and a direct legal notice is likely to be more effective.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long does an opposition or cancellation take?</h3>
+        <p>It varies by jurisdiction and whether the other party contests it, typically months rather than weeks. We handle the filing and manage the timeline for you.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do I need a registered trademark before you can send a cease and desist?</h3>
+        <p>No, but it strengthens the notice considerably. A registered mark gives every enforcement action real legal standing.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What happens if the infringer ignores a cease and desist?</h3>
+        <p>We escalate, to the host or registrar directly, to a formal dispute proceeding, or to litigation-adjacent options depending on the case.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="be-close band-white">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;">Get started</div>
+    <h2>Tell us what needs enforcing. We'll quote it directly.</h2>
+    <p>No published rate card, no commitment. Send us the details and we'll tell you plainly what it takes.</p>
+    <a href="mailto:info@cloneguard.co?subject=Brand%20Enforcement%20request&amp;body=Company%20name%3A%20%0AWhat%20needs%20enforcement%3A%20%0A%0APlease%20send%20me%20a%20quote." class="btn btn-primary btn-lg">Request a Quote</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <a href="index.html" class="logo" style="display:inline-block;">CloneGuard</a>
+    </div>
+    <div class="foot-copyright">&copy; CloneGuard Ltd. All rights reserved.</div>
+    <div class="foot-legal">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+
+  const navBurger = document.getElementById('navburger');
+  const mobileNav = document.getElementById('mobileNav');
+  const setBurgerState = (open) => {
+    mobileNav.classList.toggle('open', open);
+    navBurger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navBurger.querySelector('i').setAttribute('data-lucide', open ? 'x' : 'menu');
+    lucide.createIcons();
+  };
+  navBurger.addEventListener('click', () => setBurgerState(!mobileNav.classList.contains('open')));
+  mobileNav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setBurgerState(false)));
+  mobileNav.querySelectorAll('.mnav-head').forEach((head) => {
+    head.addEventListener('click', () => head.closest('.mnav-group').classList.toggle('open'));
+  });
+</script>
+</body>
+</html>

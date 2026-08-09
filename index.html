@@ -115,17 +115,39 @@
   .strip-item{ font-family: var(--font-mono); font-size:12.5px; color: var(--fg-secondary); }
   .strip-item b{ display:block; font-family: var(--font-display); font-size: var(--text-xl); color: var(--fg-primary); font-weight: var(--weight-semibold); margin-bottom:3px;}
 
-  /* ---------- SERVICES ---------- */
-  .svc-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-6); }
-  @media (max-width:900px){ .svc-grid{ grid-template-columns:1fr; } }
-  .svc-card{ padding: var(--space-8) var(--space-6) var(--space-6); position:relative; transition: border-color var(--duration-base) var(--ease-standard), transform var(--duration-base) var(--ease-standard); }
-  .svc-card:hover{ border-color: var(--brass-gold-700); transform: translateY(-3px); }
-  .svc-card h3{ font-family: var(--font-display); font-size: var(--text-lg); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
-  .svc-card p{ color: var(--fg-secondary); font-size:14.5px; line-height: var(--leading-normal); margin-bottom: var(--space-5); }
-  .svc-list{ list-style:none; font-size:13.5px; color: var(--fg-primary); }
-  .svc-list li{ padding: 9px 0; border-top:1px solid var(--border-default); }
-  .svc-list li:first-child{ border-top:none; }
-  .svc-more{ margin-top: var(--space-5); font-size:13.5px; font-weight: var(--weight-semibold); display:inline-flex; align-items:center; gap:6px; color: var(--fg-primary); }
+  /* ---------- WHY CLONEGUARD (Protection vs Enforcement) ---------- */
+  .why-grid{ display:grid; grid-template-columns:1fr 1fr; gap: var(--space-6); }
+  @media (max-width:800px){ .why-grid{ grid-template-columns:1fr; } }
+  .why-card{ padding: var(--space-8) var(--space-6); }
+  .why-card.why-highlight{ border:2px solid var(--brass-gold-500); box-shadow: var(--shadow-md); }
+  .why-card h3{ font-family: var(--font-display); font-size: var(--text-lg); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-2); }
+  .why-desc{ color: var(--fg-secondary); font-size:14.5px; line-height: var(--leading-normal); margin-bottom: var(--space-5); }
+  .why-list{ list-style:none; font-size:13.5px; color: var(--fg-primary); }
+  .why-list li{ display:flex; align-items:center; gap:8px; padding: 9px 0; border-top:1px solid var(--border-default); }
+  .why-list li:first-child{ border-top:none; }
+  .why-list i{ color: var(--accent-verified-strong); flex-shrink:0; }
+  .svc-more{ margin-top: var(--space-5); font-size:13.5px; font-weight: var(--weight-semibold); color: var(--accent-verified-strong); display:inline-flex; align-items:center; gap:6px; }
+
+  /* ---------- PROTECTION PLANS TEASER ---------- */
+  .plan-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap: var(--space-6); }
+  @media (max-width:900px){ .plan-grid{ grid-template-columns:1fr; } }
+  .plan-card{ padding: var(--space-8) var(--space-6); position:relative; }
+  .plan-card.plan-highlight{ border:2px solid var(--brass-gold-500); box-shadow: var(--shadow-md); }
+  .plan-flag{ position:absolute; top:-13px; left:50%; transform:translateX(-50%); background: var(--ink-navy-900); color: var(--brass-gold-300); font-family: var(--font-mono); font-size:10.5px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; padding:5px 14px; border-radius: var(--radius-pill); }
+  .plan-name{ font-family: var(--font-display); font-size: var(--text-lg); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-1); }
+  .plan-price{ font-family: var(--font-display); font-size: var(--text-2xl); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); margin: var(--space-2) 0 var(--space-4); }
+  .plan-price span{ font-size:13px; font-weight: var(--weight-medium); color: var(--fg-muted); }
+  .plan-desc{ color: var(--fg-secondary); font-size:14px; line-height: var(--leading-normal); }
+  .plan-cta-row{ text-align:center; margin-top: var(--space-10); }
+
+  /* Benefits strip (.benefits-strip etc.) now lives in assets/site.css - shared with the About page. */
+
+  /* ---------- CLOSING CTA ---------- */
+  .close-cta{ text-align:center; background: var(--ink-navy-900); color: var(--fg-on-inverse); }
+  .close-cta .wrap{ max-width:640px; }
+  .close-cta h2{ font-family: var(--font-display); font-size: clamp(28px,3.6vw,var(--text-2xl)); letter-spacing: var(--tracking-tight); margin: var(--space-4) 0 var(--space-4); color: var(--fg-on-inverse); }
+  .close-cta p{ color: var(--ink-navy-300); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-bottom: var(--space-8); }
+  .close-cta .eyebrow{ justify-content:center; }
 
   /* ---------- WHO WE SUPPORT ---------- */
   .who-grid{ display:grid; grid-template-columns:1fr 1fr; gap: var(--space-6); }
@@ -142,16 +164,6 @@
   .who-crypto .who-tag{ color: var(--fg-muted); }
   .who-link{ font-size: var(--text-base); font-weight: var(--weight-semibold); display:inline-flex; align-items:center; gap:6px; margin-top: var(--space-6); }
 
-  /* ---------- CONTACT ---------- */
-  .contact-layout{ display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-16); align-items:center; }
-  @media (max-width:800px){ .contact-layout{ grid-template-columns:1fr; gap: var(--space-8); } }
-  .contact-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap: var(--space-6); }
-  @media (max-width:600px){ .contact-grid{ grid-template-columns:1fr; } }
-  .contact-card{ padding: var(--space-8) var(--space-6); display:block; transition: border-color var(--duration-base) var(--ease-standard), transform var(--duration-base) var(--ease-standard); }
-  .contact-card:hover{ border-color: var(--brass-gold-700); transform: translateY(-3px); }
-  .contact-label{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); margin-bottom: var(--space-2); }
-  .contact-value{ font-family: var(--font-display); font-size: var(--text-lg); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); color: var(--fg-primary); }
-
 </style>
 </head>
 <body>
@@ -165,13 +177,17 @@
         <div class="navdrop-panel">
           <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns<span>Detect, verify, and take down impersonators</span></a>
           <a href="trademarks.html">Trademark Registration<span>UK, EU, and global filing</span></a>
+          <a href="brand-enforcement.html">Brand Enforcement<span>Cease and desist, disputes, and legal escalation</span></a>
+          <a href="specialist-services.html">Specialist Services<span>Executive protection, insurance, IP strategy</span></a>
         </div>
       </div>
-      <a href="pricing.html">Pricing</a>
-      <a href="#industries">Industries</a>
-      <a href="#contact">Contact</a>
+      <a href="protection-plans.html">Protection Plans</a>
+      <a href="igaming.html">iGaming</a>
+      <a href="crypto.html">Crypto</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <a href="#contact" class="btn btn-gold btn-md navcta">Contact Us</a>
+    <a href="contact.html" class="btn btn-gold btn-md navcta">Contact Us</a>
     <button class="navburger" id="navburger" aria-label="Open menu" aria-expanded="false">
       <i data-lucide="menu" width="20" height="20"></i>
     </button>
@@ -182,12 +198,16 @@
       <div class="mnav-sub">
         <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns</a>
         <a href="trademarks.html">Trademark Registration</a>
+        <a href="brand-enforcement.html">Brand Enforcement</a>
+        <a href="specialist-services.html">Specialist Services</a>
       </div>
     </div>
-    <a href="pricing.html">Pricing</a>
-    <a href="#industries">Industries</a>
-    <a href="#contact">Contact</a>
-    <a href="#contact" class="btn btn-gold btn-md">Contact Us</a>
+    <a href="protection-plans.html">Protection Plans</a>
+    <a href="igaming.html">iGaming</a>
+    <a href="crypto.html">Crypto</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-gold btn-md">Contact Us</a>
   </div>
 </header>
 
@@ -198,7 +218,7 @@
       <h1>Brand protection<br>for <span class="accent">high-risk</span><br>industries.</h1>
       <p class="lede">We monitor, detect, and take down the fake sites, accounts, and apps putting your brand and your customers at risk.</p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary btn-lg">Contact Us</a>
+        <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
         <a href="monitoring-takedowns.html" class="btn btn-secondary btn-lg">See how it works</a>
       </div>
       <div class="hero-meta">
@@ -264,49 +284,73 @@
 <section id="services" class="band-white">
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">What we do</div>
-      <h2>Three services. One point of contact.</h2>
-      <p>Detection catches problems after they appear. Registration prevents disputes before they start. Together, they cover your brand end to end.</p>
+      <div class="eyebrow">Why CloneGuard</div>
+      <h2>Protection before the problem. Enforcement after it.</h2>
+      <p>Most vendors do one or the other. CloneGuard runs both from a single team, so nothing sits in the gap between a monitoring vendor and a law firm.</p>
     </div>
 
-    <div class="svc-grid">
-      <div class="svc-card card">
-        <div class="svc-icon"><i data-lucide="search" width="22" height="22" stroke-width="1.75"></i></div>
-        <h3>Monitoring &amp; Takedowns</h3>
-        <p>Continuous detection of cloned websites, fake accounts, and impersonating apps - reviewed and actioned by our team.</p>
-        <ul class="svc-list">
-          <li>24/7 brand &amp; domain monitoring, across social, web, and app stores</li>
-          <li>Fake account, phishing site, and clone takedowns</li>
-          <li>Every case verified by an analyst before action is taken</li>
+    <div class="why-grid">
+      <div class="why-card why-highlight card">
+        <div class="svc-icon"><i data-lucide="shield-check" width="22" height="22" stroke-width="1.75"></i></div>
+        <h3>Protection</h3>
+        <p class="why-desc">Stops problems before they cost you a customer.</p>
+        <ul class="why-list">
+          <li><i data-lucide="check" width="15" height="15"></i>Trademark registration</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Continuous monitoring &amp; detection</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Domain &amp; IP portfolio strategy</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Executive &amp; VIP protection</li>
         </ul>
-        <a href="monitoring-takedowns.html" class="svc-more">Learn more →</a>
+        <a href="protection-plans.html" class="svc-more">Learn more →</a>
       </div>
 
-      <div class="svc-card card">
-        <div class="svc-icon"><i data-lucide="file-check" width="22" height="22" stroke-width="1.75"></i></div>
-        <h3>Trademark Registration</h3>
-        <p>UK and EU trademark filing, handled end to end through our specialist legal partners - you retain full ownership.</p>
-        <ul class="svc-list">
-          <li>UKIPO and EUIPO filing &amp; representation</li>
-          <li>Conflict screening before you commit to filing</li>
-          <li>Opposition, renewal, and ongoing defence support</li>
+      <div class="why-card card">
+        <div class="svc-icon"><i data-lucide="scale" width="22" height="22" stroke-width="1.75"></i></div>
+        <h3>Enforcement</h3>
+        <p class="why-desc">Acts the moment a threat is confirmed.</p>
+        <ul class="why-list">
+          <li><i data-lucide="check" width="15" height="15"></i>Takedowns</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Cease and desist letters</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Negotiations &amp; oppositions</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Domain disputes</li>
         </ul>
-        <a href="trademarks.html" class="svc-more">Learn more →</a>
-      </div>
-
-      <div class="svc-card card">
-        <div class="svc-icon"><i data-lucide="layout-grid" width="22" height="22" stroke-width="1.75"></i></div>
-        <h3>Specialist Services</h3>
-        <p>Additional protection, introduced as your business needs it - sourced through vetted specialist partners.</p>
-        <ul class="svc-list">
-          <li>Executive &amp; VIP digital protection</li>
-          <li>Cyber insurance placement for high-risk industries</li>
-          <li>Domain acquisition &amp; IP portfolio strategy</li>
-        </ul>
-        <a href="#contact" class="svc-more">Learn more →</a>
+        <a href="brand-enforcement.html" class="svc-more">Learn more →</a>
       </div>
     </div>
-    <p style="margin-top:var(--space-8); font-size:14.5px; color:var(--fg-secondary);">Subscriptions from Foundation to Enterprise, plus a la carte pricing for every service. <a href="pricing.html" style="color:var(--accent-verified-strong); font-weight:var(--weight-semibold); text-decoration:underline; text-underline-offset:2px;">See pricing →</a></p>
+  </div>
+</section>
+
+<section id="plans" class="band-tint">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Protection Plans</div>
+      <h2>One flat subscription. Choose your level of coverage.</h2>
+      <p>Foundation, Growth, and Enterprise bundle monitoring, takedowns, and trademark filing under one contract. Need something outside your plan? Every service is also available on request.</p>
+    </div>
+
+    <div class="plan-grid">
+      <div class="plan-card card">
+        <div class="plan-name">Foundation</div>
+        <div class="plan-price">$299<span>/mo, billed annually</span></div>
+        <p class="plan-desc">Continuous monitoring for one brand, plus 2 takedowns a month included.</p>
+      </div>
+
+      <div class="plan-card plan-highlight card">
+        <div class="plan-flag">Most common</div>
+        <div class="plan-name">Growth</div>
+        <div class="plan-price">$799<span>/mo, billed annually</span></div>
+        <p class="plan-desc">Priority case handling and 5 takedowns a month, built for brands under active attack.</p>
+      </div>
+
+      <div class="plan-card card">
+        <div class="plan-name">Enterprise</div>
+        <div class="plan-price">$12,000<span>/yr</span></div>
+        <p class="plan-desc">Full platform coverage with a dedicated account manager.</p>
+      </div>
+    </div>
+
+    <div class="plan-cta-row">
+      <a href="protection-plans.html" class="btn btn-primary btn-lg">View plans &amp; pricing</a>
+    </div>
   </div>
 </section>
 
@@ -325,7 +369,7 @@
           <h3>Cloned casinos. Fake payment pages.</h3>
           <p>Fake sportsbook sign-ups, spoofed deposit screens, and imitation support accounts built to capture player funds and login credentials.</p>
         </div>
-        <a href="#contact" class="who-link">Explore iGaming protection →</a>
+        <a href="igaming.html" class="who-link">Explore iGaming protection →</a>
       </div>
       <div class="who-card who-crypto">
         <div>
@@ -333,31 +377,35 @@
           <h3>Cloned exchanges. Fake deposit wallets.</h3>
           <p>Spoofed trading platforms, fake login pages, and impersonated support accounts built to phish credentials and drain funds.</p>
         </div>
-        <a href="#contact" class="who-link">Explore Crypto protection →</a>
+        <a href="crypto.html" class="who-link">Explore Crypto protection →</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="band-tint">
-  <div class="wrap contact-layout">
-    <div class="section-head" style="margin-bottom:0;">
-      <div class="eyebrow">Get in touch</div>
-      <h2>Reach the team directly.</h2>
-      <p>Get in touch through either channel.</p>
+<section id="benefits" class="band-white">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Benefits</div>
+      <h2>What you get with every engagement.</h2>
     </div>
-    <div class="contact-grid">
-      <a href="mailto:info@cloneguard.co" class="contact-card card">
-        <div class="svc-icon"><i data-lucide="mail" width="22" height="22" stroke-width="1.75"></i></div>
-        <div class="contact-label">Email</div>
-        <div class="contact-value">info@cloneguard.co</div>
-      </a>
-      <a href="https://t.me/cloneguard" target="_blank" rel="noopener" class="contact-card card">
-        <div class="svc-icon"><i data-lucide="send" width="22" height="22" stroke-width="1.75"></i></div>
-        <div class="contact-label">Telegram</div>
-        <div class="contact-value">@cloneguard</div>
-      </a>
+
+    <div class="benefits-strip">
+      <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>24/7 monitoring</div>
+      <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>Analyst-verified cases</div>
+      <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>iGaming &amp; Crypto specialists</div>
+      <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>One point of contact</div>
+      <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>Discreet engagement</div>
     </div>
+  </div>
+</section>
+
+<section class="close-cta">
+  <div class="wrap">
+    <div class="eyebrow on-inverse">Get started</div>
+    <h2>Ready to see what's already targeting your brand?</h2>
+    <p>Tell us your brand and primary domain. We'll tell you plainly what we find.</p>
+    <a href="contact.html" class="btn btn-gold btn-lg">Contact Us</a>
   </div>
 </section>
 

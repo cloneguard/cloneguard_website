@@ -73,20 +73,7 @@
   .cert-register-row{ display:flex; justify-content:space-between; font-family: var(--font-mono); font-size:11.5px; padding:6px 0; color: var(--fg-secondary); }
   .cert-stamp{ position:absolute; right:-6px; bottom:18px; transform:rotate(-9deg); border:2px solid var(--accent-verified-strong); color: var(--accent-verified-strong); background: var(--accent-verified-soft); font-family: var(--font-mono); font-size:11.5px; font-weight: var(--weight-semibold); letter-spacing: var(--tracking-mono-label); text-transform:uppercase; padding:8px 14px; border-radius: var(--radius-sm); }
 
-  /* ---------- TIMELINE ---------- */
-  .tl-track{ position:relative; display:flex; justify-content:space-between; margin-top: var(--space-12); gap: var(--space-6); }
-  .tl-track::before{ content:""; position:absolute; top:6px; left:0; right:0; height:2px; background: var(--border-strong); }
-  .tl-step{ position:relative; flex:1; }
-  .tl-dot{ width:14px; height:14px; border-radius:50%; background: var(--ink-navy-900); box-shadow: 0 0 0 4px var(--bg-surface); display:block; margin-bottom: var(--space-4); position:relative; z-index:1; }
-  .tl-when{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); margin-bottom: var(--space-2); }
-  .tl-step h3{ font-family: var(--font-display); font-size:17px; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-2); }
-  .tl-step p{ font-size:13.5px; color: var(--fg-secondary); line-height: var(--leading-normal); }
-  @media (max-width:800px){
-    .tl-track{ flex-direction:column; gap: var(--space-8); }
-    .tl-track::before{ top:0; bottom:0; left:6px; right:auto; width:2px; height:auto; }
-    .tl-step{ padding-left: var(--space-8); }
-    .tl-dot{ position:absolute; left:-1px; top:2px; margin-bottom:0; }
-  }
+  /* Timeline component (.tl-track etc.) now lives in assets/site.css - shared with the iGaming and Crypto pages. */
 
   /* ---------- JURISDICTIONS ---------- */
   .where-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-6); }
@@ -122,13 +109,17 @@
         <div class="navdrop-panel">
           <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns<span>Detect, verify, and take down impersonators</span></a>
           <a href="trademarks.html" class="active">Trademark Registration<span>UK, EU, and global filing</span></a>
+          <a href="brand-enforcement.html">Brand Enforcement<span>Cease and desist, disputes, and legal escalation</span></a>
+          <a href="specialist-services.html">Specialist Services<span>Executive protection, insurance, IP strategy</span></a>
         </div>
       </div>
-      <a href="pricing.html">Pricing</a>
-      <a href="index.html#industries">Industries</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="protection-plans.html">Protection Plans</a>
+      <a href="igaming.html">iGaming</a>
+      <a href="crypto.html">Crypto</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <a href="index.html#contact" class="btn btn-gold btn-md navcta">Contact Us</a>
+    <a href="contact.html" class="btn btn-gold btn-md navcta">Contact Us</a>
     <button class="navburger" id="navburger" aria-label="Open menu" aria-expanded="false">
       <i data-lucide="menu" width="20" height="20"></i>
     </button>
@@ -139,12 +130,16 @@
       <div class="mnav-sub">
         <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns</a>
         <a href="trademarks.html">Trademark Registration</a>
+        <a href="brand-enforcement.html">Brand Enforcement</a>
+        <a href="specialist-services.html">Specialist Services</a>
       </div>
     </div>
-    <a href="pricing.html">Pricing</a>
-    <a href="index.html#industries">Industries</a>
-    <a href="index.html#contact">Contact</a>
-    <a href="index.html#contact" class="btn btn-gold btn-md">Contact Us</a>
+    <a href="protection-plans.html">Protection Plans</a>
+    <a href="igaming.html">iGaming</a>
+    <a href="crypto.html">Crypto</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="contact.html" class="btn btn-gold btn-md">Contact Us</a>
   </div>
 </header>
 
@@ -244,7 +239,7 @@
             <td class="cmp-us"><span class="cmp-cell cmp-yes"><i data-lucide="check" width="14" height="14" stroke-width="2.5"></i>Classes and specifications drafted for how your brand actually operates</span></td>
           </tr>
           <tr>
-            <td>Pricing</td>
+            <td>Protection Plans</td>
             <td><span class="cmp-cell cmp-no"><i data-lucide="x" width="14" height="14" stroke-width="2.5"></i>Government fee plus hourly billing that's hard to predict</span></td>
             <td class="cmp-us"><span class="cmp-cell cmp-yes"><i data-lucide="check" width="14" height="14" stroke-width="2.5"></i>One itemized quote, agreed before any work begins</span></td>
           </tr>
@@ -370,7 +365,7 @@
     <h2>Find out if your name is still available to register.</h2>
     <p>A free trademark check from a licensed attorney, no commitment. We'll tell you plainly whether the name's available, and in which markets.</p>
     <a href="mailto:info@cloneguard.co?subject=Free%20Trademark%20Check%20request&amp;body=Company%20name%3A%20%0ABrand%2Fmark%20to%20check%3A%20%0AMarkets%20of%20interest%3A%20%0A%0APlease%20check%20trademark%20availability%20for%20us." class="btn btn-primary btn-lg">Check Your Trademark for Free</a>
-    <p style="margin:var(--space-6) 0 0; font-size:13.5px;"><a href="pricing.html" style="color:var(--accent-verified-strong); text-decoration:underline; text-underline-offset:2px;">See filing fees and subscription pricing →</a></p>
+    <p style="margin:var(--space-6) 0 0; font-size:13.5px;"><a href="protection-plans.html" style="color:var(--accent-verified-strong); text-decoration:underline; text-underline-offset:2px;">See filing fees and subscription pricing →</a></p>
   </div>
 </section>
 
