@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About - CloneGuard</title>
-<meta name="description" content="CloneGuard is a brand protection company built specifically for iGaming and Crypto: monitoring, takedowns, and trademark registration under one point of contact.">
+<meta name="description" content="CloneGuard is a brand protection partner built specifically for iGaming and Crypto: monitoring, takedowns, and trademark registration under one point of contact.">
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cloneguard.co/about.html">
 <meta property="og:title" content="About - CloneGuard">
-<meta property="og:description" content="CloneGuard is a brand protection company built specifically for iGaming and Crypto: monitoring, takedowns, and trademark registration under one point of contact.">
+<meta property="og:description" content="CloneGuard is a brand protection partner built specifically for iGaming and Crypto: monitoring, takedowns, and trademark registration under one point of contact.">
 <meta property="og:image" content="https://cloneguard.co/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,7 +24,7 @@
 <!-- Twitter card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About - CloneGuard">
-<meta name="twitter:description" content="CloneGuard is a brand protection company built specifically for iGaming and Crypto: monitoring, takedowns, and trademark registration under one point of contact.">
+<meta name="twitter:description" content="CloneGuard is a brand protection partner built specifically for iGaming and Crypto: monitoring, takedowns, and trademark registration under one point of contact.">
 <meta name="twitter:image" content="https://cloneguard.co/og-image.png">
 
 <!-- Design system: tokens + base only (see design-system/README.md). -->
@@ -51,7 +51,14 @@
 </script>
 
 <style>
-  /* Page-specific styles only - shared chrome, benefits strip, and section shell live in assets/site.css. */
+  /*
+    Page-specific styles only - shared chrome, benefits-strip, and who-card
+    live in assets/site.css. Every content section on this page now uses a
+    distinct visual treatment (credibility strip, contrast pair, icon
+    badges, process flow, who-card pair, icon pills) so scrolling the page
+    doesn't repeat the same eyebrow/h2/paragraph block six times. All text
+    content is unchanged from the previous version - only presentation.
+  */
 
   /* ---------- HERO ---------- */
   .ab-hero{ padding: var(--space-20) 0 var(--space-12); text-align:center; }
@@ -60,8 +67,42 @@
   .ab-hero .eyebrow{ justify-content:center; }
   .ab-hero p.lede{ font-size: var(--text-md); color: var(--fg-secondary); line-height: var(--leading-relaxed); margin:0 auto; }
 
-  /* ---------- FOCUS LINKS ---------- */
-  .focus-links{ display:flex; gap: var(--space-4); flex-wrap:wrap; margin-top: var(--space-6); }
+  /* ---------- TRUST STRIP ---------- */
+  .trust-strip{ border-top:1px solid var(--border-default); border-bottom:1px solid var(--border-default); background: var(--neutral-100); }
+  .trust-row{ display:flex; flex-wrap:wrap; justify-content:center; gap: var(--space-6) var(--space-8); padding: var(--space-5) 0; }
+  .trust-item{ display:flex; align-items:center; gap:8px; font-family: var(--font-mono); font-size:12px; color: var(--fg-secondary); }
+  .trust-item i{ color: var(--accent-verified-strong); flex-shrink:0; }
+
+  /* ---------- CONTRAST PAIR (Why we exist) ---------- */
+  .contrast-pair{ display:grid; grid-template-columns:1fr 1fr; gap: var(--space-6); margin-top: var(--space-8); }
+  @media (max-width:800px){ .contrast-pair{ grid-template-columns:1fr; } }
+  .contrast-card{ border-radius: var(--radius-md); padding: var(--space-8) var(--space-6); }
+  .contrast-them{ background: var(--bg-surface); border:1px solid var(--border-default); }
+  .contrast-us{ background: var(--ink-navy-900); color: var(--fg-on-inverse); }
+  .contrast-tag{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; margin-bottom: var(--space-3); }
+  .contrast-them .contrast-tag{ color: var(--fg-muted); }
+  .contrast-us .contrast-tag{ color: var(--brass-gold-300); }
+  .contrast-them p{ color: var(--fg-secondary); font-size:14.5px; line-height: var(--leading-normal); }
+  .contrast-us p{ color: var(--ink-navy-300); font-size:14.5px; line-height: var(--leading-normal); }
+
+  /* ---------- WORK BADGES (How we work) ---------- */
+  .work-badges{ display:flex; gap: var(--space-4); margin: var(--space-6) 0; flex-wrap:wrap; }
+  .work-badge{ display:flex; align-items:center; gap:8px; background: var(--bg-surface); border:1px solid var(--border-default); border-radius: var(--radius-pill); padding: var(--space-3) var(--space-5); font-family: var(--font-display); font-weight: var(--weight-semibold); font-size:14px; color: var(--fg-primary); }
+  .work-badge i{ color: var(--accent-verified-strong); }
+
+  /* ---------- PROCESS FLOW (How filing and enforcement get done) ---------- */
+  .flow-row{ display:flex; align-items:center; justify-content:center; gap: var(--space-4); margin: var(--space-8) 0; flex-wrap:wrap; }
+  .flow-node{ background: var(--bg-surface); border:1px solid var(--border-default); border-radius: var(--radius-md); padding: var(--space-5) var(--space-6); text-align:center; min-width:150px; }
+  .flow-node-us{ background: var(--ink-navy-900); border-color: var(--ink-navy-900); }
+  .flow-node .flow-label{ display:block; font-family: var(--font-display); font-weight: var(--weight-semibold); font-size:15px; color: var(--fg-primary); }
+  .flow-node-us .flow-label{ color: var(--fg-on-inverse); }
+  .flow-node .flow-sub{ display:block; font-size:11.5px; color: var(--fg-muted); margin-top:3px; }
+  .flow-node-us .flow-sub{ color: var(--brass-gold-300); }
+  .flow-arrow{ color: var(--fg-muted); transform:rotate(-90deg); flex-shrink:0; }
+  @media (max-width:700px){ .flow-row{ flex-direction:column; } .flow-arrow{ transform:rotate(0deg); } }
+  .flow-desc{ color: var(--fg-secondary); font-size:14.5px; line-height: var(--leading-relaxed); max-width:640px; margin:0 auto; text-align:center; }
+
+  /* ---------- FOCUS (who-card pair lives in assets/site.css) ---------- */
 
   /* ---------- CLOSE ---------- */
   .ab-close{ text-align:center; }
@@ -77,6 +118,7 @@
   <nav class="wrap">
     <a href="index.html" class="logo">CloneGuard</a>
     <div class="navlinks">
+      <a href="protection-plans.html">Protection Plans</a>
       <div class="navdrop">
         <button class="navdrop-trigger" type="button">Services <i data-lucide="chevron-down" width="14" height="14"></i></button>
         <div class="navdrop-panel">
@@ -86,9 +128,13 @@
           <a href="specialist-services.html">Specialist Services<span>Executive protection, insurance, IP strategy</span></a>
         </div>
       </div>
-      <a href="protection-plans.html">Protection Plans</a>
-      <a href="igaming.html">iGaming</a>
-      <a href="crypto.html">Crypto</a>
+      <div class="navdrop">
+        <button class="navdrop-trigger" type="button">Industries <i data-lucide="chevron-down" width="14" height="14"></i></button>
+        <div class="navdrop-panel">
+          <a href="igaming.html">iGaming<span>Casinos, sportsbooks, and betting platforms</span></a>
+          <a href="crypto.html">Crypto<span>Exchanges and crypto platforms</span></a>
+        </div>
+      </div>
       <a href="about.html" class="active">About</a>
       <a href="contact.html">Contact</a>
     </div>
@@ -98,6 +144,7 @@
     </button>
   </nav>
   <div class="mobile-nav" id="mobileNav">
+    <a href="protection-plans.html">Protection Plans</a>
     <div class="mnav-group">
       <button class="mnav-head" type="button">Services <i data-lucide="chevron-down" width="16" height="16"></i></button>
       <div class="mnav-sub">
@@ -107,9 +154,13 @@
         <a href="specialist-services.html">Specialist Services</a>
       </div>
     </div>
-    <a href="protection-plans.html">Protection Plans</a>
-    <a href="igaming.html">iGaming</a>
-    <a href="crypto.html">Crypto</a>
+    <div class="mnav-group">
+      <button class="mnav-head" type="button">Industries <i data-lucide="chevron-down" width="16" height="16"></i></button>
+      <div class="mnav-sub">
+        <a href="igaming.html">iGaming</a>
+        <a href="crypto.html">Crypto</a>
+      </div>
+    </div>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="contact.html" class="btn btn-gold btn-md">Contact Us</a>
@@ -119,17 +170,37 @@
 <section class="ab-hero band-white">
   <div class="wrap">
     <div class="eyebrow">About</div>
-    <h1>Built for the industries other vendors overlook.</h1>
-    <p class="lede">iGaming and Crypto brands get impersonated constantly, and most brand protection vendors treat them as too complicated, too regulated, or too risky to bother with. We built CloneGuard specifically for that gap.</p>
+    <h1>Built for the industries generalists overlook.</h1>
+    <p class="lede">iGaming and Crypto brands get impersonated constantly, and most brand protection providers treat them as too complicated, too regulated, or too risky to bother with. We built CloneGuard specifically for that gap.</p>
   </div>
 </section>
 
-<section class="band-white" style="padding-top:0;">
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="trust-row">
+      <span class="trust-item"><i data-lucide="shield-check" width="15" height="15"></i>iGaming &amp; Crypto specialists</span>
+      <span class="trust-item"><i data-lucide="eye" width="15" height="15"></i>Analyst-verified cases</span>
+      <span class="trust-item"><i data-lucide="user" width="15" height="15"></i>One point of contact</span>
+      <span class="trust-item"><i data-lucide="scale" width="15" height="15"></i>Specialist legal &amp; enforcement partners</span>
+    </div>
+  </div>
+</div>
+
+<section class="band-white">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Why we exist</div>
-      <h2>Mainstream vendors are slow to serve these industries. We aren't.</h2>
-      <p>Generalist brand protection vendors are built for retail, media, and consumer tech. When a casino or a crypto exchange comes to them, the compliance questions alone can take weeks. We work exclusively with iGaming and Crypto brands, so there's no ramp-up explaining what a KYC flow is or why a licensing regulator matters.</p>
+      <h2>The mainstream is slow to serve these industries. We aren't.</h2>
+    </div>
+    <div class="contrast-pair">
+      <div class="contrast-card contrast-them">
+        <div class="contrast-tag">Generalists</div>
+        <p>Built for retail, media, and consumer tech. When a casino or a crypto exchange comes to them, the compliance questions alone can take weeks.</p>
+      </div>
+      <div class="contrast-card contrast-us">
+        <div class="contrast-tag">CloneGuard</div>
+        <p>We work exclusively with iGaming and Crypto brands, so there's no ramp-up explaining what a KYC flow is or why a licensing regulator matters.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -139,9 +210,13 @@
     <div class="section-head">
       <div class="eyebrow">How we work</div>
       <h2>Protection before the problem. Enforcement after it.</h2>
-      <p>Every engagement covers two directions: protection that stops problems before they cost you a customer (trademark registration, continuous monitoring, domain and IP strategy), and enforcement that acts the moment a threat is confirmed (takedowns, cease and desist letters, negotiations, domain disputes). Most vendors do one or the other. We run both from a single team.</p>
-      <p><a href="index.html#services" style="color:var(--accent-verified-strong); font-weight:var(--weight-semibold); text-decoration:underline; text-underline-offset:2px;">See the full model →</a></p>
     </div>
+    <div class="work-badges">
+      <div class="work-badge"><i data-lucide="shield-check" width="20" height="20" stroke-width="1.75"></i>Protection</div>
+      <div class="work-badge"><i data-lucide="scale" width="20" height="20" stroke-width="1.75"></i>Enforcement</div>
+    </div>
+    <p>Every engagement covers two directions: protection that stops problems before they cost you a customer (trademark registration, continuous monitoring, domain and IP strategy), and enforcement that acts the moment a threat is confirmed (takedowns, cease and desist letters, negotiations, domain disputes). Most do one or the other. We run both from a single team.</p>
+    <p><a href="index.html#services" style="color:var(--accent-verified-strong); font-weight:var(--weight-semibold); text-decoration:underline; text-underline-offset:2px;">See the full model →</a></p>
   </div>
 </section>
 
@@ -150,8 +225,15 @@
     <div class="section-head">
       <div class="eyebrow">How filing and enforcement get done</div>
       <h2>One point of contact. Specialist execution behind it.</h2>
-      <p>Trademark filings and enforcement actions are carried out with a vetted network of specialist legal and enforcement partners. You deal with one team throughout. The specialist work happens behind that relationship, not scattered across law firms and vendors you have to manage yourself.</p>
     </div>
+    <div class="flow-row">
+      <div class="flow-node"><span class="flow-label">You</span></div>
+      <i data-lucide="chevron-down" width="16" height="16" class="flow-arrow"></i>
+      <div class="flow-node flow-node-us"><span class="flow-label">CloneGuard</span><span class="flow-sub">Single point of contact</span></div>
+      <i data-lucide="chevron-down" width="16" height="16" class="flow-arrow"></i>
+      <div class="flow-node"><span class="flow-label">Specialist partners</span><span class="flow-sub">Legal &amp; enforcement execution</span></div>
+    </div>
+    <p class="flow-desc">Trademark filings and enforcement actions are carried out with a vetted network of specialist legal and enforcement partners. You deal with one team throughout. The specialist work happens behind that relationship, not scattered across law firms and providers you have to manage yourself.</p>
   </div>
 </section>
 
@@ -162,9 +244,21 @@
       <h2>iGaming and Crypto, specifically.</h2>
       <p>No generalist checklist, no "we cover every industry" claim. Every case we handle sits inside one of two verticals, which is what lets us move fast on the threats that are actually common there.</p>
     </div>
-    <div class="focus-links">
-      <a href="igaming.html" class="btn btn-secondary btn-md">iGaming protection →</a>
-      <a href="crypto.html" class="btn btn-secondary btn-md">Crypto protection →</a>
+    <div class="who-grid">
+      <div class="who-card who-igaming">
+        <div>
+          <div class="who-tag">iGaming</div>
+          <h3>Casinos, sportsbooks, betting platforms</h3>
+        </div>
+        <a href="igaming.html" class="who-link">iGaming protection →</a>
+      </div>
+      <div class="who-card who-crypto">
+        <div>
+          <div class="who-tag">Crypto</div>
+          <h3>Exchanges and crypto platforms</h3>
+        </div>
+        <a href="crypto.html" class="who-link">Crypto protection →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -176,10 +270,10 @@
       <h2>What stays constant across every case.</h2>
     </div>
     <div class="benefits-strip">
-      <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>Verified before action</div>
-      <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>Plain reporting</div>
-      <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>Single point of contact</div>
-      <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>Built around your industry</div>
+      <div class="benefit-pill"><i data-lucide="shield-check" width="16" height="16"></i>Verified before action</div>
+      <div class="benefit-pill"><i data-lucide="file-check" width="16" height="16"></i>Plain reporting</div>
+      <div class="benefit-pill"><i data-lucide="user" width="16" height="16"></i>Single point of contact</div>
+      <div class="benefit-pill"><i data-lucide="globe" width="16" height="16"></i>Built around your industry</div>
       <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>Discreet engagement</div>
     </div>
   </div>

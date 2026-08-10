@@ -145,6 +145,28 @@ a.logo{ display:inline-block; }
 section{ padding: var(--space-24) 0; }
 .band-white{ background: var(--bg-surface); border-top:1px solid var(--border-default); border-bottom:1px solid var(--border-default); }
 .band-tint{ background: var(--neutral-100); border-top:1px solid var(--border-default); }
+/* Hero sections (class contains "-hero") never carry the band divider line -
+   it reads as an unwanted line cutting straight through the hero on every
+   subpage. Only non-hero content sections use the divider to band alternate
+   sections, matching how the homepage's plain, border-free .hero looks. */
+section[class*="-hero"].band-white,
+section[class*="-hero"].band-tint{ border-top:none; border-bottom:none; }
+
+/* ---------- WHO-CARD PAIR (dark/light two-card motif) ----------
+   Promoted from index.html - shared with the About page's Focus section. */
+.who-grid{ display:grid; grid-template-columns:1fr 1fr; gap: var(--space-6); }
+@media (max-width:800px){ .who-grid{ grid-template-columns:1fr; } }
+.who-card{ border-radius: var(--radius-md); padding: var(--space-10) var(--space-8); min-height:230px; display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; }
+.who-igaming{ background: var(--ink-navy-900); color: var(--fg-on-inverse); }
+.who-crypto{ background: var(--bg-surface); border:1px solid var(--border-default); color: var(--fg-primary); box-shadow: var(--shadow-sm); }
+.who-card h3{ font-family: var(--font-display); font-size: var(--text-xl); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
+.who-card p{ font-size:14.5px; line-height: var(--leading-normal); max-width:380px; }
+.who-igaming p{ color: var(--ink-navy-300); }
+.who-crypto p{ color: var(--fg-secondary); }
+.who-tag{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; margin-bottom: var(--space-2); }
+.who-igaming .who-tag{ color: var(--brass-gold-300); }
+.who-crypto .who-tag{ color: var(--fg-muted); }
+.who-link{ font-size: var(--text-base); font-weight: var(--weight-semibold); display:inline-flex; align-items:center; gap:6px; margin-top: var(--space-6); }
 .section-head{ max-width: 620px; margin-bottom: var(--space-12); }
 .section-head h2{ font-family: var(--font-display); font-size: clamp(28px,3.4vw,var(--text-2xl)); letter-spacing: var(--tracking-tight); margin-top: var(--space-4); }
 .section-head p{ color: var(--fg-secondary); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-top: var(--space-4); }

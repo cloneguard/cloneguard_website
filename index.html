@@ -65,48 +65,34 @@
   .hero-meta span{ display:flex; align-items:center; gap: var(--space-2); }
   .dot{ width:6px; height:6px; border-radius:50%; background: var(--accent-verified); display:inline-block; }
 
-  /* ---------- VERIFICATION PAIR ----------
-     Core card anatomy (rail, id, label, name, domain, divider, status dot+line)
-     matches components/brand/VerificationCard.jsx exactly. Size and the
-     genuine/flagged offset are NOT copied from the component's small default
-     props (260px, 26px/18px) - those defaults read as near-total overlap at
-     this scale and made the hero's signature motif look like a single card,
-     not a pair. Widened + spread out here since the motif's own guidance
-     calls hero sections out as its flagship use ("used sparingly: hero
-     sections, empty states, case-open moments, report covers") - the exact
-     place it's meant to carry visual weight. Two extra evidence rows (domain
-     age / SSL issuer) were added back for the same reason: they fill the
-     larger card with real "case file" content instead of empty dark space. */
-  .verify-stage{ position:relative; width:420px; height:280px; margin:0 auto; }
-  @media (max-width:520px){ .verify-stage{ transform:scale(0.72); transform-origin:center top; } }
-  .vcard{
-    position:absolute; top:0; left:0; width:296px; overflow:hidden;
-    border-radius: var(--radius-md); background: var(--ink-navy-900); color: var(--fg-on-inverse);
-    box-shadow: var(--shadow-lg);
-  }
-  .vcard .vrail{ height:5px; }
-  .vcard .vbody{ padding:18px 20px; }
-  .vcard .vtop{ display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
-  .vcard .vid{ font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); color: var(--ink-navy-300); }
-  .vcard .vlabel{ font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); font-weight: var(--weight-semibold); }
-  .vcard .vname{ font-family: var(--font-display); font-size: var(--text-xl); font-weight: var(--weight-semibold); letter-spacing: var(--tracking-tight); margin-bottom:4px; }
-  .vcard .vdomain{ font-family: var(--font-mono); font-size:12px; color: var(--ink-navy-300); }
-  .vcard .vmeta{ margin-top:14px; }
-  .vcard .vmeta-row{ display:flex; justify-content:space-between; font-family: var(--font-mono); font-size:11px; padding:7px 0; border-top:1px solid var(--ink-navy-700); color: var(--ink-navy-300); }
-  .vcard .vdiv{ margin-top:2px; height:1px; background: var(--ink-navy-700); }
-  .vcard .vstatus{ margin-top:14px; display:flex; gap:6px; align-items:center; }
-  .vcard .vstatus-dot{ width:7px; height:7px; border-radius:50%; }
-  .vcard .vstatus-text{ font-family: var(--font-mono); font-size:10.5px; color: var(--ink-navy-300); }
-
-  .v-genuine{ border:1px solid var(--ink-navy-700); z-index:1; transform: translate(-46px,-14px) rotate(-4deg); }
-  .v-genuine .vrail{ background: var(--accent-verified); }
-  .v-genuine .vlabel{ color: var(--brass-gold-300); }
-  .v-genuine .vstatus-dot{ background: var(--accent-verified-strong); }
-
-  .v-flagged{ border:1px solid var(--brick-red-700); z-index:2; transform: translate(46px,32px) rotate(4deg); }
-  .v-flagged .vrail{ background: var(--accent-flagged); }
-  .v-flagged .vlabel{ color: var(--brick-red-300); }
-  .v-flagged .vstatus-dot{ background: var(--accent-flagged-strong); }
+  /* ---------- CASE LIFECYCLE PANEL ----------
+     Replaces the old verified/flagged card pair. That motif only ever showed
+     detection - it never showed what CloneGuard actually does after a threat
+     is confirmed, which is most of the site now (enforcement, trademarks,
+     specialist services). This panel shows one case moving through the full
+     pipeline (Detected -> Verified -> Enforced -> Resolved), tying directly
+     to the "Protection before the problem, enforcement after it" line below
+     it. Framed explicitly as a representative example, same disclaimer
+     pattern used for the Casino A / Exchange A scenario walkthroughs. */
+  .case-panel{ width:420px; margin:0 auto; border-radius: var(--radius-md); background: var(--ink-navy-900); color: var(--fg-on-inverse); box-shadow: var(--shadow-lg); overflow:hidden; }
+  @media (max-width:520px){ .case-panel{ width:100%; max-width:380px; } }
+  .case-head{ display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid var(--ink-navy-700); }
+  .case-id{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); color: var(--brass-gold-300); }
+  .case-domain{ font-family: var(--font-mono); font-size:11px; color: var(--ink-navy-300); }
+  .case-steps{ padding:20px 20px 4px; }
+  .case-step{ display:flex; gap:14px; padding-bottom:20px; position:relative; }
+  .case-step:last-child{ padding-bottom:0; }
+  .case-step::before{ content:""; position:absolute; left:4px; top:16px; bottom:-4px; width:1px; background: var(--ink-navy-700); }
+  .case-step:last-child::before{ display:none; }
+  .case-dot{ width:9px; height:9px; border-radius:50%; margin-top:4px; flex-shrink:0; background: var(--ink-navy-500); position:relative; z-index:1; }
+  .case-step.done .case-dot{ background: var(--accent-verified-strong); }
+  .case-step.active .case-dot{ background: var(--brass-gold-500); }
+  .case-body{ flex:1; }
+  .case-row{ display:flex; justify-content:space-between; align-items:baseline; gap: var(--space-3); margin-bottom:3px; }
+  .case-label{ font-family: var(--font-display); font-size:14px; font-weight: var(--weight-semibold); }
+  .case-time{ font-family: var(--font-mono); font-size:10.5px; color: var(--ink-navy-300); white-space:nowrap; }
+  .case-desc{ font-size:12.5px; color: var(--ink-navy-300); line-height: var(--leading-normal); }
+  .case-foot{ padding:12px 20px; border-top:1px solid var(--ink-navy-700); font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--ink-navy-500); text-align:center; }
 
   /* ---------- STRIP ---------- */
   .strip{ border-top:1px solid var(--border-default); border-bottom:1px solid var(--border-default); background: var(--neutral-100); }
@@ -140,7 +126,18 @@
   .plan-desc{ color: var(--fg-secondary); font-size:14px; line-height: var(--leading-normal); }
   .plan-cta-row{ text-align:center; margin-top: var(--space-10); }
 
-  /* Benefits strip (.benefits-strip etc.) now lives in assets/site.css - shared with the About page. */
+  /* ---------- PROOF GRID (replaces the 5-pill benefits strip) ----------
+     Three sharper claims instead of five identical grey pills - each with
+     an icon, a real headline, and one proof sentence, so it reads as three
+     distinct arguments instead of a skimmable list nobody finishes. Left
+     accent rail keeps it visually distinct from the impact-grid pattern
+     already used on About and Brand Enforcement. */
+  .proof-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap: var(--space-6); }
+  @media (max-width:800px){ .proof-grid{ grid-template-columns:1fr; } }
+  .proof-card{ padding: var(--space-6) var(--space-6) var(--space-6) var(--space-5); border-left:3px solid var(--brass-gold-500); background: var(--bg-surface); border-top:1px solid var(--border-default); border-right:1px solid var(--border-default); border-bottom:1px solid var(--border-default); border-radius: var(--radius-md); }
+  .proof-icon{ color: var(--accent-verified-strong); margin-bottom: var(--space-3); }
+  .proof-card h3{ font-family: var(--font-display); font-size:16.5px; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-2); }
+  .proof-card p{ font-size:13.5px; color: var(--fg-secondary); line-height: var(--leading-normal); }
 
   /* ---------- CLOSING CTA ---------- */
   .close-cta{ text-align:center; background: var(--ink-navy-900); color: var(--fg-on-inverse); }
@@ -148,22 +145,7 @@
   .close-cta h2{ font-family: var(--font-display); font-size: clamp(28px,3.6vw,var(--text-2xl)); letter-spacing: var(--tracking-tight); margin: var(--space-4) 0 var(--space-4); color: var(--fg-on-inverse); }
   .close-cta p{ color: var(--ink-navy-300); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-bottom: var(--space-8); }
   .close-cta .eyebrow{ justify-content:center; }
-
-  /* ---------- WHO WE SUPPORT ---------- */
-  .who-grid{ display:grid; grid-template-columns:1fr 1fr; gap: var(--space-6); }
-  @media (max-width:800px){ .who-grid{ grid-template-columns:1fr; } }
-  .who-card{ border-radius: var(--radius-md); padding: var(--space-10) var(--space-8); min-height:230px; display:flex; flex-direction:column; justify-content:space-between; position:relative; overflow:hidden; }
-  .who-igaming{ background: var(--ink-navy-900); color: var(--fg-on-inverse); }
-  .who-crypto{ background: var(--bg-surface); border:1px solid var(--border-default); color: var(--fg-primary); box-shadow: var(--shadow-sm); }
-  .who-card h3{ font-family: var(--font-display); font-size: var(--text-xl); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
-  .who-card p{ font-size:14.5px; line-height: var(--leading-normal); max-width:380px; }
-  .who-igaming p{ color: var(--ink-navy-300); }
-  .who-crypto p{ color: var(--fg-secondary); }
-  .who-tag{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; margin-bottom: var(--space-2); }
-  .who-igaming .who-tag{ color: var(--brass-gold-300); }
-  .who-crypto .who-tag{ color: var(--fg-muted); }
-  .who-link{ font-size: var(--text-base); font-weight: var(--weight-semibold); display:inline-flex; align-items:center; gap:6px; margin-top: var(--space-6); }
-
+  /* Who-card pair (.who-grid etc.) now lives in assets/site.css - shared with the About page. */
 </style>
 </head>
 <body>
@@ -172,6 +154,7 @@
   <nav class="wrap">
     <a href="index.html" class="logo">CloneGuard</a>
     <div class="navlinks">
+      <a href="protection-plans.html">Protection Plans</a>
       <div class="navdrop">
         <button class="navdrop-trigger" type="button">Services <i data-lucide="chevron-down" width="14" height="14"></i></button>
         <div class="navdrop-panel">
@@ -181,9 +164,13 @@
           <a href="specialist-services.html">Specialist Services<span>Executive protection, insurance, IP strategy</span></a>
         </div>
       </div>
-      <a href="protection-plans.html">Protection Plans</a>
-      <a href="igaming.html">iGaming</a>
-      <a href="crypto.html">Crypto</a>
+      <div class="navdrop">
+        <button class="navdrop-trigger" type="button">Industries <i data-lucide="chevron-down" width="14" height="14"></i></button>
+        <div class="navdrop-panel">
+          <a href="igaming.html">iGaming<span>Casinos, sportsbooks, and betting platforms</span></a>
+          <a href="crypto.html">Crypto<span>Exchanges and crypto platforms</span></a>
+        </div>
+      </div>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
@@ -193,6 +180,7 @@
     </button>
   </nav>
   <div class="mobile-nav" id="mobileNav">
+    <a href="protection-plans.html">Protection Plans</a>
     <div class="mnav-group">
       <button class="mnav-head" type="button">Services <i data-lucide="chevron-down" width="16" height="16"></i></button>
       <div class="mnav-sub">
@@ -202,9 +190,13 @@
         <a href="specialist-services.html">Specialist Services</a>
       </div>
     </div>
-    <a href="protection-plans.html">Protection Plans</a>
-    <a href="igaming.html">iGaming</a>
-    <a href="crypto.html">Crypto</a>
+    <div class="mnav-group">
+      <button class="mnav-head" type="button">Industries <i data-lucide="chevron-down" width="16" height="16"></i></button>
+      <div class="mnav-sub">
+        <a href="igaming.html">iGaming</a>
+        <a href="crypto.html">Crypto</a>
+      </div>
+    </div>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="contact.html" class="btn btn-gold btn-md">Contact Us</a>
@@ -218,56 +210,51 @@
       <h1>Brand protection<br>for <span class="accent">high-risk</span><br>industries.</h1>
       <p class="lede">We monitor, detect, and take down the fake sites, accounts, and apps putting your brand and your customers at risk.</p>
       <div class="hero-ctas">
-        <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
-        <a href="monitoring-takedowns.html" class="btn btn-secondary btn-lg">See how it works</a>
+        <a href="protection-plans.html" class="btn btn-primary btn-lg">View Protection Plans</a>
+        <a href="#services" class="btn btn-secondary btn-lg">See how we protect you</a>
       </div>
       <div class="hero-meta">
         <span><span class="dot"></span>Enterprise-grade detection, verified by human analysts</span>
-        <span><span class="dot"></span>Cases actioned within 24 hours of confirmation</span>
+        <span><span class="dot"></span>One team, detection through enforcement</span>
       </div>
     </div>
 
-    <div class="verify-stage" aria-hidden="true">
-      <div class="vcard v-genuine">
-        <div class="vrail"></div>
-        <div class="vbody">
-          <div class="vtop">
-            <span class="vid">CG-40921</span>
-            <span class="vlabel">VERIFIED ORIGINAL</span>
+    <div class="case-panel" aria-hidden="true">
+      <div class="case-head">
+        <span class="case-id">CASE CG-40921</span>
+        <span class="case-domain">brand-casino-bonus.net</span>
+      </div>
+      <div class="case-steps">
+        <div class="case-step done">
+          <div class="case-dot"></div>
+          <div class="case-body">
+            <div class="case-row"><span class="case-label">Detected</span><span class="case-time">Day 1, 09:14</span></div>
+            <p class="case-desc">Clone site flagged by continuous monitoring</p>
           </div>
-          <div class="vname">Brand Casino Ltd.</div>
-          <div class="vdomain">brand-casino.com</div>
-          <div class="vmeta">
-            <div class="vmeta-row"><span>Domain age</span><span>6 yrs</span></div>
-            <div class="vmeta-row"><span>SSL issuer</span><span>Verified</span></div>
+        </div>
+        <div class="case-step done">
+          <div class="case-dot"></div>
+          <div class="case-body">
+            <div class="case-row"><span class="case-label">Verified</span><span class="case-time">Day 1, 11:02</span></div>
+            <p class="case-desc">Analyst confirms impersonation, evidence logged</p>
           </div>
-          <div class="vdiv"></div>
-          <div class="vstatus">
-            <span class="vstatus-dot"></span>
-            <span class="vstatus-text">Matches registered credentials</span>
+        </div>
+        <div class="case-step done">
+          <div class="case-dot"></div>
+          <div class="case-body">
+            <div class="case-row"><span class="case-label">Enforced</span><span class="case-time">Day 2, 15:40</span></div>
+            <p class="case-desc">Takedown notice issued to host and registrar</p>
+          </div>
+        </div>
+        <div class="case-step active">
+          <div class="case-dot"></div>
+          <div class="case-body">
+            <div class="case-row"><span class="case-label">Resolved</span><span class="case-time">Day 3, 08:20</span></div>
+            <p class="case-desc">Site taken offline, case closed</p>
           </div>
         </div>
       </div>
-      <div class="vcard v-flagged">
-        <div class="vrail"></div>
-        <div class="vbody">
-          <div class="vtop">
-            <span class="vid">CG-40922</span>
-            <span class="vlabel">FLAGGED IMPERSONATION</span>
-          </div>
-          <div class="vname">Brand Casino Ltd.</div>
-          <div class="vdomain">brand-casino-bonus.net</div>
-          <div class="vmeta">
-            <div class="vmeta-row"><span>Domain age</span><span>4 days</span></div>
-            <div class="vmeta-row"><span>SSL issuer</span><span>Mismatch</span></div>
-          </div>
-          <div class="vdiv"></div>
-          <div class="vstatus">
-            <span class="vstatus-dot"></span>
-            <span class="vstatus-text">Impersonates registered brand</span>
-          </div>
-        </div>
-      </div>
+      <div class="case-foot">A representative example of how we work</div>
     </div>
   </div>
 </section>
@@ -277,7 +264,7 @@
     <div class="strip-item"><b>24/7</b>Continuous monitoring</div>
     <div class="strip-item"><b>96%+</b>Takedown success rate</div>
     <div class="strip-item"><b>&lt;24h</b>Average time to case review</div>
-    <div class="strip-item"><b>100s</b>Brands protected</div>
+    <div class="strip-item"><b>100s</b>Operators &amp; platforms protected</div>
   </div>
 </div>
 
@@ -286,7 +273,7 @@
     <div class="section-head">
       <div class="eyebrow">Why CloneGuard</div>
       <h2>Protection before the problem. Enforcement after it.</h2>
-      <p>Most vendors do one or the other. CloneGuard runs both from a single team, so nothing sits in the gap between a monitoring vendor and a law firm.</p>
+      <p>Most do one or the other. CloneGuard runs both from a single team, so nothing sits in the gap between a monitoring provider and a law firm.</p>
     </div>
 
     <div class="why-grid">
@@ -358,8 +345,8 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Who we support</div>
-      <h2>Built for sectors that get overlooked.</h2>
-      <p>Mainstream vendors are slow to serve these industries. We aren't.</p>
+      <h2>Built for operators and platforms that get overlooked.</h2>
+      <p>The mainstream is slow to serve these industries. We aren't.</p>
     </div>
 
     <div class="who-grid">
@@ -390,12 +377,22 @@
       <h2>What you get with every engagement.</h2>
     </div>
 
-    <div class="benefits-strip">
-      <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>24/7 monitoring</div>
-      <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>Analyst-verified cases</div>
-      <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>iGaming &amp; Crypto specialists</div>
-      <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>One point of contact</div>
-      <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>Discreet engagement</div>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-icon"><i data-lucide="eye" width="22" height="22" stroke-width="1.75"></i></div>
+        <h3>Analyst-verified, not automated</h3>
+        <p>Every case is confirmed by a human before action is taken, so nothing gets flagged or shut down by mistake.</p>
+      </div>
+      <div class="proof-card">
+        <div class="proof-icon"><i data-lucide="layers" width="22" height="22" stroke-width="1.75"></i></div>
+        <h3>One team, detection through enforcement</h3>
+        <p>No handoff between a monitoring provider and a law firm. The same team runs monitoring, takedowns, and legal escalation.</p>
+      </div>
+      <div class="proof-card">
+        <div class="proof-icon"><i data-lucide="globe" width="22" height="22" stroke-width="1.75"></i></div>
+        <h3>Built for iGaming and Crypto specifically</h3>
+        <p>No generalist ramp-up. We already know the licensing, KYC, and threat patterns in your industry.</p>
+      </div>
     </div>
   </div>
 </section>
