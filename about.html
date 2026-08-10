@@ -113,6 +113,10 @@
   .flow-node .flow-sub{ display:block; font-size:11.5px; color: var(--fg-muted); margin-top:3px; }
   .flow-node-us .flow-sub{ color: var(--brass-gold-300); }
   .flow-arrow{ color: var(--fg-muted); align-self:center; }
+  .flow-branch{ display:grid; grid-template-columns:1fr 1fr; gap: var(--space-3); }
+  .flow-branch .flow-node{ padding: var(--space-4) var(--space-3); }
+  .flow-branch .flow-label{ font-size:13.5px; }
+  @media (max-width:480px){ .flow-branch{ grid-template-columns:1fr; } }
 
   /* ---------- FOCUS (link-list, not a card pair) ----------
      The homepage already owns the dark/light who-card pair for iGaming vs
@@ -278,14 +282,17 @@
           <div class="eyebrow">How filing and enforcement get done</div>
           <h2>One point of contact. Specialist execution behind it.</h2>
         </div>
-        <p>Trademark filings and enforcement actions are carried out with a vetted network of specialist legal and enforcement partners. You deal with one team throughout. The specialist work happens behind that relationship, not scattered across law firms and providers you have to manage yourself.</p>
+        <p>Every case starts with our internal analysts and legal team. For jurisdiction-specific filings and enforcement actions, we bring in a vetted network of specialist enforcement partners. You deal with one point of contact throughout. The specialist work happens behind that relationship, not scattered across firms and providers you have to manage yourself.</p>
       </div>
       <div class="flow-row" aria-hidden="true">
         <div class="flow-node"><span class="flow-label">You</span></div>
         <i data-lucide="chevron-down" width="16" height="16" class="flow-arrow"></i>
         <div class="flow-node flow-node-us"><span class="flow-label">CloneGuard</span><span class="flow-sub">Single point of contact</span></div>
         <i data-lucide="chevron-down" width="16" height="16" class="flow-arrow"></i>
-        <div class="flow-node"><span class="flow-label">Specialist partners</span><span class="flow-sub">Legal &amp; enforcement execution</span></div>
+        <div class="flow-branch">
+          <div class="flow-node"><span class="flow-label">Internal specialists</span><span class="flow-sub">In-house analysts &amp; legal team</span></div>
+          <div class="flow-node"><span class="flow-label">Specialist partners</span><span class="flow-sub">Legal &amp; enforcement execution</span></div>
+        </div>
       </div>
     </div>
   </div>
