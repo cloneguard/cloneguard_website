@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="design-system/styles.css">
 
 <!-- Shared site chrome: reset, nav, buttons, cards, footer (see assets/site.css). -->
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v=3">
 
 <!-- Lucide - same icon system + version referenced by components/brand/Icon.jsx -->
 <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
@@ -139,12 +139,7 @@
   .proof-card h3{ font-family: var(--font-display); font-size:16.5px; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-2); }
   .proof-card p{ font-size:13.5px; color: var(--fg-secondary); line-height: var(--leading-normal); }
 
-  /* ---------- CLOSING CTA ---------- */
-  .close-cta{ text-align:center; background: var(--ink-navy-900); color: var(--fg-on-inverse); }
-  .close-cta .wrap{ max-width:640px; }
-  .close-cta h2{ font-family: var(--font-display); font-size: clamp(28px,3.6vw,var(--text-2xl)); letter-spacing: var(--tracking-tight); margin: var(--space-4) 0 var(--space-4); color: var(--fg-on-inverse); }
-  .close-cta p{ color: var(--ink-navy-300); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-bottom: var(--space-8); }
-  .close-cta .eyebrow{ justify-content:center; }
+  /* Dark closing CTA band (.close-cta etc.) now lives in assets/site.css - shared with the About page. */
   /* Who-card pair (.who-grid etc.) now lives in assets/site.css - shared with the About page. */
 </style>
 </head>
@@ -392,6 +387,21 @@
         <div class="proof-icon"><i data-lucide="globe" width="22" height="22" stroke-width="1.75"></i></div>
         <h3>Built for iGaming and Crypto specifically</h3>
         <p>No generalist ramp-up. We already know the licensing, KYC, and threat patterns in your industry.</p>
+      </div>
+      <div class="proof-card">
+        <div class="proof-icon"><i data-lucide="user" width="22" height="22" stroke-width="1.75"></i></div>
+        <h3>Single point of contact</h3>
+        <p>One team handles your case from detection through resolution. No juggling separate vendors or law firms.</p>
+      </div>
+      <div class="proof-card">
+        <div class="proof-icon"><i data-lucide="file-check" width="22" height="22" stroke-width="1.75"></i></div>
+        <h3>Plain, no-jargon reporting</h3>
+        <p>You get a clear account of what was found and what was done about it, not a dashboard you have to interpret yourself.</p>
+      </div>
+      <div class="proof-card">
+        <div class="proof-icon"><i data-lucide="shield-check" width="22" height="22" stroke-width="1.75"></i></div>
+        <h3>Discreet engagement</h3>
+        <p>Cases are handled without drawing attention to your brand or your players. No public disclosures, no noise.</p>
       </div>
     </div>
   </div>

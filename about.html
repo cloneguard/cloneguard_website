@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="design-system/styles.css">
 
 <!-- Shared site chrome: reset, nav, buttons, cards, footer (see assets/site.css). -->
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/site.css?v=3">
 
 <!-- Lucide - same icon system + version referenced by components/brand/Icon.jsx -->
 <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
@@ -85,10 +85,21 @@
   .contrast-them p{ color: var(--fg-secondary); font-size:14.5px; line-height: var(--leading-normal); }
   .contrast-us p{ color: var(--ink-navy-300); font-size:14.5px; line-height: var(--leading-normal); }
 
-  /* ---------- WORK BADGES (How we work) ---------- */
-  .work-badges{ display:flex; gap: var(--space-4); margin: var(--space-6) 0; flex-wrap:wrap; }
-  .work-badge{ display:flex; align-items:center; gap:8px; background: var(--bg-surface); border:1px solid var(--border-default); border-radius: var(--radius-pill); padding: var(--space-3) var(--space-5); font-family: var(--font-display); font-weight: var(--weight-semibold); font-size:14px; color: var(--fg-primary); }
-  .work-badge i{ color: var(--accent-verified-strong); }
+  /* ---------- HOW WE WORK (text left, split visual right) ---------- */
+  .work-split{ display:grid; grid-template-columns:1.05fr 0.95fr; gap: var(--space-12); align-items:center; }
+  @media (max-width:900px){ .work-split{ grid-template-columns:1fr; gap: var(--space-8); } }
+  .work-split p{ color: var(--fg-secondary); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-top: var(--space-4); }
+  .work-split .work-link{ display:inline-block; margin-top: var(--space-6); color:var(--accent-verified-strong); font-weight:var(--weight-semibold); text-decoration:underline; text-underline-offset:2px; }
+  .work-visual{ border-radius: var(--radius-md); overflow:hidden; box-shadow: var(--shadow-lg); border:1px solid var(--border-default); }
+  .work-visual-half{ padding: var(--space-6) var(--space-6); background: var(--bg-surface); }
+  .work-visual-half + .work-visual-half{ border-top:1px solid var(--border-default); }
+  .work-visual-dark{ background: var(--ink-navy-900); color: var(--fg-on-inverse); }
+  .work-visual-icon{ color: var(--accent-verified-strong); margin-bottom: var(--space-3); }
+  .work-visual-dark .work-visual-icon{ color: var(--brass-gold-300); }
+  .work-visual-label{ font-family: var(--font-display); font-weight: var(--weight-semibold); font-size:16px; margin-bottom: var(--space-4); }
+  .work-visual-half ul{ list-style:none; font-size:13.5px; color: var(--fg-secondary); }
+  .work-visual-dark ul{ color: var(--ink-navy-300); }
+  .work-visual-half li{ padding:4px 0; }
 
   /* ---------- PROCESS FLOW (How filing and enforcement get done) ---------- */
   .flow-row{ display:flex; align-items:center; justify-content:center; gap: var(--space-4); margin: var(--space-8) 0; flex-wrap:wrap; }
@@ -104,12 +115,19 @@
 
   /* ---------- FOCUS (who-card pair lives in assets/site.css) ---------- */
 
-  /* ---------- CLOSE ---------- */
-  .ab-close{ text-align:center; }
-  .ab-close .wrap{ max-width:560px; }
-  .ab-close h2{ font-family: var(--font-display); font-size: clamp(26px,3.2vw,var(--text-2xl)); letter-spacing: var(--tracking-tight); margin: var(--space-4) 0 var(--space-4); }
-  .ab-close p{ color: var(--fg-secondary); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-bottom: var(--space-8); }
-  .ab-close .eyebrow{ justify-content:center; }
+  /* ---------- HOW WE OPERATE (dark numbered card grid) ----------
+     Deliberately the boldest treatment on the page - dark cards used
+     everywhere else are half a pair (contrast-us, flow-node-us); this is
+     the only section that goes fully dark across all five cards, working
+     as a strong beat right before the closing CTA. */
+  .operate-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap: var(--space-4); }
+  @media (max-width:900px){ .operate-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .operate-grid{ grid-template-columns:1fr; } }
+  .operate-card{ padding: var(--space-6) var(--space-5); text-align:center; background: var(--ink-navy-900); border-radius: var(--radius-md); }
+  .operate-num{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); color: var(--brass-gold-300); margin-bottom: var(--space-3); }
+  .operate-card h3{ font-family: var(--font-display); font-size:14.5px; font-weight: var(--weight-semibold); color: var(--fg-on-inverse); letter-spacing: var(--tracking-tight); }
+
+  /* Closing CTA (.close-cta) lives in assets/site.css - shared with the homepage. */
 </style>
 </head>
 <body>
@@ -170,7 +188,7 @@
 <section class="ab-hero band-white">
   <div class="wrap">
     <div class="eyebrow">About</div>
-    <h1>Built for the industries generalists overlook.</h1>
+    <h1>Built for the industries others overlook.</h1>
     <p class="lede">iGaming and Crypto brands get impersonated constantly, and most brand protection providers treat them as too complicated, too regulated, or too risky to bother with. We built CloneGuard specifically for that gap.</p>
   </div>
 </section>
@@ -194,7 +212,7 @@
     </div>
     <div class="contrast-pair">
       <div class="contrast-card contrast-them">
-        <div class="contrast-tag">Generalists</div>
+        <div class="contrast-tag">Everyone else</div>
         <p>Built for retail, media, and consumer tech. When a casino or a crypto exchange comes to them, the compliance questions alone can take weeks.</p>
       </div>
       <div class="contrast-card contrast-us">
@@ -207,16 +225,36 @@
 
 <section class="band-tint">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">How we work</div>
-      <h2>Protection before the problem. Enforcement after it.</h2>
+    <div class="work-split">
+      <div>
+        <div class="section-head" style="margin-bottom:0;">
+          <div class="eyebrow">How we work</div>
+          <h2>Protection before the problem. Enforcement after it.</h2>
+        </div>
+        <p>Every engagement covers two directions: protection that stops problems before they cost you a customer (trademark registration, continuous monitoring, domain and IP strategy), and enforcement that acts the moment a threat is confirmed (takedowns, cease and desist letters, negotiations, domain disputes). Most do one or the other. We run both from a single team.</p>
+        <a href="index.html#services" class="work-link">See the full model →</a>
+      </div>
+      <div class="work-visual" aria-hidden="true">
+        <div class="work-visual-half">
+          <div class="work-visual-icon"><i data-lucide="shield-check" width="22" height="22" stroke-width="1.75"></i></div>
+          <div class="work-visual-label">Protection</div>
+          <ul>
+            <li>Trademark registration</li>
+            <li>Continuous monitoring</li>
+            <li>Domain &amp; IP strategy</li>
+          </ul>
+        </div>
+        <div class="work-visual-half work-visual-dark">
+          <div class="work-visual-icon"><i data-lucide="scale" width="22" height="22" stroke-width="1.75"></i></div>
+          <div class="work-visual-label">Enforcement</div>
+          <ul>
+            <li>Takedowns</li>
+            <li>Cease and desist letters</li>
+            <li>Domain disputes</li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="work-badges">
-      <div class="work-badge"><i data-lucide="shield-check" width="20" height="20" stroke-width="1.75"></i>Protection</div>
-      <div class="work-badge"><i data-lucide="scale" width="20" height="20" stroke-width="1.75"></i>Enforcement</div>
-    </div>
-    <p>Every engagement covers two directions: protection that stops problems before they cost you a customer (trademark registration, continuous monitoring, domain and IP strategy), and enforcement that acts the moment a threat is confirmed (takedowns, cease and desist letters, negotiations, domain disputes). Most do one or the other. We run both from a single team.</p>
-    <p><a href="index.html#services" style="color:var(--accent-verified-strong); font-weight:var(--weight-semibold); text-decoration:underline; text-underline-offset:2px;">See the full model →</a></p>
   </div>
 </section>
 
@@ -269,22 +307,22 @@
       <div class="eyebrow">How we operate</div>
       <h2>What stays constant across every case.</h2>
     </div>
-    <div class="benefits-strip">
-      <div class="benefit-pill"><i data-lucide="shield-check" width="16" height="16"></i>Verified before action</div>
-      <div class="benefit-pill"><i data-lucide="file-check" width="16" height="16"></i>Plain reporting</div>
-      <div class="benefit-pill"><i data-lucide="user" width="16" height="16"></i>Single point of contact</div>
-      <div class="benefit-pill"><i data-lucide="globe" width="16" height="16"></i>Built around your industry</div>
-      <div class="benefit-pill"><i data-lucide="check" width="16" height="16"></i>Discreet engagement</div>
+    <div class="operate-grid">
+      <div class="operate-card"><div class="operate-num">01</div><h3>Verified before action</h3></div>
+      <div class="operate-card"><div class="operate-num">02</div><h3>Plain reporting</h3></div>
+      <div class="operate-card"><div class="operate-num">03</div><h3>Single point of contact</h3></div>
+      <div class="operate-card"><div class="operate-num">04</div><h3>Built around your industry</h3></div>
+      <div class="operate-card"><div class="operate-num">05</div><h3>Discreet engagement</h3></div>
     </div>
   </div>
 </section>
 
-<section class="ab-close band-tint">
+<section class="close-cta">
   <div class="wrap">
-    <div class="eyebrow">Get started</div>
+    <div class="eyebrow on-inverse">Get started</div>
     <h2>See how this works for your brand.</h2>
     <p>Send us your brand and primary domain. We'll tell you plainly what we find.</p>
-    <a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a>
+    <a href="contact.html" class="btn btn-gold btn-lg">Contact Us</a>
   </div>
 </section>
 

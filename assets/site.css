@@ -151,6 +151,11 @@ section{ padding: var(--space-24) 0; }
    sections, matching how the homepage's plain, border-free .hero looks. */
 section[class*="-hero"].band-white,
 section[class*="-hero"].band-tint{ border-top:none; border-bottom:none; }
+/* The section immediately after a hero also needs its top border stripped -
+   otherwise that section's own border-top recreates the exact same unwanted
+   line the rule above just removed from the hero's border-bottom. */
+section[class*="-hero"] + section.band-white,
+section[class*="-hero"] + section.band-tint{ border-top:none; }
 
 /* ---------- WHO-CARD PAIR (dark/light two-card motif) ----------
    Promoted from index.html - shared with the About page's Focus section. */
@@ -287,3 +292,11 @@ footer{ border-top:1px solid var(--border-default); padding: var(--space-6) 0; }
 .benefits-strip{ display:flex; flex-wrap:wrap; gap: var(--space-4); }
 .benefit-pill{ display:flex; align-items:center; gap:8px; padding: var(--space-4) var(--space-5); border:1px solid var(--border-default); border-radius: var(--radius-md); font-size:14px; color: var(--fg-primary); background: var(--bg-surface); }
 .benefit-pill i{ color: var(--accent-verified-strong); flex-shrink:0; }
+
+/* ---------- DARK CLOSING CTA BAND ----------
+   Promoted from index.html - shared with the About page's closing section. */
+.close-cta{ text-align:center; background: var(--ink-navy-900); color: var(--fg-on-inverse); }
+.close-cta .wrap{ max-width:640px; }
+.close-cta h2{ font-family: var(--font-display); font-size: clamp(28px,3.6vw,var(--text-2xl)); letter-spacing: var(--tracking-tight); margin: var(--space-4) 0 var(--space-4); color: var(--fg-on-inverse); }
+.close-cta p{ color: var(--ink-navy-300); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-bottom: var(--space-8); }
+.close-cta .eyebrow{ justify-content:center; }
