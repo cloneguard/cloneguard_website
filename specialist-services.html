@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="design-system/styles.css">
 
 <!-- Shared site chrome: reset, nav, buttons, cards, footer (see assets/site.css). -->
-<link rel="stylesheet" href="assets/site.css?v=6">
+<link rel="stylesheet" href="assets/site.css?v=7">
 
 <!-- Lucide - same icon system + version referenced by components/brand/Icon.jsx -->
 <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
@@ -54,7 +54,10 @@
   "mainEntity": [
     { "@type": "Question", "name": "How is Specialist Services different from a Protection Plan?", "acceptedAnswer": { "@type": "Answer", "text": "Protection Plans cover monitoring, takedowns, and trademark filing. Specialist Services are introduced separately, on request, when your business needs executive protection, insurance placement, or deeper IP strategy." } },
     { "@type": "Question", "name": "Do you provide cyber insurance directly?", "acceptedAnswer": { "@type": "Answer", "text": "No. We introduce you to specialist brokers who underwrite for iGaming and Crypto risk specifically, and stay involved as your point of contact." } },
-    { "@type": "Question", "name": "Can I get Specialist Services without a Protection Plan?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. These are available on their own, quoted individually based on what you need." } }
+    { "@type": "Question", "name": "Can I get Specialist Services without a Protection Plan?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. These are available on their own, quoted individually based on what you need." } },
+    { "@type": "Question", "name": "How fast can executive protection be put in place?", "acceptedAnswer": { "@type": "Answer", "text": "An initial exposure review typically starts within days of your request. Ongoing monitoring and takedown coverage for an executive's identity is scoped and confirmed from there." } },
+    { "@type": "Question", "name": "Who are the specialist partners you work with?", "acceptedAnswer": { "@type": "Answer", "text": "We work with vetted brokers and specialists selected for iGaming and Crypto risk specifically. We stay your single point of contact throughout, so you're never managing multiple vendor relationships directly." } },
+    { "@type": "Question", "name": "Does Domain & IP Portfolio Strategy include filing new trademarks?", "acceptedAnswer": { "@type": "Answer", "text": "It can. Strategy work identifies the gaps, and any resulting trademark filings are handled through our Trademark Registration service under the same point of contact." } }
   ]
 }
 </script>
@@ -219,14 +222,17 @@
     </div>
     <div class="impact-grid">
       <div class="impact-card card">
+        <div class="svc-icon"><i data-lucide="user" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Executives are a target too</h3>
         <p>Deepfake and social-engineering attacks increasingly aim at the people who can authorize a transfer, not just the brand itself.</p>
       </div>
       <div class="impact-card card">
+        <div class="svc-icon"><i data-lucide="shield-alert" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Generalist insurers don't understand this risk</h3>
         <p>Coverage built for retail or SaaS businesses often excludes the fraud patterns specific to iGaming and Crypto.</p>
       </div>
       <div class="impact-card card">
+        <div class="svc-icon"><i data-lucide="globe" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>A gap in your domain portfolio is an opening</h3>
         <p>Every unregistered variant, TLD, or lookalike is a future clone waiting to happen.</p>
       </div>
@@ -234,30 +240,78 @@
   </div>
 </section>
 
-<section class="band-white">
+<section class="how-strip" id="get-it">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">FAQ</div>
-      <h2>Specialist services, answered plainly.</h2>
+    <div class="section-head" style="margin-bottom:0;">
+      <div class="eyebrow on-inverse">Pricing &amp; access</div>
+      <h2 style="margin-top:var(--space-4);">Three ways to get specialist coverage.</h2>
     </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <h3>How is Specialist Services different from a Protection Plan?</h3>
-        <p>Protection Plans cover monitoring, takedowns, and trademark filing. Specialist Services are introduced separately, on request, when your business needs executive protection, insurance placement, or deeper IP strategy.</p>
+    <div class="path-grid">
+      <div class="path-card">
+        <div class="path-badge">Most common</div>
+        <div class="path-icon"><i data-lucide="layers" width="24" height="24" stroke-width="1.75"></i></div>
+        <h3>Included in Enterprise</h3>
+        <p>The Enterprise Protection Plan includes a specialist-services consultation as part of onboarding, at no extra cost.</p>
+        <a href="protection-plans.html">See Protection Plans →</a>
       </div>
-      <div class="faq-item">
-        <h3>Do you provide cyber insurance directly?</h3>
-        <p>No. We introduce you to specialist brokers who underwrite for iGaming and Crypto risk specifically, and stay involved as your point of contact.</p>
+      <div class="path-card">
+        <div class="path-badge">No subscription needed</div>
+        <div class="path-icon"><i data-lucide="receipt" width="24" height="24" stroke-width="1.75"></i></div>
+        <h3>Standalone, quoted individually</h3>
+        <p>Executive protection, insurance placement, and IP strategy are each available on their own, quoted for exactly what you need.</p>
+        <a href="#quote">Request a quote →</a>
       </div>
-      <div class="faq-item">
-        <h3>Can I get Specialist Services without a Protection Plan?</h3>
-        <p>Yes. These are available on their own, quoted individually based on what you need.</p>
+      <div class="path-card">
+        <div class="path-badge">For recurring needs</div>
+        <div class="path-icon"><i data-lucide="eye" width="24" height="24" stroke-width="1.75"></i></div>
+        <h3>Ongoing specialist coverage</h3>
+        <p>Need continuous executive monitoring or a standing domain-strategy review? We can scope that as an ongoing arrangement.</p>
+        <a href="contact.html">Talk to us →</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="ss-close band-tint">
+<section class="band-white" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Specialist services, answered plainly.</h2>
+    </div>
+    <div class="faq-columns">
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>How is Specialist Services different from a Protection Plan?</h3>
+          <p>Protection Plans cover monitoring, takedowns, and trademark filing. Specialist Services are introduced separately, on request, when your business needs executive protection, insurance placement, or deeper IP strategy.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you provide cyber insurance directly?</h3>
+          <p>No. We introduce you to specialist brokers who underwrite for iGaming and Crypto risk specifically, and stay involved as your point of contact.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I get Specialist Services without a Protection Plan?</h3>
+          <p>Yes. These are available on their own, quoted individually based on what you need.</p>
+        </div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>How fast can executive protection be put in place?</h3>
+          <p>An initial exposure review typically starts within days of your request. Ongoing monitoring and takedown coverage for an executive's identity is scoped and confirmed from there.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Who are the specialist partners you work with?</h3>
+          <p>We work with vetted brokers and specialists selected for iGaming and Crypto risk specifically. We stay your single point of contact throughout, so you're never managing multiple vendor relationships directly.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Does Domain &amp; IP Portfolio Strategy include filing new trademarks?</h3>
+          <p>It can. Strategy work identifies the gaps, and any resulting trademark filings are handled through our Trademark Registration service under the same point of contact.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ss-close band-tint" id="quote">
   <div class="wrap">
     <div class="eyebrow" style="justify-content:center;">Get started</div>
     <h2>Tell us what you need covered. We'll quote it directly.</h2>

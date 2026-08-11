@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="design-system/styles.css">
 
 <!-- Shared site chrome: reset, nav, buttons, cards, footer (see assets/site.css). -->
-<link rel="stylesheet" href="assets/site.css?v=6">
+<link rel="stylesheet" href="assets/site.css?v=7">
 
 <!-- Lucide - same icon system + version referenced by components/brand/Icon.jsx -->
 <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
@@ -56,7 +56,10 @@
     { "@type": "Question", "name": "When do you escalate from a takedown request to a cease and desist?", "acceptedAnswer": { "@type": "Answer", "text": "When the host or operator ignores an initial takedown request, or when the infringing party is identifiable and a direct legal notice is likely to be more effective." } },
     { "@type": "Question", "name": "How long does an opposition or cancellation take?", "acceptedAnswer": { "@type": "Answer", "text": "It varies by jurisdiction and whether the other party contests it, typically months rather than weeks. We handle the filing and manage the timeline for you." } },
     { "@type": "Question", "name": "Do I need a registered trademark before you can send a cease and desist?", "acceptedAnswer": { "@type": "Answer", "text": "No, but it strengthens the notice considerably. A registered mark gives every enforcement action real legal standing." } },
-    { "@type": "Question", "name": "What happens if the infringer ignores a cease and desist?", "acceptedAnswer": { "@type": "Answer", "text": "We escalate, to the host or registrar directly, to a formal dispute proceeding, or to litigation-adjacent options depending on the case." } }
+    { "@type": "Question", "name": "What happens if the infringer ignores a cease and desist?", "acceptedAnswer": { "@type": "Answer", "text": "We escalate, to the host or registrar directly, to a formal dispute proceeding, or to litigation-adjacent options depending on the case." } },
+    { "@type": "Question", "name": "Can you act if I don't know who's behind the infringing site?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Enforcement can be directed at the host, registrar, or platform even when the operator is anonymous, and we build the case as their identity surfaces." } },
+    { "@type": "Question", "name": "Do you charge per action or is it a flat fee?", "acceptedAnswer": { "@type": "Answer", "text": "Each action is scoped and quoted individually, since a cease and desist and a domain dispute involve very different work. You'll always see the fee before anything is filed." } },
+    { "@type": "Question", "name": "What if enforcement leads to litigation?", "acceptedAnswer": { "@type": "Answer", "text": "We manage the case up to litigation-adjacent options and bring in specialist partners for court proceedings, staying your single point of contact throughout." } }
   ]
 }
 </script>
@@ -188,26 +191,32 @@
     </div>
     <div class="action-grid">
       <div class="action-card card">
+        <div class="svc-icon"><i data-lucide="mail" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Cease and Desist Letters</h3>
         <p>A formal legal notice demanding an infringer stop, sent directly to the operator or their registrar and host.</p>
       </div>
       <div class="action-card card">
+        <div class="svc-icon"><i data-lucide="user" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Negotiations</h3>
         <p>Direct negotiation with an infringer or affiliate to resolve a dispute without escalating to litigation.</p>
       </div>
       <div class="action-card card">
+        <div class="svc-icon"><i data-lucide="flag" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Opposition Filings</h3>
         <p>Challenging a conflicting trademark application before it registers, protecting your position in a market.</p>
       </div>
       <div class="action-card card">
+        <div class="svc-icon"><i data-lucide="shield-alert" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Letters of Protest</h3>
         <p>A formal objection filed during another party's US trademark application, based on your existing rights.</p>
       </div>
       <div class="action-card card">
+        <div class="svc-icon"><i data-lucide="x" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Cancellations</h3>
         <p>Petitioning to cancel an existing registered trademark that conflicts with or infringes on yours.</p>
       </div>
       <div class="action-card card">
+        <div class="svc-icon"><i data-lucide="globe" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Domain Disputes</h3>
         <p>Formal proceedings to reclaim or shut down a domain being used to impersonate you.</p>
       </div>
@@ -223,16 +232,51 @@
     </div>
     <div class="impact-grid">
       <div class="impact-card card">
+        <div class="svc-icon"><i data-lucide="shield-alert" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Not every host responds to a report</h3>
         <p>Some hosts and registrars only act on a formal legal notice, not an informal takedown request.</p>
       </div>
       <div class="impact-card card">
+        <div class="svc-icon"><i data-lucide="clock" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Every day live compounds the damage</h3>
         <p>The longer an infringer stays live, the more customers and search rankings they capture from you.</p>
       </div>
       <div class="impact-card card">
+        <div class="svc-icon"><i data-lucide="scale" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Legal standing changes outcomes</h3>
         <p>Every enforcement action is stronger backed by a registered trademark, which is why we handle both under one team.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-strip" id="get-it">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:0;">
+      <div class="eyebrow on-inverse">Pricing &amp; access</div>
+      <h2 style="margin-top:var(--space-4);">Three ways to get enforcement handled.</h2>
+    </div>
+    <div class="path-grid">
+      <div class="path-card">
+        <div class="path-badge">Most common</div>
+        <div class="path-icon"><i data-lucide="layers" width="24" height="24" stroke-width="1.75"></i></div>
+        <h3>Included in a Protection Plan</h3>
+        <p>Enterprise plans include enforcement action credits alongside monitoring, takedowns, and filing.</p>
+        <a href="protection-plans.html">See Protection Plans →</a>
+      </div>
+      <div class="path-card">
+        <div class="path-badge">No subscription needed</div>
+        <div class="path-icon"><i data-lucide="receipt" width="24" height="24" stroke-width="1.75"></i></div>
+        <h3>One-off enforcement action</h3>
+        <p>A single cease and desist, opposition, or domain dispute, handled and quoted individually with no ongoing commitment.</p>
+        <a href="#quote">Request a quote →</a>
+      </div>
+      <div class="path-card">
+        <div class="path-badge">For repeat cases</div>
+        <div class="path-icon"><i data-lucide="flag" width="24" height="24" stroke-width="1.75"></i></div>
+        <h3>Ongoing enforcement retainer</h3>
+        <p>Facing repeat infringement across a market? We can scope an ongoing retainer instead of quoting case by case.</p>
+        <a href="contact.html">Talk to us →</a>
       </div>
     </div>
   </div>
@@ -281,38 +325,54 @@
   </div>
 </section>
 
-<section class="band-tint">
+<section class="band-tint" id="faq">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">FAQ</div>
       <h2>Brand enforcement, answered plainly.</h2>
     </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <h3>What's the difference between a takedown request and an enforcement action?</h3>
-        <p>A takedown request asks a host, registrar, or platform to remove content. Enforcement goes further, formal legal notices, opposition filings, and dispute proceedings, used when a takedown request alone doesn't resolve the issue.</p>
+    <div class="faq-columns">
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What's the difference between a takedown request and an enforcement action?</h3>
+          <p>A takedown request asks a host, registrar, or platform to remove content. Enforcement goes further, formal legal notices, opposition filings, and dispute proceedings, used when a takedown request alone doesn't resolve the issue.</p>
+        </div>
+        <div class="faq-item">
+          <h3>When do you escalate from a takedown request to a cease and desist?</h3>
+          <p>When the host or operator ignores an initial takedown request, or when the infringing party is identifiable and a direct legal notice is likely to be more effective.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long does an opposition or cancellation take?</h3>
+          <p>It varies by jurisdiction and whether the other party contests it, typically months rather than weeks. We handle the filing and manage the timeline for you.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do I need a registered trademark before you can send a cease and desist?</h3>
+          <p>No, but it strengthens the notice considerably. A registered mark gives every enforcement action real legal standing.</p>
+        </div>
       </div>
-      <div class="faq-item">
-        <h3>When do you escalate from a takedown request to a cease and desist?</h3>
-        <p>When the host or operator ignores an initial takedown request, or when the infringing party is identifiable and a direct legal notice is likely to be more effective.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How long does an opposition or cancellation take?</h3>
-        <p>It varies by jurisdiction and whether the other party contests it, typically months rather than weeks. We handle the filing and manage the timeline for you.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Do I need a registered trademark before you can send a cease and desist?</h3>
-        <p>No, but it strengthens the notice considerably. A registered mark gives every enforcement action real legal standing.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What happens if the infringer ignores a cease and desist?</h3>
-        <p>We escalate, to the host or registrar directly, to a formal dispute proceeding, or to litigation-adjacent options depending on the case.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What happens if the infringer ignores a cease and desist?</h3>
+          <p>We escalate, to the host or registrar directly, to a formal dispute proceeding, or to litigation-adjacent options depending on the case.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can you act if I don't know who's behind the infringing site?</h3>
+          <p>Yes. Enforcement can be directed at the host, registrar, or platform even when the operator is anonymous, and we build the case as their identity surfaces.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you charge per action or is it a flat fee?</h3>
+          <p>Each action is scoped and quoted individually, since a cease and desist and a domain dispute involve very different work. You'll always see the fee before anything is filed.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What if enforcement leads to litigation?</h3>
+          <p>We manage the case up to litigation-adjacent options and bring in specialist partners for court proceedings, staying your single point of contact throughout.</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="be-close band-white">
+<section class="be-close band-white" id="quote">
   <div class="wrap">
     <div class="eyebrow" style="justify-content:center;">Get started</div>
     <h2>Tell us what needs enforcing. We'll quote it directly.</h2>
