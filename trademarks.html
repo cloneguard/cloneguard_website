@@ -92,7 +92,10 @@
      register search passing, not a threat being flagged. Backed by a
      faded, rotated "refused" ghost card representing a later, conflicting
      application - visualizing the first-to-file race the hero copy
-     already promises. */
+     already promises. Brand name kept generic (not casino-specific) so it
+     reads for Crypto buyers too; classes shown span both verticals. */
+  .cert-live{ display:flex; align-items:center; justify-content:center; gap:7px; font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--accent-verified-strong); margin-bottom: var(--space-5); }
+  .cert-live-dot{ width:6px; height:6px; border-radius:50%; background: var(--accent-verified-strong); animation: radar-pulse 1.8s ease-in-out infinite; }
   .cert-stack{ position:relative; max-width:400px; margin:0 auto; }
   .cert-ghost{ position:absolute; top:-10px; right:2%; width:84%; background: var(--neutral-100); border:2px dashed var(--border-strong); border-radius: var(--radius-md); padding: var(--space-6) var(--space-5) var(--space-8); transform:rotate(6deg); z-index:0; overflow:hidden; }
   .cert-ghost-top{ display:flex; justify-content:space-between; font-family: var(--font-mono); font-size:9.5px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); margin-bottom: var(--space-3); }
@@ -116,17 +119,27 @@
   .tl-substeps li::before{ content:"\2192"; position:absolute; left:0; color: var(--brass-gold-700); font-size:11px; }
 
   /* ---------- JURISDICTIONS ---------- */
-  .where-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: var(--space-6); }
+  .where-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-6); }
+  @media (max-width:900px){ .where-grid{ grid-template-columns:1fr; } }
   .where-card{ padding: var(--space-8) var(--space-6) var(--space-6); }
+  .where-badge{ display:inline-block; font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--brass-gold-700); border:1px solid var(--border-default); border-radius: var(--radius-pill); padding:3px 10px; margin-bottom: var(--space-4); }
   .where-flag{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--brass-gold-700); margin-bottom: var(--space-3); }
   .where-card h3{ font-family: var(--font-display); font-size: var(--text-lg); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
   .where-card p{ color: var(--fg-secondary); font-size:14.5px; line-height: var(--leading-normal); }
+  .where-wide{ grid-column: 1 / -1; }
+  .where-wide-inner{ display:grid; grid-template-columns:1fr 1fr; gap: var(--space-8); margin-top: var(--space-5); }
+  @media (max-width:700px){ .where-wide-inner{ grid-template-columns:1fr; gap: var(--space-6); } }
 
-  /* ---------- INCLUDED ---------- */
-  .incl-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); gap: var(--space-6); margin-top: var(--space-10); }
-  .incl-card{ padding: var(--space-6); }
-  .incl-card h3{ font-family: var(--font-display); font-size:16px; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-2); }
-  .incl-card p{ font-size:13.5px; color: var(--fg-secondary); line-height: var(--leading-normal); }
+  /* ---------- INCLUDED (checklist, not cards - deliberately distinct from
+     the DIY-vs-CloneGuard comparison table further down the page) ---------- */
+  .incl-checklist{ display:grid; grid-template-columns:1fr 1fr; gap:0 var(--space-10); margin-top: var(--space-10); }
+  @media (max-width:700px){ .incl-checklist{ grid-template-columns:1fr; } }
+  .incl-check-item{ display:flex; gap: var(--space-3); align-items:flex-start; padding: var(--space-5) 0; border-top:1px solid var(--border-default); }
+  .incl-check-item:nth-child(-n+2){ border-top:none; }
+  @media (max-width:700px){ .incl-check-item:nth-child(2){ border-top:1px solid var(--border-default); } }
+  .incl-check-item i{ color: var(--accent-verified-strong); flex-shrink:0; margin-top:3px; }
+  .incl-check-item b{ color: var(--fg-primary); font-weight: var(--weight-semibold); font-family: var(--font-display); font-size:15px; letter-spacing: var(--tracking-tight); display:block; margin-bottom:3px; }
+  .incl-check-item span{ color: var(--fg-secondary); font-size:13.5px; line-height: var(--leading-normal); }
 
   /* ---------- CLOSE ---------- */
   .tm-close{ text-align:center; background: var(--bg-surface); }
@@ -206,29 +219,32 @@
       </div>
     </div>
 
-    <div class="cert-stack" aria-hidden="true">
-      <div class="cert-ghost">
-        <div class="cert-ghost-top"><span>Application</span><span>08 Mar 2026</span></div>
-        <div class="cert-ghost-mark">BRAND CASINO</div>
-        <div class="cert-ghost-sub">Filed 32 days after CG-TM-2214</div>
-        <div class="cert-ghost-stamp">Refused - prior mark</div>
-      </div>
-      <div class="cert-card">
-        <div class="cert-top">
-          <span class="cert-label">Certificate of Registration</span>
-          <span class="cert-id">CG-TM-2214</span>
+    <div>
+      <div class="cert-live"><span class="cert-live-dot"></span>Priority date locked, Day 0</div>
+      <div class="cert-stack" aria-hidden="true">
+        <div class="cert-ghost">
+          <div class="cert-ghost-top"><span>Application</span><span>08 Mar 2026</span></div>
+          <div class="cert-ghost-mark">YOURBRAND</div>
+          <div class="cert-ghost-sub">Filed 32 days after CG-TM-2214</div>
+          <div class="cert-ghost-stamp">Refused - prior mark</div>
         </div>
-        <div class="cert-mark">BRAND CASINO</div>
-        <div class="cert-classes">
-          <span class="cert-class">Class 41 - Gambling &amp; gaming services</span>
-          <span class="cert-class">Class 9 - Software &amp; platforms</span>
+        <div class="cert-card">
+          <div class="cert-top">
+            <span class="cert-label">Certificate of Registration</span>
+            <span class="cert-id">CG-TM-2214</span>
+          </div>
+          <div class="cert-mark">YOURBRAND</div>
+          <div class="cert-classes">
+            <span class="cert-class">Class 41 - Gambling &amp; entertainment services</span>
+            <span class="cert-class">Class 36 - Financial &amp; crypto-asset services</span>
+          </div>
+          <div class="cert-registers">
+            <div class="cert-register-row"><span>Register</span><span>UKIPO</span></div>
+            <div class="cert-register-row"><span>Filed</span><span>04 Feb 2026</span></div>
+            <div class="cert-register-row"><span>Renewal due</span><span>04 Feb 2036</span></div>
+          </div>
+          <div class="cert-stamp">Registered</div>
         </div>
-        <div class="cert-registers">
-          <div class="cert-register-row"><span>Register</span><span>UKIPO</span></div>
-          <div class="cert-register-row"><span>Filed</span><span>04 Feb 2026</span></div>
-          <div class="cert-register-row"><span>Renewal due</span><span>04 Feb 2036</span></div>
-        </div>
-        <div class="cert-stamp">Registered</div>
       </div>
     </div>
   </div>
@@ -238,7 +254,7 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">Why speed matters</div>
-      <h2>Filing early doesn't just protect the name. It's what makes every takedown after that enforceable.</h2>
+      <h2>Filing early doesn't just protect the name. It's what makes every takedown after that enforceable, and here's exactly what happens once you do.</h2>
       <p>Most trademark registers reward whoever files first, not whoever used the name first. In iGaming and Crypto, where a live brand is worth copying fast, that gap gets exploited.</p>
     </div>
     <div class="impact-grid">
@@ -258,16 +274,8 @@
         <p>A takedown backed by a registered mark is a legal right a platform has to act on. Without one, it's a request they can ignore.</p>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="band-white" id="timeline">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">What to expect</div>
-      <h2>The clock starts on the day you file, not the day you're registered.</h2>
-      <p>Timelines vary by register and whether anyone objects, but the shape is broadly the same everywhere.</p>
-    </div>
+    <div class="eyebrow" style="margin-top:var(--space-16);">The process, step by step</div>
     <div class="tl-track">
       <div class="tl-step">
         <span class="tl-dot"></span>
@@ -323,29 +331,36 @@
 
     <div class="where-grid">
       <div class="where-card card">
+        <div class="where-badge">Most requested</div>
         <div class="where-flag">United Kingdom - UKIPO</div>
         <h3>United Kingdom</h3>
         <p>One of the largest regulated online gambling markets in the world, with its own register independent of the EU since Brexit. The default first filing for any brand touching UK-facing players.</p>
       </div>
       <div class="where-card card">
-        <div class="where-flag">United States - USPTO</div>
-        <h3>United States</h3>
-        <p>Federal registration through the USPTO. Real-money gambling faces registrability restrictions here that don't apply to most Crypto and fintech brands, so we check this with you before filing, not after you've paid the fee.</p>
-      </div>
-      <div class="where-card card">
+        <div class="where-badge">Most requested</div>
         <div class="where-flag">European Union - EUIPO</div>
         <h3>European Union</h3>
         <p>A single filing covers all 27 member states in one registration, including Malta, home to the MGA and the jurisdiction most iGaming operators are actually licensed in.</p>
       </div>
       <div class="where-card card">
-        <div class="where-flag">United Arab Emirates</div>
-        <h3>UAE</h3>
-        <p>An increasingly important base for Web3 and Crypto brands, anchored by Dubai's VARA framework for virtual assets. Not a licensing route for real-money gambling brands, whose registrability options here are limited, we'll tell you plainly if that's the case.</p>
+        <div class="where-badge">Most requested</div>
+        <div class="where-flag">United States - USPTO</div>
+        <h3>United States</h3>
+        <p>Federal registration through the USPTO. Real-money gambling faces registrability restrictions here that don't apply to most Crypto and fintech brands, so we check this with you before filing, not after you've paid the fee.</p>
       </div>
-      <div class="where-card card">
-        <div class="where-flag">130+ countries - Madrid Protocol</div>
-        <h3>Rest of world</h3>
-        <p>A single base filing can extend to 130+ countries through the Madrid Protocol, the most efficient way to build out coverage once your core markets are filed.</p>
+      <div class="where-card where-wide card">
+        <div class="where-badge">Most comprehensive</div>
+        <h3>Everywhere else</h3>
+        <div class="where-wide-inner">
+          <div>
+            <div class="where-flag">130+ countries - Madrid Protocol</div>
+            <p>A single base filing can extend to 130+ countries through the Madrid Protocol, the most efficient way to build out coverage once your core markets are filed.</p>
+          </div>
+          <div>
+            <div class="where-flag">Direct filing - all other markets</div>
+            <p>For markets outside the Protocol, including the UAE, anchored by Dubai's VARA framework for Web3 and Crypto brands (not a route for real-money gambling marks, we'll tell you plainly if that's the case), we file directly with the local office.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -357,41 +372,34 @@
       <div class="eyebrow">What's included</div>
       <h2>Every filing, handled properly.</h2>
     </div>
-    <div class="incl-grid">
-      <div class="incl-card card">
-        <div class="svc-icon"><i data-lucide="search" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>Register search</h3>
-        <p>Conflict check across the relevant register before you commit to filing.</p>
+    <div class="incl-checklist">
+      <div class="incl-check-item">
+        <i data-lucide="check" width="18" height="18" stroke-width="2.5"></i>
+        <div><b>Register search</b><span>Conflict check across the relevant register before you commit to filing.</span></div>
       </div>
-      <div class="incl-card card">
-        <div class="svc-icon"><i data-lucide="layers" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>Sector-fit classes</h3>
-        <p>Goods and services drafted and classified correctly for iGaming and Crypto.</p>
+      <div class="incl-check-item">
+        <i data-lucide="check" width="18" height="18" stroke-width="2.5"></i>
+        <div><b>Sector-fit classes</b><span>Goods and services drafted and classified correctly for iGaming and Crypto.</span></div>
       </div>
-      <div class="incl-card card">
-        <div class="svc-icon"><i data-lucide="scale" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>Attorney of record</h3>
-        <p>Application filed by a licensed trademark attorney, not a template.</p>
+      <div class="incl-check-item">
+        <i data-lucide="check" width="18" height="18" stroke-width="2.5"></i>
+        <div><b>Attorney of record</b><span>Application filed by a licensed trademark attorney, not a template.</span></div>
       </div>
-      <div class="incl-card card">
-        <div class="svc-icon"><i data-lucide="eye" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>Examination tracked</h3>
-        <p>Procedural queries and deadlines handled for you, start to finish.</p>
+      <div class="incl-check-item">
+        <i data-lucide="check" width="18" height="18" stroke-width="2.5"></i>
+        <div><b>Examination tracked</b><span>Procedural queries and deadlines handled for you, start to finish.</span></div>
       </div>
-      <div class="incl-card card">
-        <div class="svc-icon"><i data-lucide="receipt" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>Itemized fees</h3>
-        <p>Every cost agreed in writing before any work begins.</p>
+      <div class="incl-check-item">
+        <i data-lucide="check" width="18" height="18" stroke-width="2.5"></i>
+        <div><b>Itemized fees</b><span>Every cost agreed in writing before any work begins.</span></div>
       </div>
-      <div class="incl-card card">
-        <div class="svc-icon"><i data-lucide="user" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>One point of contact</h3>
-        <p>No separate law firm relationship to manage.</p>
+      <div class="incl-check-item">
+        <i data-lucide="check" width="18" height="18" stroke-width="2.5"></i>
+        <div><b>One point of contact</b><span>No separate law firm relationship to manage.</span></div>
       </div>
-      <div class="incl-card card">
-        <div class="svc-icon"><i data-lucide="shield-check" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>10-year validity</h3>
-        <p>Once granted, your registration is valid for 10 years, and renewable indefinitely after that.</p>
+      <div class="incl-check-item">
+        <i data-lucide="check" width="18" height="18" stroke-width="2.5"></i>
+        <div><b>10-year validity</b><span>Once granted, your registration is valid for 10 years, and renewable indefinitely after that.</span></div>
       </div>
     </div>
   </div>
@@ -400,7 +408,7 @@
 <section class="how-strip" id="get-it">
   <div class="wrap">
     <div class="section-head" style="margin-bottom:0;">
-      <div class="eyebrow on-inverse">Pricing &amp; access</div>
+      <div class="eyebrow on-inverse">Purchase paths</div>
       <h2 style="margin-top:var(--space-4);">Three ways to get registered.</h2>
     </div>
     <div class="path-grid">
