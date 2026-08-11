@@ -102,6 +102,7 @@
   .cov-card{ padding: var(--space-6); }
   .cov-card h3{ font-family: var(--font-display); font-size:16px; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-2); }
   .cov-card p{ font-size:13.5px; color: var(--fg-secondary); line-height: var(--leading-normal); }
+  .cov-example{ font-family: var(--font-mono); font-size:11px; color: var(--fg-muted); margin-top: var(--space-3); padding-top: var(--space-3); border-top:1px solid var(--border-default); }
 
   /* ---------- HOW IT WORKS ---------- */
   .step-num{ width:36px; height:36px; border-radius:50%; background: var(--accent-verified-soft); color: var(--brass-gold-700); display:flex; align-items:center; justify-content:center; font-family: var(--font-display); font-weight: var(--weight-semibold); font-size:15px; margin-bottom: var(--space-4); }
@@ -229,7 +230,7 @@
     </div>
 
     <div class="scan-stack" aria-hidden="true">
-      <div class="scan-live"><span class="radar-live-dot"></span>Live monitoring, 24/7 across 5 channels</div>
+      <div class="scan-live"><span class="radar-live-dot"></span>Live monitoring, 24/7</div>
       <div class="browser-card state-live">
         <div class="browser-bar">
           <div class="browser-dots"><span></span><span></span><span></span></div>
@@ -265,28 +266,33 @@
     <div class="cov-grid">
       <div class="cov-card card">
         <div class="svc-icon"><i data-lucide="globe" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>Casino &amp; sportsbook sites</h3>
-        <p>Cloned platforms and fake deposit or sign-up pages built to mimic yours.</p>
-      </div>
-      <div class="cov-card card">
-        <div class="svc-icon"><i data-lucide="wallet" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>Exchange &amp; wallet logins</h3>
-        <p>Spoofed login and deposit screens built to phish credentials and drain funds.</p>
+        <h3>Domains</h3>
+        <p>Cloned sites, spoofed login and deposit pages, and lookalike URLs built to phish credentials.</p>
+        <div class="cov-example">e.g. brand-casino-bonus.net</div>
       </div>
       <div class="cov-card card">
         <div class="svc-icon"><i data-lucide="smartphone" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>App stores</h3>
+        <h3>Apps</h3>
         <p>Impersonating apps listed under your name on iOS and Android.</p>
+        <div class="cov-example">e.g. "Brand Casino VIP" on Google Play</div>
+      </div>
+      <div class="cov-card card">
+        <div class="svc-icon"><i data-lucide="layout-grid" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Marketplaces</h3>
+        <p>Malicious browser extensions and add-ons impersonating your platform or wallet tools.</p>
+        <div class="cov-example">e.g. fake wallet extension on the Chrome Web Store</div>
       </div>
       <div class="cov-card card">
         <div class="svc-icon"><i data-lucide="at-sign" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>Social &amp; ads</h3>
-        <p>Fake accounts and paid ads impersonating your brand or support team.</p>
+        <h3>Social &amp; messaging</h3>
+        <p>Fake accounts, paid ad impersonation, and impersonating support channels on Telegram and Discord.</p>
+        <div class="cov-example">e.g. @brandcasino_support on Telegram</div>
       </div>
       <div class="cov-card card">
-        <div class="svc-icon"><i data-lucide="send" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>Telegram &amp; Discord</h3>
-        <p>Impersonating community and support channels built to scam your players.</p>
+        <div class="svc-icon"><i data-lucide="eye" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Dark web</h3>
+        <p>Leaked credentials, stolen accounts, and brand mentions surfaced before they're used against you.</p>
+        <div class="cov-example">e.g. bulk player credentials for sale</div>
       </div>
     </div>
   </div>
