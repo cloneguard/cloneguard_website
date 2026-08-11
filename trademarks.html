@@ -54,7 +54,7 @@
   "mainEntity": [
     { "@type": "Question", "name": "Do I need a registered trademark before CloneGuard can monitor or take down impersonators?", "acceptedAnswer": { "@type": "Answer", "text": "No. Monitoring and takedowns can start on day one. But a registered mark turns a takedown request into an enforceable legal right, which is why we recommend filing early rather than after the first clone appears." } },
     { "@type": "Question", "name": "How much does a filing cost?", "acceptedAnswer": { "@type": "Answer", "text": "There's no published rate card, because government fees and complexity vary by jurisdiction and class. You get an itemized quote after a free check, agreed in writing before any work begins." } },
-    { "@type": "Question", "name": "What's the difference between filing in the UK, EU, and through the Madrid Protocol?", "acceptedAnswer": { "@type": "Answer", "text": "The UK and EU are separate registers, UKIPO and EUIPO, each requiring its own filing. The Madrid Protocol lets a single base filing extend to 100+ other jurisdictions, including most of the markets iGaming and Crypto brands expand into." } },
+    { "@type": "Question", "name": "What's the difference between filing in the UK, US, EU, UAE, and through the Madrid Protocol?", "acceptedAnswer": { "@type": "Answer", "text": "The UK, US, EU, and UAE each have their own register, UKIPO, USPTO, EUIPO, and the UAE trademark office, each requiring its own filing. The Madrid Protocol lets a single base filing extend to 130+ other jurisdictions once your core markets are covered." } },
     { "@type": "Question", "name": "Can I file a trademark in the US for a real-money gambling brand?", "acceptedAnswer": { "@type": "Answer", "text": "It depends. Real-money gambling faces registrability restrictions at the USPTO that don't apply to most Crypto and fintech brands. We check this with you first, and would rather tell you a market's wrong for you than take the filing fee anyway." } },
     { "@type": "Question", "name": "What happens if someone objects to my application?", "acceptedAnswer": { "@type": "Answer", "text": "Your attorney of record handles the response, whether that's an office action, a third-party opposition, or a co-existence negotiation. It's covered as part of the filing, not billed as a separate legal matter." } },
     { "@type": "Question", "name": "How long is a trademark valid once granted?", "acceptedAnswer": { "@type": "Answer", "text": "Ten years from registration, and renewable indefinitely after that as long as you keep using the mark and file the renewal on time." } },
@@ -89,8 +89,17 @@
   /* Clearance certificate mock-up: light, bordered like a physical
      certificate, with a rotated stamp badge. Intentionally not the dark
      "case file" card used elsewhere on the site - this page is about a
-     register search passing, not a threat being flagged. */
-  .cert-card{ position:relative; background: var(--bg-surface); border:2px solid var(--ink-navy-900); border-radius: var(--radius-md); padding: var(--space-8) var(--space-6) var(--space-10); max-width:380px; margin:0 auto; box-shadow: var(--shadow-lg); overflow:hidden; }
+     register search passing, not a threat being flagged. Backed by a
+     faded, rotated "refused" ghost card representing a later, conflicting
+     application - visualizing the first-to-file race the hero copy
+     already promises. */
+  .cert-stack{ position:relative; max-width:400px; margin:0 auto; }
+  .cert-ghost{ position:absolute; top:-10px; right:2%; width:84%; background: var(--neutral-100); border:2px dashed var(--border-strong); border-radius: var(--radius-md); padding: var(--space-6) var(--space-5) var(--space-8); transform:rotate(6deg); z-index:0; overflow:hidden; }
+  .cert-ghost-top{ display:flex; justify-content:space-between; font-family: var(--font-mono); font-size:9.5px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); margin-bottom: var(--space-3); }
+  .cert-ghost-mark{ font-family: var(--font-display); font-weight: var(--weight-bold); font-size:18px; letter-spacing: var(--tracking-tight); color: var(--fg-muted); opacity:.65; margin-bottom: var(--space-2); }
+  .cert-ghost-sub{ font-family: var(--font-mono); font-size:10px; color: var(--fg-muted); opacity:.8; }
+  .cert-ghost-stamp{ position:absolute; right:10px; bottom:12px; transform:rotate(-7deg); border:2px solid var(--accent-flagged-strong); color: var(--accent-flagged-strong); background: var(--accent-flagged-soft); font-family: var(--font-mono); font-size:10px; font-weight: var(--weight-semibold); letter-spacing: var(--tracking-mono-label); text-transform:uppercase; padding:5px 10px; border-radius: var(--radius-sm); }
+  .cert-card{ position:relative; z-index:1; transform:rotate(-1.5deg); background: var(--bg-surface); border:2px solid var(--ink-navy-900); border-radius: var(--radius-md); padding: var(--space-8) var(--space-6) var(--space-10); margin:0 auto; box-shadow: var(--shadow-lg); overflow:hidden; }
   .cert-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: var(--space-6); }
   .cert-label{ font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); }
   .cert-id{ font-family: var(--font-mono); font-size:10px; color: var(--fg-muted); }
@@ -101,20 +110,20 @@
   .cert-register-row{ display:flex; justify-content:space-between; font-family: var(--font-mono); font-size:11.5px; padding:6px 0; color: var(--fg-secondary); }
   .cert-stamp{ position:absolute; right:-6px; bottom:18px; transform:rotate(-9deg); border:2px solid var(--accent-verified-strong); color: var(--accent-verified-strong); background: var(--accent-verified-soft); font-family: var(--font-mono); font-size:11.5px; font-weight: var(--weight-semibold); letter-spacing: var(--tracking-mono-label); text-transform:uppercase; padding:8px 14px; border-radius: var(--radius-sm); }
 
-  /* Timeline component (.tl-track etc.) now lives in assets/site.css - shared with the iGaming and Crypto pages. */
+  /* Timeline component (.tl-track etc.) now lives in assets/site.css - shared with the iGaming and Crypto pages. Sub-points per step are page-local. */
+  .tl-substeps{ list-style:none; margin: var(--space-3) 0 0; padding:0; display:flex; flex-direction:column; gap: var(--space-2); }
+  .tl-substeps li{ font-size:12.5px; color: var(--fg-secondary); line-height: var(--leading-normal); padding-left: var(--space-4); position:relative; }
+  .tl-substeps li::before{ content:"\2192"; position:absolute; left:0; color: var(--brass-gold-700); font-size:11px; }
 
   /* ---------- JURISDICTIONS ---------- */
-  .where-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-6); }
-  @media (max-width:900px){ .where-grid{ grid-template-columns:1fr; } }
+  .where-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: var(--space-6); }
   .where-card{ padding: var(--space-8) var(--space-6) var(--space-6); }
   .where-flag{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--brass-gold-700); margin-bottom: var(--space-3); }
   .where-card h3{ font-family: var(--font-display); font-size: var(--text-lg); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
   .where-card p{ color: var(--fg-secondary); font-size:14.5px; line-height: var(--leading-normal); }
 
   /* ---------- INCLUDED ---------- */
-  .incl-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-6); margin-top: var(--space-10); }
-  @media (max-width:900px){ .incl-grid{ grid-template-columns:1fr 1fr; } }
-  @media (max-width:600px){ .incl-grid{ grid-template-columns:1fr; } }
+  .incl-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(210px,1fr)); gap: var(--space-6); margin-top: var(--space-10); }
   .incl-card{ padding: var(--space-6); }
   .incl-card h3{ font-family: var(--font-display); font-size:16px; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-2); }
   .incl-card p{ font-size:13.5px; color: var(--fg-secondary); line-height: var(--leading-normal); }
@@ -186,7 +195,7 @@
     <div>
       <div class="eyebrow">Trademark Registration</div>
       <h1>Own the name before <span class="accent">someone else files it.</span></h1>
-      <p class="lede">Registration is the legal foundation everything else stands on. Without it, a takedown is a favour a platform does you. With it, it's a right you can enforce. Filed end to end by a licensed trademark attorney, built for how iGaming and Crypto brands actually operate - one point of contact, one flat process, no law-firm hourly billing.</p>
+      <p class="lede">Registration is the legal foundation everything else stands on: without it, a takedown is a favour a platform does you. Filed end to end by a licensed attorney, one point of contact, one flat process, no law-firm hourly billing.</p>
       <div class="tm-hero-ctas">
         <a href="#file" class="btn btn-primary btn-lg">Check Your Trademark for Free</a>
         <a href="protection-plans.html" class="btn btn-secondary btn-lg">See Protection Plans</a>
@@ -197,22 +206,30 @@
       </div>
     </div>
 
-    <div class="cert-card" aria-hidden="true">
-      <div class="cert-top">
-        <span class="cert-label">Certificate of Registration</span>
-        <span class="cert-id">CG-TM-2214</span>
+    <div class="cert-stack" aria-hidden="true">
+      <div class="cert-ghost">
+        <div class="cert-ghost-top"><span>Application</span><span>08 Mar 2026</span></div>
+        <div class="cert-ghost-mark">BRAND CASINO</div>
+        <div class="cert-ghost-sub">Filed 32 days after CG-TM-2214</div>
+        <div class="cert-ghost-stamp">Refused - prior mark</div>
       </div>
-      <div class="cert-mark">BRAND CASINO</div>
-      <div class="cert-classes">
-        <span class="cert-class">Class 41 - Gambling &amp; gaming services</span>
-        <span class="cert-class">Class 9 - Software &amp; platforms</span>
+      <div class="cert-card">
+        <div class="cert-top">
+          <span class="cert-label">Certificate of Registration</span>
+          <span class="cert-id">CG-TM-2214</span>
+        </div>
+        <div class="cert-mark">BRAND CASINO</div>
+        <div class="cert-classes">
+          <span class="cert-class">Class 41 - Gambling &amp; gaming services</span>
+          <span class="cert-class">Class 9 - Software &amp; platforms</span>
+        </div>
+        <div class="cert-registers">
+          <div class="cert-register-row"><span>Register</span><span>UKIPO</span></div>
+          <div class="cert-register-row"><span>Filed</span><span>04 Feb 2026</span></div>
+          <div class="cert-register-row"><span>Renewal due</span><span>04 Feb 2036</span></div>
+        </div>
+        <div class="cert-stamp">Registered</div>
       </div>
-      <div class="cert-registers">
-        <div class="cert-register-row"><span>Register</span><span>UKIPO</span></div>
-        <div class="cert-register-row"><span>Filed</span><span>04 Feb 2026</span></div>
-        <div class="cert-register-row"><span>Renewal due</span><span>04 Feb 2036</span></div>
-      </div>
-      <div class="cert-stamp">Registered</div>
     </div>
   </div>
 </section>
@@ -257,24 +274,40 @@
         <div class="tl-when">Day 0</div>
         <h3>Filed</h3>
         <p>Your filing date is what's protected from this point, even while examination is still ongoing.</p>
+        <ul class="tl-substeps">
+          <li>Priority is locked in immediately, before a competitor can register a similar mark.</li>
+          <li>You can already cite the pending application in a takedown request.</li>
+        </ul>
       </div>
       <div class="tl-step">
         <span class="tl-dot"></span>
         <div class="tl-when">Month 2 to 3</div>
         <h3>Published</h3>
         <p>The application is published on the register, opening a window for third parties to raise an objection.</p>
+        <ul class="tl-substeps">
+          <li>If the examiner raises an office action, your attorney of record handles the response, no separate legal engagement.</li>
+          <li>This is where most DIY filings stall: an unanswered office action can kill an otherwise sound application.</li>
+        </ul>
       </div>
       <div class="tl-step">
         <span class="tl-dot"></span>
         <div class="tl-when">Month 3 to 4</div>
         <h3>Opposition window</h3>
         <p>If no one objects in this window, the application moves forward to registration.</p>
+        <ul class="tl-substeps">
+          <li>If a third party opposes, we manage the response, from negotiation to a formal defense.</li>
+          <li>Most applications in this sector clear this stage without a contested opposition.</li>
+        </ul>
       </div>
       <div class="tl-step">
         <span class="tl-dot"></span>
         <div class="tl-when">Month 4 to 18</div>
         <h3>Registered</h3>
         <p>Certificate issued. Valid for 10 years, and renewable indefinitely after that.</p>
+        <ul class="tl-substeps">
+          <li>Renewal deadlines are tracked and flagged to you well ahead of time.</li>
+          <li>This is what turns every future takedown request into an enforceable legal right.</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -295,14 +328,24 @@
         <p>One of the largest regulated online gambling markets in the world, with its own register independent of the EU since Brexit. The default first filing for any brand touching UK-facing players.</p>
       </div>
       <div class="where-card card">
-        <div class="where-flag">European Union - EUIPO</div>
-        <h3>European Union</h3>
-        <p>A single filing covers all 27 member states in one registration, including Malta, home to the MGA and the jurisdiction most iGaming operators are actually licensed in. One of the most efficient filings available for this sector.</p>
+        <div class="where-flag">United States - USPTO</div>
+        <h3>United States</h3>
+        <p>Federal registration through the USPTO. Real-money gambling faces registrability restrictions here that don't apply to most Crypto and fintech brands, so we check this with you before filing, not after you've paid the fee.</p>
       </div>
       <div class="where-card card">
-        <div class="where-flag">100+ jurisdictions - Madrid Protocol</div>
+        <div class="where-flag">European Union - EUIPO</div>
+        <h3>European Union</h3>
+        <p>A single filing covers all 27 member states in one registration, including Malta, home to the MGA and the jurisdiction most iGaming operators are actually licensed in.</p>
+      </div>
+      <div class="where-card card">
+        <div class="where-flag">United Arab Emirates</div>
+        <h3>UAE</h3>
+        <p>An increasingly important base for Web3 and Crypto brands, anchored by Dubai's VARA framework for virtual assets. Not a licensing route for real-money gambling brands, whose registrability options here are limited, we'll tell you plainly if that's the case.</p>
+      </div>
+      <div class="where-card card">
+        <div class="where-flag">130+ countries - Madrid Protocol</div>
         <h3>Rest of world</h3>
-        <p>Direct filing in over 100 jurisdictions, including the UAE, anchored by Dubai's VARA framework for Web3 and Crypto brands. A single base filing can extend to 130+ countries through the Madrid Protocol. On the US specifically: real-money gambling faces registrability restrictions at the USPTO that don't apply to most Crypto and fintech brands, so we check that with you first. We'd rather tell you a market's wrong for you than take the filing fee anyway.</p>
+        <p>A single base filing can extend to 130+ countries through the Madrid Protocol, the most efficient way to build out coverage once your core markets are filed.</p>
       </div>
     </div>
   </div>
@@ -344,6 +387,11 @@
         <div class="svc-icon"><i data-lucide="user" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>One point of contact</h3>
         <p>No separate law firm relationship to manage.</p>
+      </div>
+      <div class="incl-card card">
+        <div class="svc-icon"><i data-lucide="shield-check" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>10-year validity</h3>
+        <p>Once granted, your registration is valid for 10 years, and renewable indefinitely after that.</p>
       </div>
     </div>
   </div>
@@ -446,8 +494,8 @@
           <p>There's no published rate card, because government fees and complexity vary by jurisdiction and class. You get an itemized quote after a free check, agreed in writing before any work begins.</p>
         </div>
         <div class="faq-item">
-          <h3>What's the difference between filing in the UK, EU, and through the Madrid Protocol?</h3>
-          <p>The UK and EU are separate registers, UKIPO and EUIPO, each requiring its own filing. The Madrid Protocol lets a single base filing extend to 100+ other jurisdictions, including most of the markets iGaming and Crypto brands expand into.</p>
+          <h3>What's the difference between filing in the UK, US, EU, UAE, and through the Madrid Protocol?</h3>
+          <p>The UK, US, EU, and UAE each have their own register, UKIPO, USPTO, EUIPO, and the UAE trademark office, each requiring its own filing. The Madrid Protocol lets a single base filing extend to 130+ other jurisdictions once your core markets are covered.</p>
         </div>
         <div class="faq-item">
           <h3>Can I file a trademark in the US for a real-money gambling brand?</h3>
