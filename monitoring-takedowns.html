@@ -36,6 +36,23 @@
 <!-- Lucide - same icon system + version referenced by components/brand/Icon.jsx -->
 <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What's the difference between monitoring and takedowns?", "acceptedAnswer": { "@type": "Answer", "text": "Monitoring is continuous detection across web, apps, and social. Takedowns are the enforcement action once a case is verified - getting the confirmed clone or fake account removed. You get both as part of the same service; monitoring runs continuously and takedowns are metered into your plan." } },
+    { "@type": "Question", "name": "Can I buy takedowns without a monitoring subscription?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Single takedowns and takedown packs are available as one-off purchases, quoted directly without a Protection Plan subscription." } },
+    { "@type": "Question", "name": "Can I get monitoring without takedown execution, or vice versa?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, on request. If you already run detection or enforcement in-house, we can scope and quote just the half you're missing." } },
+    { "@type": "Question", "name": "How fast is a confirmed case actioned?", "acceptedAnswer": { "@type": "Answer", "text": "Typically within 24 hours of confirmation, though response time varies by host, registrar, or platform." } },
+    { "@type": "Question", "name": "What happens if a host or platform doesn't respond?", "acceptedAnswer": { "@type": "Answer", "text": "We escalate. Persistent cases move to Brand Enforcement - formal legal notices and dispute proceedings - to force resolution." } },
+    { "@type": "Question", "name": "Do you monitor app stores and messaging apps, or just websites?", "acceptedAnswer": { "@type": "Answer", "text": "Both. Coverage spans casino and exchange sites, app stores, social platforms, and messaging apps like Telegram and Discord." } },
+    { "@type": "Question", "name": "How do you avoid false positives?", "acceptedAnswer": { "@type": "Answer", "text": "Every flagged case is reviewed by a human analyst before any action is taken - nothing is actioned automatically." } },
+    { "@type": "Question", "name": "What do I get in reporting?", "acceptedAnswer": { "@type": "Answer", "text": "A clear monthly report covering every case detected and actioned - no dashboard login required." } }
+  ]
+}
+</script>
+
 <style>
   /*
     Page-specific styles only - shared chrome, impact-card grid, and the
@@ -93,6 +110,17 @@
   .how-num{ font-family: var(--font-mono); font-size:12px; color: var(--brass-gold-300); margin-bottom: var(--space-4); }
   .how-step h3{ font-family: var(--font-display); font-size:19px; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
   .how-step p{ font-size:14px; line-height: var(--leading-normal); color: var(--ink-navy-300); }
+
+  /* ---------- HOW TO GET THIS ---------- */
+  .path-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background: var(--ink-navy-700); margin-top: var(--space-12); border-radius: var(--radius-md); overflow:hidden; }
+  @media (max-width:800px){ .path-grid{ grid-template-columns:1fr; } }
+  .path-card{ background: var(--ink-navy-800); padding: var(--space-8) var(--space-6); display:flex; flex-direction:column; }
+  .path-badge{ display:inline-block; align-self:flex-start; font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--brass-gold-300); border:1px solid var(--ink-navy-600); border-radius: var(--radius-pill); padding:3px 10px; margin-bottom: var(--space-4); }
+  .path-icon{ color: var(--brass-gold-300); margin-bottom: var(--space-4); }
+  .path-card h3{ font-family: var(--font-display); font-size:18px; letter-spacing: var(--tracking-tight); color: var(--fg-on-inverse); margin-bottom: var(--space-3); }
+  .path-card p{ font-size:13.5px; line-height: var(--leading-normal); color: var(--ink-navy-300); margin-bottom: var(--space-5); flex:1; }
+  .path-card a{ font-size:13px; font-weight: var(--weight-semibold); color: var(--brass-gold-300); display:inline-flex; align-items:center; gap:4px; }
+  .path-card a:hover{ color: var(--brass-gold-100); }
 
   /* ---------- HOW CASES RESOLVE (moved from homepage) ---------- */
   .test-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap: var(--space-6); margin-top: var(--space-12); }
@@ -391,10 +419,89 @@
         <span class="badge badge-verified">Typical resolution: under 24 hours</span>
       </div>
       <div class="test-card card">
-        <div class="case-tag">Trademark Registration</div>
-        <h3>Screened, filed, registered.</h3>
-        <p>Your mark is screened for conflicts and filed with the relevant IP office, closing the gap copycats rely on to register lookalike marks first.</p>
-        <span class="badge badge-verified">&lt;6 months to registration</span>
+        <div class="case-tag">Social &amp; Support - Takedown</div>
+        <h3>Flagged, reported, removed.</h3>
+        <p>A fake support account impersonating your brand on Telegram is reported with evidence to the platform - typically removed within a day of confirmation.</p>
+        <span class="badge badge-verified">Typical resolution: under 24 hours</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-strip">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:0;">
+      <div class="eyebrow on-inverse">How to get this</div>
+      <h2 style="margin-top:var(--space-4);">Three ways to get monitoring and takedowns.</h2>
+    </div>
+    <div class="path-grid">
+      <div class="path-card">
+        <div class="path-badge">Most common</div>
+        <div class="path-icon"><i data-lucide="layers" width="24" height="24" stroke-width="1.75"></i></div>
+        <h3>Included in a Protection Plan</h3>
+        <p>Monitoring runs continuously as the base of every plan. Takedowns are metered in, with a set number included per month and top-up packs available if you need more.</p>
+        <a href="protection-plans.html">See Protection Plans →</a>
+      </div>
+      <div class="path-card">
+        <div class="path-badge">No subscription needed</div>
+        <div class="path-icon"><i data-lucide="receipt" width="24" height="24" stroke-width="1.75"></i></div>
+        <h3>One-off takedown packs</h3>
+        <p>Need a takedown handled without committing to a plan? Single takedowns and takedown packs are available as one-off purchases, quoted directly.</p>
+        <a href="protection-plans.html#quote">Get a quote →</a>
+      </div>
+      <div class="path-card">
+        <div class="path-badge">On request</div>
+        <div class="path-icon"><i data-lucide="search" width="24" height="24" stroke-width="1.75"></i></div>
+        <h3>Monitoring-only or takedowns-only</h3>
+        <p>Already run detection or enforcement in-house? We'll scope and quote just the half you're missing, monitoring on its own or takedown execution on its own.</p>
+        <a href="contact.html">Talk to us →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-tint" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>Monitoring &amp; Takedowns, answered plainly.</h2>
+    </div>
+    <div class="faq-columns">
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What's the difference between monitoring and takedowns?</h3>
+          <p>Monitoring is continuous detection across web, apps, and social. Takedowns are the enforcement action once a case is verified - getting the confirmed clone or fake account removed. You get both as part of the same service; monitoring runs continuously and takedowns are metered into your plan.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I buy takedowns without a monitoring subscription?</h3>
+          <p>Yes. Single takedowns and takedown packs are available as one-off purchases, quoted directly without a Protection Plan subscription.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I get monitoring without takedown execution, or vice versa?</h3>
+          <p>Yes, on request. If you already run detection or enforcement in-house, we can scope and quote just the half you're missing.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How fast is a confirmed case actioned?</h3>
+          <p>Typically within 24 hours of confirmation, though response time varies by host, registrar, or platform.</p>
+        </div>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What happens if a host or platform doesn't respond?</h3>
+          <p>We escalate. Persistent cases move to Brand Enforcement - formal legal notices and dispute proceedings - to force resolution.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you monitor app stores and messaging apps, or just websites?</h3>
+          <p>Both. Coverage spans casino and exchange sites, app stores, social platforms, and messaging apps like Telegram and Discord.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do you avoid false positives?</h3>
+          <p>Every flagged case is reviewed by a human analyst before any action is taken - nothing is actioned automatically.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What do I get in reporting?</h3>
+          <p>A clear monthly report covering every case detected and actioned - no dashboard login required.</p>
+        </div>
       </div>
     </div>
   </div>
