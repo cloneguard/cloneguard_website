@@ -67,10 +67,10 @@
 <style>
   /*
     Page-specific styles only - shared chrome, impact/cmp/faq components
-    live in assets/site.css. Own identity: the enforcement-actions feed
-    (what was done, not what was found) and a 6-card service grid, distinct
-    from the certificate motif on Trademarks and the browser motif on
-    Monitoring.
+    live in assets/site.css. Own identity: the escalation-track hero visual
+    (a case moving from an ignored takedown to resolution) and a 6-card
+    service grid split into two triggered groups, distinct from the
+    certificate motif on Trademarks and the browser motif on Monitoring.
   */
 
   /* ---------- HERO ---------- */
@@ -82,13 +82,40 @@
   .be-hero p.lede{ font-size: var(--text-md); color: var(--fg-secondary); line-height: var(--leading-relaxed); max-width: 460px; margin-bottom: var(--space-8); }
   .be-hero-ctas{ display:flex; gap: var(--space-3); flex-wrap:wrap; }
 
-  /* ---------- ACTIONS GRID ---------- */
+  /* Escalation case file: dark card showing a real case moving step by
+     step from an ignored takedown request through to resolution - the
+     visual proof of the headline, not a random list of unrelated cases. */
+  .escalation-card{ background: var(--ink-navy-900); border-radius: var(--radius-md); padding: var(--space-8) var(--space-6); box-shadow: var(--shadow-lg); max-width:380px; margin:0 auto; }
+  .escalation-label{ font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--ink-navy-300); margin-bottom: var(--space-6); }
+  .escalation-track{ position:relative; padding-left: var(--space-8); }
+  .escalation-track::before{ content:""; position:absolute; left:9px; top:4px; bottom:20px; width:2px; background: var(--ink-navy-700); }
+  .escalation-step{ position:relative; padding-bottom: var(--space-6); }
+  .escalation-step:last-child{ padding-bottom:0; }
+  .escalation-dot{ position:absolute; left:-32px; top:1px; width:18px; height:18px; border-radius:50%; display:flex; align-items:center; justify-content:center; background: var(--ink-navy-800); border:2px solid var(--ink-navy-600); }
+  .escalation-step.is-done .escalation-dot{ background: var(--accent-verified-strong); border-color: var(--accent-verified-strong); color: var(--ink-navy-900); }
+  .escalation-step.is-active .escalation-dot{ background: var(--accent-flagged-strong); border-color: var(--accent-flagged-strong); animation: radar-pulse 1.8s ease-in-out infinite; }
+  .escalation-step h4{ font-family: var(--font-display); font-size:14.5px; font-weight: var(--weight-semibold); color: var(--fg-on-inverse); margin-bottom:3px; }
+  .escalation-step p{ font-size:12px; color: var(--ink-navy-300); line-height:1.4; }
+  .escalation-status{ font-family: var(--font-mono); font-size:10px; text-transform:uppercase; letter-spacing: var(--tracking-mono-label); }
+  .escalation-status.status-ignored{ color: var(--accent-flagged-strong); }
+  .escalation-status.status-active{ color: var(--brass-gold-300); }
+  .escalation-status.status-resolved{ color: var(--accent-verified-strong); }
+
+  /* ---------- ACTIONS GRID (two triggered groups, not one flat list) ---------- */
+  .action-group-label{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--brass-gold-700); margin: var(--space-12) 0 var(--space-5); }
+  .action-group-label:first-of-type{ margin-top:0; }
   .action-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-6); }
   @media (max-width:900px){ .action-grid{ grid-template-columns:1fr 1fr; } }
   @media (max-width:600px){ .action-grid{ grid-template-columns:1fr; } }
   .action-card{ padding: var(--space-6); }
   .action-card h3{ font-family: var(--font-display); font-size:16px; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-2); }
+  .action-when{ font-size:12.5px; color: var(--accent-verified-strong); font-weight: var(--weight-semibold); line-height: var(--leading-normal); margin-bottom: var(--space-3); }
   .action-card p{ font-size:13.5px; color: var(--fg-secondary); line-height: var(--leading-normal); }
+
+  /* ---------- PURCHASE PATHS (2-up here, not 3 - brand enforcement isn't
+     bundled into Protection Plans, unlike Monitoring or Trademarks) ---------- */
+  #get-it .path-grid{ grid-template-columns: repeat(2,1fr); max-width:760px; margin-left:auto; margin-right:auto; }
+  @media (max-width:800px){ #get-it .path-grid{ grid-template-columns:1fr; } }
 
   /* ---------- CLOSE ---------- */
   .be-close{ text-align:center; }
@@ -165,19 +192,29 @@
       </div>
     </div>
 
-    <div class="feed-card" aria-hidden="true">
-      <div class="feed-label">Illustrative enforcement activity</div>
-      <div class="feed-row">
-        <span class="feed-desc">Cease and desist sent - brand-casino-vip.net</span>
-        <span class="feed-status status-flagged">Sent</span>
-      </div>
-      <div class="feed-row">
-        <span class="feed-desc">Opposition filed - conflicting application</span>
-        <span class="feed-status status-flagged">Filed</span>
-      </div>
-      <div class="feed-row">
-        <span class="feed-desc">Domain dispute - brandexchange-secure.io</span>
-        <span class="feed-status status-removed">Transferred</span>
+    <div class="escalation-card" aria-hidden="true">
+      <div class="escalation-label">Escalation case file · CG-BE-0847</div>
+      <div class="escalation-track">
+        <div class="escalation-step is-done">
+          <span class="escalation-dot"><i data-lucide="check" width="10" height="10" stroke-width="3"></i></span>
+          <h4>Takedown request sent</h4>
+          <p>Day 0 · <span class="escalation-status status-ignored">No response</span></p>
+        </div>
+        <div class="escalation-step is-done">
+          <span class="escalation-dot"><i data-lucide="check" width="10" height="10" stroke-width="3"></i></span>
+          <h4>Cease and desist sent</h4>
+          <p>Day 3 · <span class="escalation-status status-active">Escalated</span></p>
+        </div>
+        <div class="escalation-step is-active">
+          <span class="escalation-dot"></span>
+          <h4>Domain dispute filed</h4>
+          <p>Day 12 · <span class="escalation-status status-active">In progress</span></p>
+        </div>
+        <div class="escalation-step">
+          <span class="escalation-dot"></span>
+          <h4>Resolved</h4>
+          <p><span class="escalation-status status-resolved">Domain transferred</span></p>
+        </div>
       </div>
     </div>
   </div>
@@ -187,64 +224,51 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">What we handle</div>
-      <h2>Six actions, one team.</h2>
+      <h2>Six actions, one team, grouped by when you'd actually need them.</h2>
+      <p>Some hosts only act on a formal legal notice, not a takedown request, and every day an infringer stays live compounds the damage. Every action below is stronger backed by a registered trademark, which is why we handle both under one team.</p>
     </div>
+
+    <div class="action-group-label">When an infringer is live</div>
     <div class="action-grid">
       <div class="action-card card">
         <div class="svc-icon"><i data-lucide="mail" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Cease and Desist Letters</h3>
+        <p class="action-when">Use when: an infringer ignores your takedown request and you need a direct legal notice to force a response.</p>
         <p>A formal legal notice demanding an infringer stop, sent directly to the operator or their registrar and host.</p>
+      </div>
+      <div class="action-card card">
+        <div class="svc-icon"><i data-lucide="globe" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Domain Disputes</h3>
+        <p class="action-when">Use when: a domain is impersonating you and the registrar won't act on an informal request.</p>
+        <p>Formal proceedings to reclaim or shut down a domain being used to impersonate you.</p>
       </div>
       <div class="action-card card">
         <div class="svc-icon"><i data-lucide="user" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Negotiations</h3>
+        <p class="action-when">Use when: you'd rather resolve a dispute directly than escalate to a full legal proceeding.</p>
         <p>Direct negotiation with an infringer or affiliate to resolve a dispute without escalating to litigation.</p>
       </div>
+    </div>
+
+    <div class="action-group-label">When it's about the trademark register</div>
+    <div class="action-grid">
       <div class="action-card card">
         <div class="svc-icon"><i data-lucide="flag" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Opposition Filings</h3>
-        <p>Challenging a conflicting trademark application before it registers, protecting your position in a market.</p>
+        <p class="action-when">Use when: someone else is trying to register a trademark that conflicts with yours, before it's granted.</p>
+        <p>Challenging a conflicting application before it registers, protecting your position in a market.</p>
       </div>
       <div class="action-card card">
         <div class="svc-icon"><i data-lucide="shield-alert" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Letters of Protest</h3>
+        <p class="action-when">Use when: a conflicting US application is pending and you want to flag it before it's even published.</p>
         <p>A formal objection filed during another party's US trademark application, based on your existing rights.</p>
       </div>
       <div class="action-card card">
         <div class="svc-icon"><i data-lucide="x" width="20" height="20" stroke-width="1.75"></i></div>
         <h3>Cancellations</h3>
+        <p class="action-when">Use when: a conflicting mark has already been registered and needs removing from the register.</p>
         <p>Petitioning to cancel an existing registered trademark that conflicts with or infringes on yours.</p>
-      </div>
-      <div class="action-card card">
-        <div class="svc-icon"><i data-lucide="globe" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>Domain Disputes</h3>
-        <p>Formal proceedings to reclaim or shut down a domain being used to impersonate you.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="band-tint">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Why it matters</div>
-      <h2>A takedown request only goes so far.</h2>
-    </div>
-    <div class="impact-grid">
-      <div class="impact-card card">
-        <div class="svc-icon"><i data-lucide="shield-alert" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>Not every host responds to a report</h3>
-        <p>Some hosts and registrars only act on a formal legal notice, not an informal takedown request.</p>
-      </div>
-      <div class="impact-card card">
-        <div class="svc-icon"><i data-lucide="clock" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>Every day live compounds the damage</h3>
-        <p>The longer an infringer stays live, the more customers and search rankings they capture from you.</p>
-      </div>
-      <div class="impact-card card">
-        <div class="svc-icon"><i data-lucide="scale" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>Legal standing changes outcomes</h3>
-        <p>Every enforcement action is stronger backed by a registered trademark, which is why we handle both under one team.</p>
       </div>
     </div>
   </div>
@@ -254,16 +278,10 @@
   <div class="wrap">
     <div class="section-head" style="margin-bottom:0;">
       <div class="eyebrow on-inverse">Purchase paths</div>
-      <h2 style="margin-top:var(--space-4);">Three ways to get enforcement handled.</h2>
+      <h2 style="margin-top:var(--space-4);">Two ways to get enforcement handled.</h2>
+      <p style="color:var(--ink-navy-300); margin-top:var(--space-3);">Not bundled into a Protection Plan, since enforcement work varies too much case to case to price up front. It's handled one of two ways.</p>
     </div>
     <div class="path-grid">
-      <div class="path-card">
-        <div class="path-badge">Most common</div>
-        <div class="path-icon"><i data-lucide="layers" width="24" height="24" stroke-width="1.75"></i></div>
-        <h3>Included in a Protection Plan</h3>
-        <p>Enterprise plans include enforcement action credits alongside monitoring, takedowns, and filing.</p>
-        <a href="protection-plans.html">See Protection Plans →</a>
-      </div>
       <div class="path-card">
         <div class="path-badge">No subscription needed</div>
         <div class="path-icon"><i data-lucide="receipt" width="24" height="24" stroke-width="1.75"></i></div>
