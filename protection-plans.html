@@ -430,8 +430,16 @@
   ];
   let state = { currency:'USD', billing:'annual', brands:0 };
 
+  function roundUpTo9(v){
+    // Smallest number ending in 9 that is >= v, so every price shown
+    // (in any currency, at any brand/billing combination) follows the
+    // same ...9 convention as the base USD list prices, instead of
+    // landing on whatever raw FX or multi-brand math produces.
+    return Math.ceil((v + 1) / 10) * 10 - 1;
+  }
+
   function fmt(n, cur){
-    const v = Math.round(n * rates[cur]);
+    const v = roundUpTo9(n * rates[cur]);
     return symbols[cur] + v.toLocaleString();
   }
 
