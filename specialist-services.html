@@ -66,9 +66,10 @@
   /*
     Page-specific styles only - shared chrome, impact/faq components live
     in assets/site.css. Own identity: a coverage-summary card (policy-style
-    rows), distinct from the dark activity feed on iGaming/Crypto/Brand
-    Enforcement, since this page is about ad-hoc specialist coverage, not
-    detection or enforcement activity.
+    rows with live matching status), distinct from the dark activity feed
+    on iGaming/Crypto and the escalation track on Brand Enforcement, since
+    this page is about ad-hoc specialist introductions, not detection or
+    enforcement activity.
   */
 
   /* ---------- HERO ---------- */
@@ -80,20 +81,34 @@
   .ss-hero p.lede{ font-size: var(--text-md); color: var(--fg-secondary); line-height: var(--leading-relaxed); max-width: 460px; margin-bottom: var(--space-8); }
   .ss-hero-ctas{ display:flex; gap: var(--space-3); flex-wrap:wrap; }
 
-  /* Coverage-summary card: light, document-style, policy-sheet feel. */
+  /* Coverage-summary card: light, document-style, policy-sheet feel, with
+     a live matching indicator and per-row status instead of three
+     identical "On request" tags - shows this as an active process. */
+  .coverage-live{ display:flex; align-items:center; justify-content:center; gap:7px; font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--brass-gold-700); margin-bottom: var(--space-5); }
+  .coverage-live-dot{ width:6px; height:6px; border-radius:50%; background: var(--brass-gold-700); animation: radar-pulse 1.8s ease-in-out infinite; }
   .coverage-card{ background: var(--bg-surface); border:1px solid var(--border-default); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); max-width:380px; margin:0 auto; overflow:hidden; }
   .coverage-head{ background: var(--ink-navy-900); color: var(--fg-on-inverse); padding: var(--space-5) var(--space-6); font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; }
-  .coverage-row{ display:flex; justify-content:space-between; align-items:center; gap: var(--space-3); padding: var(--space-5) var(--space-6); border-top:1px solid var(--border-default); }
+  .coverage-row{ display:flex; align-items:center; gap: var(--space-3); padding: var(--space-5) var(--space-6); border-top:1px solid var(--border-default); }
   .coverage-row:first-of-type{ border-top:none; }
-  .coverage-label{ font-size:13.5px; color: var(--fg-primary); font-weight: var(--weight-medium); }
-  .coverage-tag{ font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); white-space:nowrap; }
+  .coverage-row-icon{ width:32px; height:32px; border-radius:50%; background: var(--accent-verified-soft); color: var(--brass-gold-700); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .coverage-label{ font-size:13.5px; color: var(--fg-primary); font-weight: var(--weight-medium); flex:1; }
+  .coverage-status{ display:flex; align-items:center; gap:6px; font-family: var(--font-mono); font-size:9.5px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); white-space:nowrap; }
+  .coverage-status-dot{ width:5px; height:5px; border-radius:50%; background: var(--brass-gold-700); animation: radar-pulse 1.8s ease-in-out infinite; flex-shrink:0; }
+  .coverage-foot{ padding: var(--space-4) var(--space-6); border-top:1px solid var(--border-default); font-family: var(--font-mono); font-size:10.5px; color: var(--fg-muted); text-align:center; }
 
-  /* ---------- ACTIONS GRID (reuses action-card sizing from Brand Enforcement, 3-up) ---------- */
+  /* ---------- WHAT WE COVER (folds "why it matters" into each card via
+     .ss-why, instead of a separate duplicate icon grid) ---------- */
   .ss-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-6); }
   @media (max-width:900px){ .ss-grid{ grid-template-columns:1fr; } }
   .ss-card{ padding: var(--space-8) var(--space-6) var(--space-6); }
   .ss-card h3{ font-family: var(--font-display); font-size: var(--text-lg); letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
+  .ss-why{ font-size:12.5px; color: var(--accent-verified-strong); font-weight: var(--weight-semibold); line-height: var(--leading-normal); margin-bottom: var(--space-3); }
   .ss-card p{ color: var(--fg-secondary); font-size:14.5px; line-height: var(--leading-normal); }
+
+  /* ---------- PURCHASE PATHS (2-up here - three unrelated services share
+     the same two purchase mechanics: one-off or ongoing, not bundled) ---------- */
+  #get-it .path-grid{ grid-template-columns: repeat(2,1fr); max-width:760px; margin-left:auto; margin-right:auto; }
+  @media (max-width:800px){ #get-it .path-grid{ grid-template-columns:1fr; } }
 
   /* ---------- CLOSE ---------- */
   .ss-close{ text-align:center; }
@@ -170,19 +185,26 @@
       </div>
     </div>
 
-    <div class="coverage-card" aria-hidden="true">
-      <div class="coverage-head">Specialist coverage</div>
-      <div class="coverage-row">
-        <span class="coverage-label">Executive &amp; VIP Protection</span>
-        <span class="coverage-tag">On request</span>
-      </div>
-      <div class="coverage-row">
-        <span class="coverage-label">Cyber Insurance Placement</span>
-        <span class="coverage-tag">On request</span>
-      </div>
-      <div class="coverage-row">
-        <span class="coverage-label">Domain &amp; IP Portfolio Strategy</span>
-        <span class="coverage-tag">On request</span>
+    <div>
+      <div class="coverage-live"><span class="coverage-live-dot"></span>Specialist matching in progress</div>
+      <div class="coverage-card" aria-hidden="true">
+        <div class="coverage-head">Specialist introductions</div>
+        <div class="coverage-row">
+          <div class="coverage-row-icon"><i data-lucide="shield-check" width="16" height="16" stroke-width="1.75"></i></div>
+          <span class="coverage-label">Executive &amp; VIP Protection</span>
+          <span class="coverage-status"><span class="coverage-status-dot"></span>Reviewing exposure</span>
+        </div>
+        <div class="coverage-row">
+          <div class="coverage-row-icon"><i data-lucide="layout-grid" width="16" height="16" stroke-width="1.75"></i></div>
+          <span class="coverage-label">Cyber Insurance Placement</span>
+          <span class="coverage-status"><span class="coverage-status-dot"></span>Matching broker</span>
+        </div>
+        <div class="coverage-row">
+          <div class="coverage-row-icon"><i data-lucide="file-check" width="16" height="16" stroke-width="1.75"></i></div>
+          <span class="coverage-label">Domain &amp; IP Portfolio Strategy</span>
+          <span class="coverage-status"><span class="coverage-status-dot"></span>Scoping gaps</span>
+        </div>
+        <div class="coverage-foot">Typically matched with a vetted specialist within 2 business days</div>
       </div>
     </div>
   </div>
@@ -192,49 +214,26 @@
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">What we cover</div>
-      <h2>Three services, introduced as you need them.</h2>
+      <h2>Three services, introduced as you need them, for the risks a takedown report doesn't cover.</h2>
     </div>
     <div class="ss-grid">
       <div class="ss-card card">
         <div class="svc-icon"><i data-lucide="shield-check" width="22" height="22" stroke-width="1.75"></i></div>
         <h3>Executive &amp; VIP Protection</h3>
+        <p class="ss-why">Why it matters: deepfake and social-engineering attacks increasingly target the people who can authorize a transfer, not just the brand.</p>
         <p>Digital protection for the people whose identities can be used to compromise your brand: deepfake monitoring, impersonation takedowns, and personal exposure reviews for executives and key staff.</p>
       </div>
       <div class="ss-card card">
         <div class="svc-icon"><i data-lucide="layout-grid" width="22" height="22" stroke-width="1.75"></i></div>
         <h3>Cyber Insurance Placement</h3>
+        <p class="ss-why">Why it matters: coverage built for retail or SaaS businesses often excludes the fraud patterns specific to iGaming and Crypto.</p>
         <p>Introductions to specialist insurance brokers for coverage built around iGaming and Crypto risk profiles, which most generalist insurers won't underwrite.</p>
       </div>
       <div class="ss-card card">
         <div class="svc-icon"><i data-lucide="file-check" width="22" height="22" stroke-width="1.75"></i></div>
         <h3>Domain &amp; IP Portfolio Strategy</h3>
+        <p class="ss-why">Why it matters: every unregistered variant, TLD, or lookalike is a future clone waiting to happen.</p>
         <p>Proactive domain acquisition and a structured view of your wider IP position, so gaps get closed before someone else fills them.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="band-tint">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Why it matters</div>
-      <h2>The risks that don't show up in a takedown report.</h2>
-    </div>
-    <div class="impact-grid">
-      <div class="impact-card card">
-        <div class="svc-icon"><i data-lucide="user" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>Executives are a target too</h3>
-        <p>Deepfake and social-engineering attacks increasingly aim at the people who can authorize a transfer, not just the brand itself.</p>
-      </div>
-      <div class="impact-card card">
-        <div class="svc-icon"><i data-lucide="shield-alert" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>Generalist insurers don't understand this risk</h3>
-        <p>Coverage built for retail or SaaS businesses often excludes the fraud patterns specific to iGaming and Crypto.</p>
-      </div>
-      <div class="impact-card card">
-        <div class="svc-icon"><i data-lucide="globe" width="20" height="20" stroke-width="1.75"></i></div>
-        <h3>A gap in your domain portfolio is an opening</h3>
-        <p>Every unregistered variant, TLD, or lookalike is a future clone waiting to happen.</p>
       </div>
     </div>
   </div>
@@ -244,16 +243,10 @@
   <div class="wrap">
     <div class="section-head" style="margin-bottom:0;">
       <div class="eyebrow on-inverse">Purchase paths</div>
-      <h2 style="margin-top:var(--space-4);">Three ways to get specialist coverage.</h2>
+      <h2 style="margin-top:var(--space-4);">Two ways to get specialist coverage.</h2>
+      <p style="color:var(--ink-navy-300); margin-top:var(--space-3);">Not bundled into a Protection Plan, since each of the three services is introduced separately and priced for what you actually need. It's handled one of two ways.</p>
     </div>
     <div class="path-grid">
-      <div class="path-card">
-        <div class="path-badge">Most common</div>
-        <div class="path-icon"><i data-lucide="layers" width="24" height="24" stroke-width="1.75"></i></div>
-        <h3>Included in Enterprise</h3>
-        <p>The Enterprise Protection Plan includes a specialist-services consultation as part of onboarding, at no extra cost.</p>
-        <a href="protection-plans.html">See Protection Plans →</a>
-      </div>
       <div class="path-card">
         <div class="path-badge">No subscription needed</div>
         <div class="path-icon"><i data-lucide="receipt" width="24" height="24" stroke-width="1.75"></i></div>
@@ -262,10 +255,10 @@
         <a href="#quote">Request a quote →</a>
       </div>
       <div class="path-card">
-        <div class="path-badge">For recurring needs</div>
+        <div class="path-badge">For ongoing needs</div>
         <div class="path-icon"><i data-lucide="eye" width="24" height="24" stroke-width="1.75"></i></div>
         <h3>Ongoing specialist coverage</h3>
-        <p>Need continuous executive monitoring or a standing domain-strategy review? We can scope that as an ongoing arrangement.</p>
+        <p>Need continuous executive monitoring or a standing domain-strategy review? We can scope that as an ongoing arrangement instead of a one-off.</p>
         <a href="contact.html">Talk to us →</a>
       </div>
     </div>
