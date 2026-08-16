@@ -249,7 +249,7 @@
         <div class="tier-price">$949<sup>/mo</sup></div>
         <ul class="tier-list">
           <li><i data-lucide="check" width="15" height="15"></i>Full monitoring coverage, one brand</li>
-          <li><i data-lucide="check" width="15" height="15"></i>4 per month included takedowns, pooled across brands</li>
+          <li><i data-lucide="check" width="15" height="15"></i>4 takedowns per month, pooled across brands</li>
           <li><i data-lucide="check" width="15" height="15"></i>Additional brands: 0 × $379/mo</li>
           <li><i data-lucide="check" width="15" height="15"></i>Extra takedowns: $129 each beyond your 4</li>
           <li><i data-lucide="check" width="15" height="15"></i>20% off trademark filing</li>
@@ -265,7 +265,7 @@
         <div class="tier-price">$1,949<sup>/mo</sup></div>
         <ul class="tier-list">
           <li><i data-lucide="check" width="15" height="15"></i>Full monitoring coverage, one brand</li>
-          <li><i data-lucide="check" width="15" height="15"></i>12 per month included takedowns, pooled across brands</li>
+          <li><i data-lucide="check" width="15" height="15"></i>12 takedowns per month, pooled across brands</li>
           <li><i data-lucide="check" width="15" height="15"></i>Additional brands: 0 × $329/mo</li>
           <li><i data-lucide="check" width="15" height="15"></i>Extra takedowns: $109 each beyond your 12</li>
           <li><i data-lucide="check" width="15" height="15"></i>30% off trademark filing</li>
@@ -480,7 +480,7 @@
               '<li><i data-lucide="check" width="15" height="15"></i>Takedowns pay-as-you-go: ' + fmt(t.takedownRate, state.currency) + ' each</li>' +
               '<li><i data-lucide="check" width="15" height="15"></i>No monthly takedown commitment</li>'
             : '<li><i data-lucide="check" width="15" height="15"></i>Full monitoring coverage, one brand</li>' +
-              '<li><i data-lucide="check" width="15" height="15"></i>' + t.included + ' per month included takedowns, pooled across brands</li>' +
+              '<li><i data-lucide="check" width="15" height="15"></i>' + t.included + ' takedowns per month, pooled across brands</li>' +
               '<li><i data-lucide="check" width="15" height="15"></i>Additional brands: ' + state.brands + ' × ' + fmt(t.brandPrice, state.currency) + '/mo</li>' +
               '<li><i data-lucide="check" width="15" height="15"></i>Extra takedowns: ' + fmt(t.overageRate, state.currency) + ' each beyond your ' + t.included + '</li>') +
           (state.billing === 'annual' ? '<li><i data-lucide="check" width="15" height="15"></i>' + t.tmDiscount + ' off trademark filing</li>' : '') +
