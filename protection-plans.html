@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Protection Plans - CloneGuard</title>
-<meta name="description" content="Foundation, Growth, and Enterprise subscriptions bundle monitoring, takedowns, and trademark filing for iGaming and Crypto brands. Anything outside your plan is quoted on request.">
+<meta name="description" content="Monitor, Growth, Scale, and Enterprise plans for iGaming and Crypto brands, from pay-as-you-go monitoring to bundled takedown volume, with a subscriber discount on trademark filing. Anything outside your plan is quoted on request.">
 
 <!-- Favicon -->
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cloneguard.co/protection-plans.html">
 <meta property="og:title" content="Protection Plans - CloneGuard">
-<meta property="og:description" content="Foundation, Growth, and Enterprise subscriptions bundle monitoring, takedowns, and trademark filing for iGaming and Crypto brands. Anything outside your plan is quoted on request.">
+<meta property="og:description" content="Monitor, Growth, Scale, and Enterprise plans for iGaming and Crypto brands, from pay-as-you-go monitoring to bundled takedown volume, with a subscriber discount on trademark filing. Anything outside your plan is quoted on request.">
 <meta property="og:image" content="https://cloneguard.co/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -24,7 +24,7 @@
 <!-- Twitter card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Protection Plans - CloneGuard">
-<meta name="twitter:description" content="Foundation, Growth, and Enterprise subscriptions bundle monitoring, takedowns, and trademark filing for iGaming and Crypto brands. Anything outside your plan is quoted on request.">
+<meta name="twitter:description" content="Monitor, Growth, Scale, and Enterprise plans for iGaming and Crypto brands, from pay-as-you-go monitoring to bundled takedown volume, with a subscriber discount on trademark filing. Anything outside your plan is quoted on request.">
 <meta name="twitter:image" content="https://cloneguard.co/og-image.png">
 
 <!-- Design system: tokens + base only (see design-system/README.md). -->
@@ -50,9 +50,9 @@
     "@type": "OfferCatalog",
     "name": "Protection Plans",
     "itemListElement": [
-      { "@type": "Offer", "name": "Foundation", "price": "299", "priceCurrency": "USD" },
-      { "@type": "Offer", "name": "Growth", "price": "799", "priceCurrency": "USD" },
-      { "@type": "Offer", "name": "Enterprise", "price": "12000", "priceCurrency": "USD" }
+      { "@type": "Offer", "name": "Monitor", "price": "229", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Growth", "price": "549", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Scale", "price": "1199", "priceCurrency": "USD" }
     ]
   }
 }
@@ -62,9 +62,12 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What happens if I go over my included takedowns?", "acceptedAnswer": { "@type": "Answer", "text": "Extra takedowns are billed at the discounted top-up rate for your tier, or you can request a one-off pack. There is no automatic overage charge." } },
-    { "@type": "Question", "name": "Can I switch tiers later?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can move up or down between Foundation, Growth, and Enterprise at your next billing cycle." } },
-    { "@type": "Question", "name": "Is trademark filing really included?", "acceptedAnswer": { "@type": "Answer", "text": "One trademark filing is included with any annual subscription. Monthly billing does not include a filing." } },
+    { "@type": "Question", "name": "What's the difference between Monitor and the bundled plans?", "acceptedAnswer": { "@type": "Answer", "text": "Monitor is pay-as-you-go: full monitoring coverage with no monthly takedown commitment, billed per takedown as they happen. Growth and Scale bundle a monthly takedown allowance at a lower per-unit rate, which works out cheaper once you're actioning more than the occasional case." } },
+    { "@type": "Question", "name": "Are included takedowns shared across all my brands, or per brand?", "acceptedAnswer": { "@type": "Answer", "text": "Shared account-wide. Adding a brand adds monitoring coverage for that brand, it does not add to your included takedown allowance." } },
+    { "@type": "Question", "name": "What happens if I go over my included takedowns?", "acceptedAnswer": { "@type": "Answer", "text": "Billed at your tier's overage rate ($79 on Growth, $59 on Scale), or you can request a one-off pack. There is no automatic overage charge." } },
+    { "@type": "Question", "name": "Can I switch tiers later?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can move between Monitor, Growth, Scale, and Enterprise at your next billing cycle." } },
+    { "@type": "Question", "name": "Is trademark filing included in my plan?", "acceptedAnswer": { "@type": "Answer", "text": "Not bundled in, deliberately, so you're never paying for a filing you don't need. Annual subscribers get a discount instead: 10% off on Monitor, 20% off on Growth, 30% off on Scale. Enterprise has filing scoped into the contract directly." } },
+    { "@type": "Question", "name": "How is pricing worked out for additional brands?", "acceptedAnswer": { "@type": "Answer", "text": "Each brand needs its own monitoring coverage, so additional brands are priced per brand. On Monitor every brand is priced the same; on Growth and Scale, the per-brand rate gets cheaper as you move up a tier." } },
     { "@type": "Question", "name": "What currencies can I pay in?", "acceptedAnswer": { "@type": "Answer", "text": "USD, GBP, and EUR. Prices are converted automatically at checkout." } },
     { "@type": "Question", "name": "What if I need something that isn't covered by my plan?", "acceptedAnswer": { "@type": "Answer", "text": "Send us details of what you need. We quote it separately and apply your subscriber discount where it applies." } }
   ]
@@ -96,8 +99,9 @@
   .stepper span{ font-size:14px; font-weight: var(--weight-semibold); min-width:14px; text-align:center; }
 
   /* ---------- TIER GRID ---------- */
-  .tier-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: var(--space-6); align-items:stretch; }
-  @media (max-width:900px){ .tier-grid{ grid-template-columns:1fr; } }
+  .tier-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap: var(--space-5); align-items:stretch; }
+  @media (max-width:1100px){ .tier-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (max-width:600px){ .tier-grid{ grid-template-columns:1fr; } }
   .tier-card{ padding: var(--space-8) var(--space-6); display:flex; flex-direction:column; position:relative; }
   .tier-card.tier-highlight{ border-color: var(--brass-gold-500); box-shadow: var(--shadow-md); }
   .tier-flag{ position:absolute; top:-13px; left:50%; transform:translateX(-50%); background: var(--ink-navy-900); color: var(--brass-gold-300); font-family: var(--font-mono); font-size:10.5px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; padding:5px 14px; border-radius: var(--radius-pill); }
@@ -111,11 +115,15 @@
   .tier-list i{ flex-shrink:0; margin-top:2px; color: var(--accent-verified-strong); }
   .tier-card .btn{ width:100%; margin-top: var(--space-6); }
 
-  /* ---------- QUOTE SECTION (replaces itemized on-request pricing) ---------- */
-  .quote-layout{ display:grid; grid-template-columns:1fr 1fr; gap: var(--space-16); align-items:center; }
-  @media (max-width:800px){ .quote-layout{ grid-template-columns:1fr; gap: var(--space-8); } }
-  .quote-pills{ display:flex; flex-wrap:wrap; gap: var(--space-3); }
-  .quote-pill{ font-size:13.5px; color: var(--fg-primary); background: var(--bg-surface); border:1px solid var(--border-default); border-radius: var(--radius-md); padding: var(--space-3) var(--space-4); }
+  /* ---------- QUOTE SECTION (links out to each service's own Purchase
+     Paths section, instead of a flat list of unlinked action names) ---------- */
+  .quote-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap: var(--space-5); margin-top: var(--space-10); }
+  @media (max-width:700px){ .quote-grid{ grid-template-columns:1fr; } }
+  .quote-card{ padding: var(--space-6); display:flex; flex-direction:column; }
+  .quote-card h3{ font-family: var(--font-display); font-size:16px; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-2); }
+  .quote-card p{ font-size:13.5px; color: var(--fg-secondary); line-height: var(--leading-normal); margin-bottom: var(--space-4); flex:1; }
+  .quote-card a{ font-size:13px; font-weight: var(--weight-semibold); color: var(--accent-verified-strong); text-decoration:underline; text-underline-offset:2px; }
+  .quote-card a:hover{ color: var(--brass-gold-700); }
 
   /* FAQ component (.faq-list etc.) now lives in assets/site.css - shared with the iGaming and Crypto pages. */
 
@@ -180,8 +188,8 @@
 <section class="pr-hero band-white">
   <div class="wrap">
     <div class="eyebrow">Protection Plans</div>
-    <h1>One flat subscription. Choose your level of coverage.</h1>
-    <p class="lede">Foundation, Growth, and Enterprise bundle monitoring, takedowns, and trademark filing under one contract. Anything outside your plan is quoted on request.</p>
+    <h1>Pay for monitoring. Choose how you want takedowns handled.</h1>
+    <p class="lede">Monitor is pay-as-you-go. Growth and Scale bundle a monthly takedown allowance at a lower rate. Enterprise is scoped to your portfolio. All plans include a subscriber discount on trademark filing.</p>
   </div>
 </section>
 
@@ -222,14 +230,29 @@
     -->
     <div class="tier-grid" id="tier-grid">
       <div class="card tier-card">
-        <div class="tier-name">Foundation</div>
-        <div class="tier-period">per month, billed annually</div>
-        <div class="tier-price">$299<sup>/mo</sup></div>
+        <div class="tier-name">Monitor</div>
+        <div class="tier-period">per month, per brand, billed annually</div>
+        <div class="tier-price">$229<sup>/mo</sup></div>
         <ul class="tier-list">
-          <li><i data-lucide="check" width="15" height="15"></i>2 per month included takedowns</li>
-          <li><i data-lucide="check" width="15" height="15"></i>Additional brands: 0 × $150/mo</li>
-          <li><i data-lucide="check" width="15" height="15"></i>Extra takedowns: +5 takedowns for $249</li>
-          <li><i data-lucide="check" width="15" height="15"></i>One trademark filing included</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Continuous monitoring, one brand</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Takedowns pay-as-you-go: $99 each</li>
+          <li><i data-lucide="check" width="15" height="15"></i>No monthly takedown commitment</li>
+          <li><i data-lucide="check" width="15" height="15"></i>10% off trademark filing</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Analyst-verified cases only</li>
+        </ul>
+        <a href="contact.html" class="btn btn-secondary btn-md">Get started</a>
+      </div>
+
+      <div class="card tier-card">
+        <div class="tier-name">Growth</div>
+        <div class="tier-period">per month, billed annually</div>
+        <div class="tier-price">$549<sup>/mo</sup></div>
+        <ul class="tier-list">
+          <li><i data-lucide="check" width="15" height="15"></i>Full monitoring coverage, one brand</li>
+          <li><i data-lucide="check" width="15" height="15"></i>4 per month included takedowns, pooled across brands</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Additional brands: 0 × $259/mo</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Extra takedowns: $79 each beyond your 4</li>
+          <li><i data-lucide="check" width="15" height="15"></i>20% off trademark filing</li>
           <li><i data-lucide="check" width="15" height="15"></i>Analyst-verified cases only</li>
         </ul>
         <a href="contact.html" class="btn btn-secondary btn-md">Get started</a>
@@ -237,14 +260,15 @@
 
       <div class="card tier-card tier-highlight">
         <div class="tier-flag">Most common</div>
-        <div class="tier-name">Growth</div>
+        <div class="tier-name">Scale</div>
         <div class="tier-period">per month, billed annually</div>
-        <div class="tier-price">$799<sup>/mo</sup></div>
+        <div class="tier-price">$1,199<sup>/mo</sup></div>
         <ul class="tier-list">
-          <li><i data-lucide="check" width="15" height="15"></i>5 per month included takedowns</li>
-          <li><i data-lucide="check" width="15" height="15"></i>Additional brands: 0 × $400/mo</li>
-          <li><i data-lucide="check" width="15" height="15"></i>Extra takedowns: +10 takedowns for $1,399</li>
-          <li><i data-lucide="check" width="15" height="15"></i>One trademark filing included</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Full monitoring coverage, one brand</li>
+          <li><i data-lucide="check" width="15" height="15"></i>12 per month included takedowns, pooled across brands</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Additional brands: 0 × $219/mo</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Extra takedowns: $59 each beyond your 12</li>
+          <li><i data-lucide="check" width="15" height="15"></i>30% off trademark filing</li>
           <li><i data-lucide="check" width="15" height="15"></i>Analyst-verified cases only</li>
         </ul>
         <a href="contact.html" class="btn btn-primary btn-md">Get started</a>
@@ -252,39 +276,55 @@
 
       <div class="card tier-card">
         <div class="tier-name">Enterprise</div>
-        <div class="tier-period">per year, billed annually</div>
-        <div class="tier-price">$12,000<sup>/yr</sup></div>
+        <div class="tier-period">custom, billed annually</div>
+        <div class="tier-price">Custom</div>
         <ul class="tier-list">
-          <li><i data-lucide="check" width="15" height="15"></i>25 per year included takedowns</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Pooled takedown volume, scoped to your portfolio</li>
           <li><i data-lucide="check" width="15" height="15"></i>Full platform coverage, 24/7 SOC</li>
+          <li><i data-lucide="check" width="15" height="15"></i>Brand Enforcement retainer included</li>
+          <li><i data-lucide="check" width="15" height="15"></i>UK + EU trademark filing scoped in</li>
           <li><i data-lucide="check" width="15" height="15"></i>Dedicated account manager</li>
-          <li><i data-lucide="check" width="15" height="15"></i>Analyst-verified cases only</li>
         </ul>
-        <a href="contact.html" class="btn btn-secondary btn-md">Get started</a>
+        <a href="contact.html" class="btn btn-secondary btn-md">Talk to us</a>
       </div>
     </div>
   </div>
 </section>
 
 <section id="quote" class="band-tint">
-  <div class="wrap quote-layout">
-    <div class="section-head" style="margin-bottom:0;">
+  <div class="wrap">
+    <div class="section-head">
       <div class="eyebrow">Not ready for a subscription?</div>
       <h2>Every service is also available on request.</h2>
-      <p>No commitment, no published rate card. Tell us what you need and we'll quote it directly. Already a subscriber? Your discount applies automatically.</p>
-      <a href="mailto:info@cloneguard.co?subject=Quote%20request&amp;body=Company%20name%3A%20%0AService%20needed%3A%20%0A%0APlease%20send%20me%20a%20quote." class="btn btn-primary btn-lg" style="margin-top:var(--space-6);">Request a Quote</a>
+      <p>No commitment, no published rate card. Tell us what you need and we'll quote it directly. Already a subscriber? Your discount applies automatically. Each service below has its own purchase options.</p>
     </div>
-    <div class="quote-pills">
-      <div class="quote-pill">Single takedown</div>
-      <div class="quote-pill">Takedown pack</div>
-      <div class="quote-pill">Cease and desist letter</div>
-      <div class="quote-pill">Negotiations</div>
-      <div class="quote-pill">Letter of protest</div>
-      <div class="quote-pill">Opposition filing</div>
-      <div class="quote-pill">Cancellation</div>
-      <div class="quote-pill">Domain dispute</div>
-      <div class="quote-pill">Trademark filing only</div>
+    <div class="quote-grid">
+      <div class="quote-card card">
+        <div class="svc-icon"><i data-lucide="eye" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Monitoring &amp; Takedowns</h3>
+        <p>Single takedowns, takedown packs, or monitoring-only coverage, quoted directly without a subscription.</p>
+        <a href="monitoring-takedowns.html#get-it">See purchase paths →</a>
+      </div>
+      <div class="quote-card card">
+        <div class="svc-icon"><i data-lucide="scale" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Trademark Registration</h3>
+        <p>A single mark filed and managed to registration, or a free check first if you're not ready to commit.</p>
+        <a href="trademarks.html#get-it">See purchase paths →</a>
+      </div>
+      <div class="quote-card card">
+        <div class="svc-icon"><i data-lucide="flag" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Brand Enforcement</h3>
+        <p>Cease and desist letters, oppositions, cancellations, and domain disputes, one-off or as an ongoing retainer.</p>
+        <a href="brand-enforcement.html#get-it">See purchase paths →</a>
+      </div>
+      <div class="quote-card card">
+        <div class="svc-icon"><i data-lucide="user" width="20" height="20" stroke-width="1.75"></i></div>
+        <h3>Specialist Services</h3>
+        <p>Executive protection, cyber insurance placement, and domain and IP portfolio strategy, quoted individually.</p>
+        <a href="specialist-services.html#get-it">See purchase paths →</a>
+      </div>
     </div>
+    <a href="mailto:info@cloneguard.co?subject=Quote%20request&amp;body=Company%20name%3A%20%0AService%20needed%3A%20%0A%0APlease%20send%20me%20a%20quote." class="btn btn-primary btn-lg" style="margin-top:var(--space-10);">Request a Quote</a>
   </div>
 </section>
 
@@ -294,26 +334,42 @@
       <div class="eyebrow">FAQ</div>
       <h2>Plan questions, answered plainly.</h2>
     </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <h3>What happens if I go over my included takedowns?</h3>
-        <p>Extra takedowns are billed at the discounted top-up rate for your tier, or you can request a one-off pack. There is no automatic overage charge.</p>
+    <div class="faq-columns">
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What's the difference between Monitor and the bundled plans?</h3>
+          <p>Monitor is pay-as-you-go: full monitoring coverage with no monthly takedown commitment, billed per takedown as they happen. Growth and Scale bundle a monthly takedown allowance at a lower per-unit rate, which works out cheaper once you're actioning more than the occasional case.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Are included takedowns shared across all my brands, or per brand?</h3>
+          <p>Shared account-wide. Adding a brand adds monitoring coverage for that brand, it does not add to your included takedown allowance.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What happens if I go over my included takedowns?</h3>
+          <p>Billed at your tier's overage rate ($79 on Growth, $59 on Scale), or you can request a one-off pack. There is no automatic overage charge.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I switch tiers later?</h3>
+          <p>Yes. You can move between Monitor, Growth, Scale, and Enterprise at your next billing cycle.</p>
+        </div>
       </div>
-      <div class="faq-item">
-        <h3>Can I switch tiers later?</h3>
-        <p>Yes. You can move up or down between Foundation, Growth, and Enterprise at your next billing cycle.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Is trademark filing really included?</h3>
-        <p>One trademark filing is included with any annual subscription. Monthly billing does not include a filing.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What currencies can I pay in?</h3>
-        <p>USD, GBP, and EUR. Prices are converted automatically at checkout.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What if I need something that isn't covered by my plan?</h3>
-        <p>Send us details of what you need. We quote it separately and apply your subscriber discount where it applies.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>Is trademark filing included in my plan?</h3>
+          <p>Not bundled in, deliberately, so you're never paying for a filing you don't need. Annual subscribers get a discount instead: 10% off on Monitor, 20% off on Growth, 30% off on Scale. Enterprise has filing scoped into the contract directly.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How is pricing worked out for additional brands?</h3>
+          <p>Each brand needs its own monitoring coverage, so additional brands are priced per brand. On Monitor every brand is priced the same; on Growth and Scale, the per-brand rate gets cheaper as you move up a tier.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What currencies can I pay in?</h3>
+          <p>USD, GBP, and EUR. Prices are converted automatically at checkout.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What if I need something that isn't covered by my plan?</h3>
+          <p>Send us details of what you need. We quote it separately and apply your subscriber discount where it applies.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -323,7 +379,7 @@
   <div class="wrap">
     <div class="eyebrow on-inverse">Get started</div>
     <h2>Tell us what you need protected. We'll recommend a tier.</h2>
-    <p>Most iGaming and Crypto brands start on Foundation or Growth. If you're not sure which fits, send us your brand and we'll size it before you commit to anything.</p>
+    <p>Most iGaming and Crypto brands land on Growth or Scale. If you're not sure which fits, send us your brand and we'll size it before you commit to anything.</p>
     <a href="contact.html" class="btn btn-gold btn-lg">Contact Us</a>
   </div>
 </section>
@@ -367,9 +423,10 @@
   const rates = { USD: 1, GBP: 0.79, EUR: 0.92 };
   const symbols = { USD: '$', GBP: '£', EUR: '€' };
   const tiers = [
-    { key:'foundation', name:'Foundation', annual:299, includedTakedowns:'2 per month', brandPrice:150, extra:'+5 takedowns for $249', highlight:false },
-    { key:'growth', name:'Growth', annual:799, includedTakedowns:'5 per month', brandPrice:400, extra:'+10 takedowns for $1,399', highlight:true },
-    { key:'enterprise', name:'Enterprise', annual:12000, includedTakedowns:'25 per year', brandPrice:null, extra:null, highlight:false }
+    { key:'monitor', kind:'payg', name:'Monitor', brandPrice:229, takedownRate:99, tmDiscount:'10%', highlight:false },
+    { key:'growth', kind:'bundle', name:'Growth', annual:549, included:4, brandPrice:259, overageRate:79, tmDiscount:'20%', highlight:false },
+    { key:'scale', kind:'bundle', name:'Scale', annual:1199, included:12, brandPrice:219, overageRate:59, tmDiscount:'30%', highlight:true },
+    { key:'enterprise', kind:'custom', name:'Enterprise', highlight:false }
   ];
   let state = { currency:'USD', billing:'annual', brands:0 };
 
@@ -382,29 +439,51 @@
     const grid = document.getElementById('tier-grid');
     grid.innerHTML = '';
     tiers.forEach((t) => {
-      const isEnterprise = t.key === 'enterprise';
-      let base = t.annual;
-      if (!isEnterprise && state.billing === 'monthly') base = Math.round(base * 1.2);
-      const brandCost = (!isEnterprise && t.brandPrice) ? Math.round(t.brandPrice * state.brands) : 0;
-      const total = base + brandCost;
-      const priceLabel = fmt(total, state.currency) + '<sup>' + (isEnterprise ? '/yr' : '/mo') + '</sup>';
-      const periodLabel = isEnterprise ? 'per year, billed annually' : (state.billing === 'annual' ? 'per month, billed annually' : 'per month, billed monthly');
-
       const card = document.createElement('div');
       card.className = 'card tier-card' + (t.highlight ? ' tier-highlight' : '');
+
+      if (t.kind === 'custom') {
+        card.innerHTML =
+          '<div class="tier-name">' + t.name + '</div>' +
+          '<div class="tier-period">custom, billed annually</div>' +
+          '<div class="tier-price">Custom</div>' +
+          '<ul class="tier-list">' +
+            '<li><i data-lucide="check" width="15" height="15"></i>Pooled takedown volume, scoped to your portfolio</li>' +
+            '<li><i data-lucide="check" width="15" height="15"></i>Full platform coverage, 24/7 SOC</li>' +
+            '<li><i data-lucide="check" width="15" height="15"></i>Brand Enforcement retainer included</li>' +
+            '<li><i data-lucide="check" width="15" height="15"></i>UK + EU trademark filing scoped in</li>' +
+            '<li><i data-lucide="check" width="15" height="15"></i>Dedicated account manager</li>' +
+          '</ul>' +
+          '<a href="contact.html" class="btn btn-secondary btn-md">Talk to us</a>';
+        grid.appendChild(card);
+        return;
+      }
+
+      const isPayg = t.kind === 'payg';
+      let base = isPayg ? t.brandPrice : t.annual;
+      if (state.billing === 'monthly') base = Math.round(base * 1.2);
+      const brandCost = isPayg ? Math.round(base * state.brands) : (t.brandPrice ? Math.round(t.brandPrice * state.brands) : 0);
+      const total = isPayg ? (base + brandCost) : (base + brandCost);
+      const priceLabel = fmt(total, state.currency) + '<sup>/mo</sup>';
+      const periodLabel = isPayg
+        ? (state.billing === 'annual' ? 'per month, per brand, billed annually' : 'per month, per brand, billed monthly')
+        : (state.billing === 'annual' ? 'per month, billed annually' : 'per month, billed monthly');
+
       card.innerHTML =
         (t.highlight ? '<div class="tier-flag">Most common</div>' : '') +
         '<div class="tier-name">' + t.name + '</div>' +
         '<div class="tier-period">' + periodLabel + '</div>' +
         '<div class="tier-price">' + priceLabel + '</div>' +
         '<ul class="tier-list">' +
-          '<li><i data-lucide="check" width="15" height="15"></i>' + t.includedTakedowns + ' included takedowns</li>' +
-          (!isEnterprise
-            ? '<li><i data-lucide="check" width="15" height="15"></i>Additional brands: ' + state.brands + ' × ' + fmt(t.brandPrice, state.currency) + '/mo</li>' +
-              '<li><i data-lucide="check" width="15" height="15"></i>Extra takedowns: ' + t.extra + '</li>'
-            : '<li><i data-lucide="check" width="15" height="15"></i>Full platform coverage, 24/7 SOC</li>' +
-              '<li><i data-lucide="check" width="15" height="15"></i>Dedicated account manager</li>') +
-          (state.billing === 'annual' && !isEnterprise ? '<li><i data-lucide="check" width="15" height="15"></i>One trademark filing included</li>' : '') +
+          (isPayg
+            ? '<li><i data-lucide="check" width="15" height="15"></i>Continuous monitoring, ' + (1 + state.brands) + ' brand' + (state.brands > 0 ? 's' : '') + '</li>' +
+              '<li><i data-lucide="check" width="15" height="15"></i>Takedowns pay-as-you-go: ' + fmt(t.takedownRate, state.currency) + ' each</li>' +
+              '<li><i data-lucide="check" width="15" height="15"></i>No monthly takedown commitment</li>'
+            : '<li><i data-lucide="check" width="15" height="15"></i>Full monitoring coverage, one brand</li>' +
+              '<li><i data-lucide="check" width="15" height="15"></i>' + t.included + ' per month included takedowns, pooled across brands</li>' +
+              '<li><i data-lucide="check" width="15" height="15"></i>Additional brands: ' + state.brands + ' × ' + fmt(t.brandPrice, state.currency) + '/mo</li>' +
+              '<li><i data-lucide="check" width="15" height="15"></i>Extra takedowns: ' + fmt(t.overageRate, state.currency) + ' each beyond your ' + t.included + '</li>') +
+          (state.billing === 'annual' ? '<li><i data-lucide="check" width="15" height="15"></i>' + t.tmDiscount + ' off trademark filing</li>' : '') +
           '<li><i data-lucide="check" width="15" height="15"></i>Analyst-verified cases only</li>' +
         '</ul>' +
         '<a href="contact.html" class="btn ' + (t.highlight ? 'btn-primary' : 'btn-secondary') + ' btn-md">Get started</a>';

@@ -115,8 +115,9 @@
   .svc-more{ margin-top: var(--space-5); font-size:13.5px; font-weight: var(--weight-semibold); color: var(--accent-verified-strong); display:inline-flex; align-items:center; gap:6px; }
 
   /* ---------- PROTECTION PLANS TEASER ---------- */
-  .plan-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap: var(--space-6); }
-  @media (max-width:900px){ .plan-grid{ grid-template-columns:1fr; } }
+  .plan-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap: var(--space-5); }
+  @media (max-width:1000px){ .plan-grid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:600px){ .plan-grid{ grid-template-columns:1fr; } }
   .plan-card{ padding: var(--space-8) var(--space-6); position:relative; }
   .plan-card.plan-highlight{ border:2px solid var(--brass-gold-500); box-shadow: var(--shadow-md); }
   .plan-flag{ position:absolute; top:-13px; left:50%; transform:translateX(-50%); background: var(--ink-navy-900); color: var(--brass-gold-300); font-family: var(--font-mono); font-size:10.5px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; padding:5px 14px; border-radius: var(--radius-pill); }
@@ -306,26 +307,32 @@
     <div class="section-head">
       <div class="eyebrow">Protection Plans</div>
       <h2>One flat subscription. Choose your level of coverage.</h2>
-      <p>Foundation, Growth, and Enterprise bundle monitoring, takedowns, and trademark filing under one contract. Need something outside your plan? Every service is also available on request.</p>
+      <p>Monitor is pay-as-you-go. Growth and Scale bundle a monthly takedown allowance at a lower rate. Enterprise is scoped to your portfolio. Need something outside your plan? Every service is also available on request.</p>
     </div>
 
     <div class="plan-grid">
       <div class="plan-card card">
-        <div class="plan-name">Foundation</div>
-        <div class="plan-price">$299<span>/mo, billed annually</span></div>
-        <p class="plan-desc">Continuous monitoring for one brand, plus 2 takedowns a month included.</p>
+        <div class="plan-name">Monitor</div>
+        <div class="plan-price">$229<span>/mo, per brand</span></div>
+        <p class="plan-desc">Continuous monitoring, one brand, takedowns pay-as-you-go at $99 each.</p>
+      </div>
+
+      <div class="plan-card card">
+        <div class="plan-name">Growth</div>
+        <div class="plan-price">$549<span>/mo, billed annually</span></div>
+        <p class="plan-desc">Monitoring plus 4 takedowns a month, pooled across every brand you add.</p>
       </div>
 
       <div class="plan-card plan-highlight card">
         <div class="plan-flag">Most common</div>
-        <div class="plan-name">Growth</div>
-        <div class="plan-price">$799<span>/mo, billed annually</span></div>
-        <p class="plan-desc">Priority case handling and 5 takedowns a month, built for brands under active attack.</p>
+        <div class="plan-name">Scale</div>
+        <div class="plan-price">$1,199<span>/mo, billed annually</span></div>
+        <p class="plan-desc">Monitoring plus 12 takedowns a month, built for brands under active attack.</p>
       </div>
 
       <div class="plan-card card">
         <div class="plan-name">Enterprise</div>
-        <div class="plan-price">$12,000<span>/yr</span></div>
+        <div class="plan-price">Custom<span>scoped to your portfolio</span></div>
         <p class="plan-desc">Full platform coverage with a dedicated account manager.</p>
       </div>
     </div>
