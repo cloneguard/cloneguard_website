@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="design-system/styles.css">
 
 <!-- Shared site chrome: reset, nav, buttons, cards, footer (see assets/site.css). -->
-<link rel="stylesheet" href="assets/site.css?v=10">
+<link rel="stylesheet" href="assets/site.css?v=11">
 
 <!-- Lucide - same icon system + version referenced by components/brand/Icon.jsx -->
 <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
@@ -100,16 +100,8 @@
   .cert-ghost-mark{ font-family: var(--font-display); font-weight: var(--weight-bold); font-size:18px; letter-spacing: var(--tracking-tight); color: var(--fg-muted); opacity:.65; margin-bottom: var(--space-2); }
   .cert-ghost-sub{ font-family: var(--font-mono); font-size:10px; color: var(--fg-muted); opacity:.8; }
   .cert-ghost-stamp{ position:absolute; right:10px; bottom:12px; transform:rotate(-7deg); border:2px solid var(--accent-flagged-strong); color: var(--accent-flagged-strong); background: var(--accent-flagged-soft); font-family: var(--font-mono); font-size:10px; font-weight: var(--weight-semibold); letter-spacing: var(--tracking-mono-label); text-transform:uppercase; padding:5px 10px; border-radius: var(--radius-sm); }
-  .cert-card{ position:relative; z-index:1; transform:rotate(-1.5deg); background: var(--bg-surface); border:2px solid var(--ink-navy-900); border-radius: var(--radius-md); padding: var(--space-8) var(--space-6) var(--space-10); margin:0 auto; box-shadow: var(--shadow-lg); overflow:hidden; }
-  .cert-top{ display:flex; justify-content:space-between; align-items:flex-start; margin-bottom: var(--space-6); }
-  .cert-label{ font-family: var(--font-mono); font-size:10px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); }
-  .cert-id{ font-family: var(--font-mono); font-size:10px; color: var(--fg-muted); }
-  .cert-mark{ font-family: var(--font-display); font-weight: var(--weight-bold); font-size:27px; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-4); }
-  .cert-classes{ display:flex; flex-direction:column; gap:6px; margin-bottom: var(--space-6); }
-  .cert-class{ font-family: var(--font-mono); font-size:11px; color: var(--fg-secondary); }
-  .cert-registers{ border-top:1px solid var(--border-default); padding-top: var(--space-4); }
-  .cert-register-row{ display:flex; justify-content:space-between; font-family: var(--font-mono); font-size:11.5px; padding:6px 0; color: var(--fg-secondary); }
-  .cert-stamp{ position:absolute; right:-6px; bottom:18px; transform:rotate(-9deg); border:2px solid var(--accent-verified-strong); color: var(--accent-verified-strong); background: var(--accent-verified-soft); font-family: var(--font-mono); font-size:11.5px; font-weight: var(--weight-semibold); letter-spacing: var(--tracking-mono-label); text-transform:uppercase; padding:8px 14px; border-radius: var(--radius-sm); }
+  /* .cert-card and its children are shared in site.css; this page layers it behind .cert-ghost, so it needs its own slight tilt. */
+  .cert-stack .cert-card{ transform:rotate(-1.5deg); }
 
   /* Timeline component (.tl-track etc.) now lives in assets/site.css - shared with the iGaming and Crypto pages. Sub-points per step are page-local. */
   .tl-substeps{ list-style:none; margin: var(--space-3) 0 0; padding:0; display:flex; flex-direction:column; gap: var(--space-2); }
