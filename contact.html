@@ -59,8 +59,7 @@
   .ct-hero p.lede{ font-size: var(--text-md); color: var(--fg-secondary); line-height: var(--leading-relaxed); margin:0 auto; }
 
   /* ---------- CONTACT CARDS ---------- */
-  .contact-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap: var(--space-6); max-width:640px; margin:0 auto; }
-  @media (max-width:600px){ .contact-grid{ grid-template-columns:1fr; } }
+  .contact-grid{ display:grid; grid-template-columns:1fr; max-width:320px; margin:0 auto; }
   .contact-card{ padding: var(--space-8) var(--space-6); display:block; text-align:center; transition: border-color var(--duration-base) var(--ease-standard), transform var(--duration-base) var(--ease-standard); }
   .contact-card:hover{ border-color: var(--brass-gold-700); transform: translateY(-3px); }
   .contact-card .svc-icon{ margin-left:auto; margin-right:auto; }
@@ -141,7 +140,7 @@
   <div class="wrap">
     <div class="eyebrow">Contact</div>
     <h1>Reach the team directly.</h1>
-    <p class="lede">Email or Telegram reaches the same team that handles every case.</p>
+    <p class="lede">Email reaches the same team that handles every case.</p>
   </div>
 </section>
 
@@ -152,11 +151,6 @@
         <div class="svc-icon"><i data-lucide="mail" width="22" height="22" stroke-width="1.75"></i></div>
         <div class="contact-label">Email</div>
         <div class="contact-value">info@cloneguard.co</div>
-      </a>
-      <a href="https://t.me/cloneguard" target="_blank" rel="noopener" class="contact-card card">
-        <div class="svc-icon"><i data-lucide="send" width="22" height="22" stroke-width="1.75"></i></div>
-        <div class="contact-label">Telegram</div>
-        <div class="contact-value">@cloneguard</div>
       </a>
     </div>
   </div>
