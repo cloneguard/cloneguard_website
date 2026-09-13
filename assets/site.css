@@ -282,6 +282,42 @@ footer{ border-top:1px solid var(--border-default); padding: var(--space-6) 0; }
 .path-card a{ font-size:13px; font-weight: var(--weight-semibold); color: var(--brass-gold-300); display:inline-flex; align-items:center; gap:4px; }
 .path-card a:hover{ color: var(--brass-gold-100); }
 
+/* ---------- BLOG ----------
+   Shared by blog/index.html and every post. Reuses .eyebrow, .band-white,
+   .band-tint, .section-head, .faq-list from elsewhere on the site rather
+   than inventing a parallel visual language for editorial content. */
+.blog-crumb{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); display:flex; align-items:center; gap:6px; margin-bottom: var(--space-6); }
+.blog-crumb a{ color: var(--fg-muted); }
+.blog-crumb a:hover{ color: var(--accent-verified-strong); }
+
+.blog-hero{ max-width: var(--container-narrow); }
+.blog-hero h1{ font-family: var(--font-display); font-size: clamp(28px,3.6vw,var(--text-2xl)); line-height: var(--leading-tight); letter-spacing: var(--tracking-tighter); margin: var(--space-4) 0 var(--space-5); }
+.blog-meta{ display:flex; gap: var(--space-5); flex-wrap:wrap; font-family: var(--font-mono); font-size:12px; color: var(--fg-muted); padding-bottom: var(--space-8); border-bottom:1px solid var(--border-default); }
+
+.blog-body{ max-width: var(--container-narrow); }
+.blog-body h2{ font-family: var(--font-display); font-size: var(--text-xl); letter-spacing: var(--tracking-tight); margin: var(--space-12) 0 var(--space-4); }
+.blog-body h2:first-child{ margin-top:0; }
+.blog-body h3{ font-family: var(--font-display); font-size: var(--text-md); letter-spacing: var(--tracking-tight); margin: var(--space-8) 0 var(--space-3); }
+.blog-body p{ color: var(--fg-secondary); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-bottom: var(--space-5); }
+.blog-body ul{ margin: 0 0 var(--space-5); padding-left: var(--space-6); }
+.blog-body li{ color: var(--fg-secondary); font-size: var(--text-base); line-height: var(--leading-relaxed); margin-bottom: var(--space-2); }
+.blog-body strong{ color: var(--fg-primary); font-weight: var(--weight-semibold); }
+
+.blog-related{ max-width: var(--container-narrow); background: var(--neutral-100); border:1px solid var(--border-default); border-radius: var(--radius-md); padding: var(--space-6) var(--space-8); margin: var(--space-10) 0; }
+.blog-related .eyebrow{ margin-bottom: var(--space-3); }
+.blog-related p{ color: var(--fg-secondary); font-size:14.5px; line-height: var(--leading-relaxed); margin-bottom: var(--space-3); }
+.blog-related a{ font-size:14px; font-weight: var(--weight-semibold); color: var(--accent-verified-strong); }
+
+.blog-index-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap: var(--space-6); }
+@media (max-width:800px){ .blog-index-grid{ grid-template-columns:1fr; } }
+.blog-card{ padding: var(--space-8); display:flex; flex-direction:column; }
+.blog-card-meta{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); margin-bottom: var(--space-3); }
+.blog-card h3{ font-family: var(--font-display); font-size:17px; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
+.blog-card h3 a{ color: var(--fg-primary); }
+.blog-card h3 a:hover{ color: var(--accent-verified-strong); }
+.blog-card p{ color: var(--fg-secondary); font-size:14px; line-height: var(--leading-normal); margin-bottom: var(--space-4); flex:1; }
+.blog-card .blog-card-link{ font-size:13.5px; font-weight: var(--weight-semibold); color: var(--accent-verified-strong); }
+
 /* ---------- INDUSTRY PAGES (iGaming, Crypto) ----------
    Shared template: flagged-activity feed (hero visual), 4-col threat and
    cost grids, and the how-we-protect-you grid mapping threats to services. */
