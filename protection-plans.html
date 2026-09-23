@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="design-system/styles.css">
 
 <!-- Shared site chrome: reset, nav, buttons, cards, footer (see assets/site.css). -->
-<link rel="stylesheet" href="assets/site.css?v=14">
+<link rel="stylesheet" href="assets/site.css?v=15">
 
 <!-- Lucide - same icon system + version referenced by components/brand/Icon.jsx -->
 <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
@@ -93,6 +93,8 @@
   .opt-group{ display:inline-flex; border:1px solid var(--border-default); border-radius: var(--radius-pill); padding:3px; background: var(--bg-surface); }
   .opt-btn{ border:none; background:none; font-family: var(--font-body); font-size:13.5px; font-weight: var(--weight-medium); color: var(--fg-secondary); padding:7px 16px; border-radius: var(--radius-pill); cursor:pointer; transition: background var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard); }
   .opt-btn.active{ background: var(--ink-navy-900); color: var(--fg-on-inverse); }
+  .opt-save{ font-family: var(--font-mono); font-size:10.5px; color: var(--brass-gold-700); margin-left:5px; }
+  .opt-btn.active .opt-save{ color: var(--brass-gold-300); }
   .stepper{ display:inline-flex; align-items:center; gap: var(--space-3); border:1px solid var(--border-default); border-radius: var(--radius-pill); padding:5px 8px; background: var(--bg-surface); }
   .stepper button{ width:26px; height:26px; border-radius:50%; border:1px solid var(--border-default); background: var(--bg-surface); color: var(--fg-primary); font-size:15px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
   .stepper button:hover{ border-color: var(--brass-gold-700); }
@@ -209,8 +211,8 @@
       <div>
         <div class="pr-control-label">Billing</div>
         <div class="opt-group" id="billing-group">
-          <button data-val="annual" class="opt-btn active">Annual</button>
-          <button data-val="monthly" class="opt-btn">Monthly</button>
+          <button data-val="annual" class="opt-btn">Annual <span class="opt-save">Save 20%</span></button>
+          <button data-val="monthly" class="opt-btn active">Monthly</button>
         </div>
       </div>
       <div>
@@ -225,21 +227,23 @@
 
     <!--
       Tier grid ships with real, static markup for the default state
-      (USD, annual, 0 additional brands) so search engines and AI crawlers
+      (USD, monthly, 0 additional brands) so search engines and AI crawlers
       that don't execute JavaScript still see actual plan pricing. The
       script below only re-renders this grid once a visitor changes a
-      control - it does not run automatically on page load.
+      control - it does not run automatically on page load. Monthly is the
+      default view deliberately: most new clients start on monthly, and
+      Annual is offered as an explicit 20%-off upgrade once trust is
+      established, not the default assumption.
     -->
     <div class="tier-grid" id="tier-grid">
       <div class="card tier-card">
         <div class="tier-name">Monitor</div>
-        <div class="tier-period">per month, per brand, billed annually</div>
-        <div class="tier-price">$429<sup>/mo</sup></div>
+        <div class="tier-period">per month, per brand, billed monthly</div>
+        <div class="tier-price">$539<sup>/mo</sup></div>
         <ul class="tier-list">
           <li><i data-lucide="check" width="15" height="15"></i>Continuous monitoring, one brand</li>
           <li><i data-lucide="check" width="15" height="15"></i>Takedowns pay-as-you-go: $179 each</li>
           <li><i data-lucide="check" width="15" height="15"></i>No monthly takedown commitment</li>
-          <li><i data-lucide="check" width="15" height="15"></i>10% off trademark filing</li>
           <li><i data-lucide="check" width="15" height="15"></i>Analyst-verified cases only</li>
         </ul>
         <a href="contact.html" class="btn btn-secondary btn-md">Get started</a>
@@ -248,14 +252,13 @@
       <div class="card tier-card tier-highlight">
         <div class="tier-flag">Most popular</div>
         <div class="tier-name">Growth</div>
-        <div class="tier-period">per month, billed annually</div>
-        <div class="tier-price">$949<sup>/mo</sup></div>
+        <div class="tier-period">per month, billed monthly</div>
+        <div class="tier-price">$1,189<sup>/mo</sup></div>
         <ul class="tier-list">
           <li><i data-lucide="check" width="15" height="15"></i>Full monitoring coverage, one brand</li>
           <li><i data-lucide="check" width="15" height="15"></i>4 takedowns per month, pooled across brands</li>
           <li><i data-lucide="check" width="15" height="15"></i>Additional brands: 0 × $379/mo</li>
           <li><i data-lucide="check" width="15" height="15"></i>Extra takedowns: $129 each beyond your 4</li>
-          <li><i data-lucide="check" width="15" height="15"></i>20% off trademark filing</li>
           <li><i data-lucide="check" width="15" height="15"></i>Analyst-verified cases only</li>
         </ul>
         <a href="contact.html" class="btn btn-primary btn-md">Get started</a>
@@ -263,14 +266,13 @@
 
       <div class="card tier-card">
         <div class="tier-name">Scale</div>
-        <div class="tier-period">per month, billed annually</div>
-        <div class="tier-price">$1,949<sup>/mo</sup></div>
+        <div class="tier-period">per month, billed monthly</div>
+        <div class="tier-price">$2,439<sup>/mo</sup></div>
         <ul class="tier-list">
           <li><i data-lucide="check" width="15" height="15"></i>Full monitoring coverage, one brand</li>
           <li><i data-lucide="check" width="15" height="15"></i>12 takedowns per month, pooled across brands</li>
           <li><i data-lucide="check" width="15" height="15"></i>Additional brands: 0 × $329/mo</li>
           <li><i data-lucide="check" width="15" height="15"></i>Extra takedowns: $109 each beyond your 12</li>
-          <li><i data-lucide="check" width="15" height="15"></i>30% off trademark filing</li>
           <li><i data-lucide="check" width="15" height="15"></i>Analyst-verified cases only</li>
         </ul>
         <a href="contact.html" class="btn btn-secondary btn-md">Get started</a>
@@ -326,7 +328,7 @@
         <a href="specialist-services.html#get-it">See purchase paths →</a>
       </div>
     </div>
-    <a href="mailto:info@cloneguard.co?subject=Quote%20request&amp;body=Company%20name%3A%20%0AService%20needed%3A%20%0A%0APlease%20send%20me%20a%20quote." class="btn btn-primary btn-lg" style="margin-top:var(--space-10);">Request a Quote</a>
+    <a href="contact.html" class="btn btn-primary btn-lg" style="margin-top:var(--space-10);">Request a Quote</a>
   </div>
 </section>
 
@@ -430,7 +432,7 @@
     { key:'scale', kind:'bundle', name:'Scale', annual:1949, included:12, brandPrice:329, overageRate:109, tmDiscount:'30%', highlight:false },
     { key:'enterprise', kind:'custom', name:'Enterprise', highlight:false }
   ];
-  let state = { currency:'USD', billing:'annual', brands:0 };
+  let state = { currency:'USD', billing:'monthly', brands:0 };
 
   function roundUpTo9(v){
     // Smallest number ending in 9 that is >= v, so every price shown
@@ -471,7 +473,7 @@
 
       const isPayg = t.kind === 'payg';
       let base = isPayg ? t.brandPrice : t.annual;
-      if (state.billing === 'monthly') base = Math.round(base * 1.2);
+      if (state.billing === 'monthly') base = Math.round(base * 1.25);
       const brandCost = isPayg ? Math.round(base * state.brands) : (t.brandPrice ? Math.round(t.brandPrice * state.brands) : 0);
       const total = isPayg ? (base + brandCost) : (base + brandCost);
       const priceLabel = fmt(total, state.currency) + '<sup>/mo</sup>';
