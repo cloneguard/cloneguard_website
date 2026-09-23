@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="design-system/styles.css">
 
 <!-- Shared site chrome: reset, nav, buttons, cards, footer (see assets/site.css). -->
-<link rel="stylesheet" href="assets/site.css?v=13">
+<link rel="stylesheet" href="assets/site.css?v=14">
 
 <!-- Lucide - same icon system + version referenced by components/brand/Icon.jsx -->
 <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
@@ -245,7 +245,8 @@
         <a href="contact.html" class="btn btn-secondary btn-md">Get started</a>
       </div>
 
-      <div class="card tier-card">
+      <div class="card tier-card tier-highlight">
+        <div class="tier-flag">Most popular</div>
         <div class="tier-name">Growth</div>
         <div class="tier-period">per month, billed annually</div>
         <div class="tier-price">$949<sup>/mo</sup></div>
@@ -257,11 +258,10 @@
           <li><i data-lucide="check" width="15" height="15"></i>20% off trademark filing</li>
           <li><i data-lucide="check" width="15" height="15"></i>Analyst-verified cases only</li>
         </ul>
-        <a href="contact.html" class="btn btn-secondary btn-md">Get started</a>
+        <a href="contact.html" class="btn btn-primary btn-md">Get started</a>
       </div>
 
-      <div class="card tier-card tier-highlight">
-        <div class="tier-flag">Most common</div>
+      <div class="card tier-card">
         <div class="tier-name">Scale</div>
         <div class="tier-period">per month, billed annually</div>
         <div class="tier-price">$1,949<sup>/mo</sup></div>
@@ -273,7 +273,7 @@
           <li><i data-lucide="check" width="15" height="15"></i>30% off trademark filing</li>
           <li><i data-lucide="check" width="15" height="15"></i>Analyst-verified cases only</li>
         </ul>
-        <a href="contact.html" class="btn btn-primary btn-md">Get started</a>
+        <a href="contact.html" class="btn btn-secondary btn-md">Get started</a>
       </div>
 
       <div class="card tier-card">
@@ -426,8 +426,8 @@
   const symbols = { USD: '$', GBP: '£', EUR: '€' };
   const tiers = [
     { key:'monitor', kind:'payg', name:'Monitor', brandPrice:429, takedownRate:179, tmDiscount:'10%', highlight:false },
-    { key:'growth', kind:'bundle', name:'Growth', annual:949, included:4, brandPrice:379, overageRate:129, tmDiscount:'20%', highlight:false },
-    { key:'scale', kind:'bundle', name:'Scale', annual:1949, included:12, brandPrice:329, overageRate:109, tmDiscount:'30%', highlight:true },
+    { key:'growth', kind:'bundle', name:'Growth', annual:949, included:4, brandPrice:379, overageRate:129, tmDiscount:'20%', highlight:true },
+    { key:'scale', kind:'bundle', name:'Scale', annual:1949, included:12, brandPrice:329, overageRate:109, tmDiscount:'30%', highlight:false },
     { key:'enterprise', kind:'custom', name:'Enterprise', highlight:false }
   ];
   let state = { currency:'USD', billing:'annual', brands:0 };
@@ -480,7 +480,7 @@
         : (state.billing === 'annual' ? 'per month, billed annually' : 'per month, billed monthly');
 
       card.innerHTML =
-        (t.highlight ? '<div class="tier-flag">Most common</div>' : '') +
+        (t.highlight ? '<div class="tier-flag">Most popular</div>' : '') +
         '<div class="tier-name">' + t.name + '</div>' +
         '<div class="tier-period">' + periodLabel + '</div>' +
         '<div class="tier-price">' + priceLabel + '</div>' +

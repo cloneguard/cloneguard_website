@@ -322,7 +322,7 @@ footer{ border-top:1px solid var(--border-default); padding: var(--space-6) 0; }
 
 .blog-index-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap: var(--space-6); }
 @media (max-width:800px){ .blog-index-grid{ grid-template-columns:1fr; } }
-.blog-card{ display:flex; flex-direction:column; }
+.blog-card{ display:flex; flex-direction:column; padding: var(--space-8); }
 .blog-card-meta{ font-family: var(--font-mono); font-size:11px; letter-spacing: var(--tracking-mono-label); text-transform:uppercase; color: var(--fg-muted); margin-bottom: var(--space-3); }
 .blog-card h3{ font-family: var(--font-display); font-size:17px; letter-spacing: var(--tracking-tight); margin-bottom: var(--space-3); }
 .blog-card h3 a{ color: var(--fg-primary); }
