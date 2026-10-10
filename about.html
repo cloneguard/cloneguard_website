@@ -14,7 +14,7 @@
 
 <!-- Open Graph / social preview -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://cloneguard.co/about.html">
+<meta property="og:url" content="https://cloneguard.co/about">
 <meta property="og:title" content="About - CloneGuard">
 <meta property="og:description" content="CloneGuard is a brand protection partner built specifically for iGaming and Crypto: monitoring, takedowns, and trademark registration under one point of contact.">
 <meta property="og:image" content="https://cloneguard.co/og-image.png">
@@ -36,11 +36,14 @@
 <!-- Lucide - same icon system + version referenced by components/brand/Icon.jsx -->
 <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.js"></script>
 
+<!-- Canonical: Cloudflare Pages serves .html files at a clean, extensionless URL and 308-redirects the .html version to it. This must match that target exactly. -->
+<link rel="canonical" href="https://cloneguard.co/about">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  "url": "https://cloneguard.co/about.html",
+  "url": "https://cloneguard.co/about",
   "mainEntity": {
     "@type": "Organization",
     "name": "CloneGuard",
@@ -150,56 +153,56 @@
 
 <header>
   <nav class="wrap">
-    <a href="index.html" class="logo">CloneGuard</a>
+    <a href="/" class="logo">CloneGuard</a>
     <div class="navlinks">
-      <a href="protection-plans.html">Protection Plans</a>
+      <a href="protection-plans">Protection Plans</a>
       <div class="navdrop">
         <button class="navdrop-trigger" type="button">Services <i data-lucide="chevron-down" width="14" height="14"></i></button>
         <div class="navdrop-panel">
-          <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns<span>Detect, verify, and take down impersonators</span></a>
-          <a href="trademarks.html">Trademark Registration<span>UK, EU, and global filing</span></a>
-          <a href="brand-enforcement.html">Brand Enforcement<span>Cease and desist, disputes, and legal escalation</span></a>
-          <a href="specialist-services.html">Specialist Services<span>Executive protection, insurance, IP strategy</span></a>
+          <a href="monitoring-takedowns">Monitoring &amp; Takedowns<span>Detect, verify, and take down impersonators</span></a>
+          <a href="trademarks">Trademark Registration<span>UK, EU, and global filing</span></a>
+          <a href="brand-enforcement">Brand Enforcement<span>Cease and desist, disputes, and legal escalation</span></a>
+          <a href="specialist-services">Specialist Services<span>Executive protection, insurance, IP strategy</span></a>
         </div>
       </div>
       <div class="navdrop">
         <button class="navdrop-trigger" type="button">Industries <i data-lucide="chevron-down" width="14" height="14"></i></button>
         <div class="navdrop-panel">
-          <a href="igaming.html">iGaming<span>Casinos, sportsbooks, and betting platforms</span></a>
-          <a href="crypto.html">Crypto<span>Exchanges and crypto platforms</span></a>
+          <a href="igaming">iGaming<span>Casinos, sportsbooks, and betting platforms</span></a>
+          <a href="crypto">Crypto<span>Exchanges and crypto platforms</span></a>
         </div>
       </div>
-      <a href="blog/index.html">Blog</a>
-      <a href="about.html" class="active">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="blog/">Blog</a>
+      <a href="about" class="active">About</a>
+      <a href="contact">Contact</a>
     </div>
-    <a href="contact.html" class="btn btn-gold btn-md navcta">Contact Us</a>
+    <a href="contact" class="btn btn-gold btn-md navcta">Contact Us</a>
     <button class="navburger" id="navburger" aria-label="Open menu" aria-expanded="false">
       <i data-lucide="menu" width="20" height="20"></i>
     </button>
   </nav>
   <div class="mobile-nav" id="mobileNav">
-    <a href="protection-plans.html">Protection Plans</a>
+    <a href="protection-plans">Protection Plans</a>
     <div class="mnav-group">
       <button class="mnav-head" type="button">Services <i data-lucide="chevron-down" width="16" height="16"></i></button>
       <div class="mnav-sub">
-        <a href="monitoring-takedowns.html">Monitoring &amp; Takedowns</a>
-        <a href="trademarks.html">Trademark Registration</a>
-        <a href="brand-enforcement.html">Brand Enforcement</a>
-        <a href="specialist-services.html">Specialist Services</a>
+        <a href="monitoring-takedowns">Monitoring &amp; Takedowns</a>
+        <a href="trademarks">Trademark Registration</a>
+        <a href="brand-enforcement">Brand Enforcement</a>
+        <a href="specialist-services">Specialist Services</a>
       </div>
     </div>
     <div class="mnav-group">
       <button class="mnav-head" type="button">Industries <i data-lucide="chevron-down" width="16" height="16"></i></button>
       <div class="mnav-sub">
-        <a href="igaming.html">iGaming</a>
-        <a href="crypto.html">Crypto</a>
+        <a href="igaming">iGaming</a>
+        <a href="crypto">Crypto</a>
       </div>
     </div>
-    <a href="blog/index.html">Blog</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="contact.html" class="btn btn-gold btn-md">Contact Us</a>
+    <a href="blog/">Blog</a>
+    <a href="about">About</a>
+    <a href="contact">Contact</a>
+    <a href="contact" class="btn btn-gold btn-md">Contact Us</a>
   </div>
 </header>
 
@@ -250,7 +253,7 @@
           <h2>Protection before the problem. Enforcement after it.</h2>
         </div>
         <p>Every engagement covers two directions: protection that stops problems before they cost you a customer (trademark registration, continuous monitoring, domain and IP strategy), and enforcement that acts the moment a threat is confirmed (takedowns, cease and desist letters, negotiations, domain disputes). Most do one or the other. We run both from a single team.</p>
-        <a href="index.html#services" class="work-link">See the full model →</a>
+        <a href="/#services" class="work-link">See the full model →</a>
       </div>
       <div class="work-visual" aria-hidden="true">
         <div class="work-visual-half">
@@ -308,12 +311,12 @@
       <p>No generalist checklist, no "we cover every industry" claim. Every case we handle sits inside one of two verticals, which is what lets us move fast on the threats that are actually common there.</p>
     </div>
     <div class="focus-list">
-      <a href="igaming.html" class="focus-row">
+      <a href="igaming" class="focus-row">
         <span class="focus-tag">iGaming</span>
         <span class="focus-title">Casinos, sportsbooks, betting platforms</span>
         <span class="focus-arrow">→</span>
       </a>
-      <a href="crypto.html" class="focus-row">
+      <a href="crypto" class="focus-row">
         <span class="focus-tag">Crypto</span>
         <span class="focus-title">Exchanges and crypto platforms</span>
         <span class="focus-arrow">→</span>
@@ -328,7 +331,7 @@
       <div class="eyebrow on-inverse">Get started</div>
       <h2>See how this works for your brand.</h2>
       <p>Monitor is pay-as-you-go with no minimum commitment, or talk to us first if you'd rather scope it out.</p>
-      <a href="protection-plans.html" class="btn btn-gold btn-lg">Start Monitoring</a>
+      <a href="protection-plans" class="btn btn-gold btn-lg">Start Monitoring</a>
     </div>
     <div class="operate-checklist">
       <div class="operate-item"><i data-lucide="check" width="16" height="16"></i>Verified before action</div>
@@ -343,12 +346,12 @@
 <footer>
   <div class="wrap foot-grid">
     <div>
-      <a href="index.html" class="logo" style="display:inline-block;">CloneGuard</a>
+      <a href="/" class="logo" style="display:inline-block;">CloneGuard</a>
     </div>
     <div class="foot-copyright">&copy; CloneGuard Ltd. All rights reserved.</div>
     <div class="foot-legal">
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="terms.html">Terms</a>
+      <a href="privacy-policy">Privacy Policy</a>
+      <a href="terms">Terms</a>
     </div>
   </div>
 </footer>
